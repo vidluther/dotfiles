@@ -1,6 +1,10 @@
+2014-07-08 07:51:17 -0500 Vid Luther 
+
+	* ready for an initial import. take screenshot, say cheese (HEAD, master)
+
 2014-07-08 07:07:16 -0500 Vid Luther 
 
-	* my .zshrc and githooks collection (HEAD, master)
+	* my .zshrc and githooks collection
 
 2014-05-08 16:33:42 -0500 Vid Luther 
 

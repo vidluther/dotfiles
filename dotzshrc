@@ -2,15 +2,9 @@
 #ZSH=$HOME/Dropbox/oh-my-zsh
 ZSH=/Users/vluther/Dropbox\ \(Personal\)/oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+## This resides in $ZSH/themes/
 ZSH_THEME="vidluther"
 #DEFAULT_USER="vluther"
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -36,14 +30,18 @@ source $ZSH/oh-my-zsh.sh
 setopt append_history no_inc_append_history no_share_history
 
 PATH=/usr/local/php5/bin:~/bin:/Users/vluther/.chefdk/gem/ruby/2.1.0/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
-# Customize to your needs...
+
+## These should not be public :).. 
 
 source "/Users/vluther/.apikeys.sh"
 
-#export EDITOR="~/bin/mate -w"
 export EDITOR="~/bin/subl -w"
 
+
+# This changes sometimes.. 
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 
+# vmware fusion doesn't work in Yosemite Beta's yet, so we're 
+# back to Virtualbox for now (the default)
 #export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
