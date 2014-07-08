@@ -1,4 +1,19 @@
 # Dot Files
 
-These are config files for various things I use that make my life easier. Stored here, so I can reference them easily if/when 
-I'm changing computers, or have multiple machines I switch between. 
+### bin
+
+Some shell/ruby/python scripts that I use very often.
+
+### fonts
+
+Fonts that I use to make my life better in iTerm, these fonts are necessary
+for the battery charge/github indicators to show properly in the zsh prompt.
+
+### iterm
+
+My iterm settings, and some themes I like. Basically, it's just the Pastel (Dark
+Background colors preset, menlo regular font)
+
+### vidluther.zsh-theme
+
+My custom theme for oh-my-zsh, credits/inspiration can be found within the file.

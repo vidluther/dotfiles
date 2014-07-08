@@ -1,6 +1,10 @@
+2014-07-08 07:52:50 -0500 Vid Luther 
+
+	* screenshot and background docs (HEAD, master)
+
 2014-07-08 07:51:17 -0500 Vid Luther 
 
-	* ready for an initial import. take screenshot, say cheese (HEAD, master)
+	* ready for an initial import. take screenshot, say cheese
 
 2014-07-08 07:07:16 -0500 Vid Luther 
 

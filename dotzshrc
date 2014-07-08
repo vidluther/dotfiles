@@ -4,7 +4,6 @@ ZSH=/Users/vluther/Dropbox\ \(Personal\)/oh-my-zsh
 
 ## This resides in $ZSH/themes/
 ZSH_THEME="vidluther"
-#DEFAULT_USER="vluther"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -31,17 +30,17 @@ setopt append_history no_inc_append_history no_share_history
 
 PATH=/usr/local/php5/bin:~/bin:/Users/vluther/.chefdk/gem/ruby/2.1.0/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
 
-## These should not be public :).. 
+## These should not be public :)..
 
 source "/Users/vluther/.apikeys.sh"
 
 export EDITOR="~/bin/subl -w"
 
 
-# This changes sometimes.. 
+# This changes sometimes..
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 
-# vmware fusion doesn't work in Yosemite Beta's yet, so we're 
+# vmware fusion doesn't work in Yosemite Beta's yet, so we're
 # back to Virtualbox for now (the default)
 #export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
