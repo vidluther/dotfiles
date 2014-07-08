@@ -15,4 +15,3 @@ END {
         }
     }
 }' > ~/ssh_config.txt
-

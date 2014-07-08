@@ -1,6 +1,10 @@
+2014-07-08 07:57:52 -0500 Vid Luther 
+
+	* more docs, and minor formatting changes (HEAD, master)
+
 2014-07-08 07:52:50 -0500 Vid Luther 
 
-	* screenshot and background docs (HEAD, master)
+	* screenshot and background docs (origin/master, origin/HEAD)
 
 2014-07-08 07:51:17 -0500 Vid Luther 
 
@@ -12,7 +16,7 @@
 
 2014-05-08 16:33:42 -0500 Vid Luther 
 
-	* zsh and slate changes (origin/master, origin/HEAD)
+	* zsh and slate changes
 
 2014-04-13 13:03:23 -0500 Vid Luther 
 

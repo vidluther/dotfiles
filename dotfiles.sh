@@ -3,13 +3,13 @@
 set -e
 set -x
 
-ln -s ~/Dropbox\ \(Personal\)/dotfiles/bin /Users/vluther/sandbox/bin
-ln -s ~/Dropbox\ \(Personal\)/dotfiles/dotzshrc /Users/vluther/sandbox/.zshrc
-ln -s ~/Dropbox\ \(Personal\)/dotfiles/gitconfig /Users/vluther/sandbox/.gitconfig
+ln -s ~/Dropbox\ \(Personal\)/dotfiles/bin /Users/vluther/bin
+ln -s ~/Dropbox\ \(Personal\)/dotfiles/dotzshrc /Users/vluther/.zshrc
+ln -s ~/Dropbox\ \(Personal\)/dotfiles/gitconfig /Users/vluther/.gitconfig
 
 
 
 ## My .ssh stuff. Also not public for obvious reasons.
 
-ln -s ~/Dropbox\ \(Personal\)/pcli/ssh /Users/vluther/sandbox/.ssh
-ln -s ~/Dropbox\ \(Personal\)/pcli/apikeys.sh /Users/vluther/sandbox/.apikeys.sh
+ln -s ~/Dropbox\ \(Personal\)/pcli/ssh /Users/vluther/.ssh
+ln -s ~/Dropbox\ \(Personal\)/pcli/apikeys.sh /Users/vluther/.apikeys.sh
