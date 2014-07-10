@@ -1,10 +1,14 @@
+2014-07-10 10:35:18 -0500 Vid Luther 
+
+	* git log alias, and change to editor (HEAD, master)
+
 2014-07-08 07:57:52 -0500 Vid Luther 
 
-	* more docs, and minor formatting changes (HEAD, master)
+	* more docs, and minor formatting changes (origin/master, origin/HEAD)
 
 2014-07-08 07:52:50 -0500 Vid Luther 
 
-	* screenshot and background docs (origin/master, origin/HEAD)
+	* screenshot and background docs
 
 2014-07-08 07:51:17 -0500 Vid Luther 
 

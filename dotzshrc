@@ -28,14 +28,13 @@ plugins=(git textmate github git-flow ssh-agent osx rbenv)
 source $ZSH/oh-my-zsh.sh
 setopt append_history no_inc_append_history no_share_history
 
-PATH=/usr/local/php5/bin:~/bin:/Users/vluther/.chefdk/gem/ruby/2.1.0/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
+PATH=/usr/local/mysql/bin:/usr/local/php5/bin:~/bin:/Users/vluther/.chefdk/gem/ruby/2.1.0/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
 
 ## These should not be public :)..
 
 source "/Users/vluther/.apikeys.sh"
 
-export EDITOR="~/bin/subl -w"
-
+export EDITOR="vim"
 
 # This changes sometimes..
 export DOCKER_HOST=tcp://192.168.59.103:2375
