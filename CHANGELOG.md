@@ -1,10 +1,14 @@
+2014-07-22 14:42:59 -0500 Vid Luther 
+
+	* background docs (HEAD, master)
+
 2014-07-22 01:32:04 -0500 Vid Luther 
 
-	* yosemite boot disk creator.. for those days when you want a fresh install (HEAD, master)
+	* yosemite boot disk creator.. for those days when you want a fresh install (origin/master, origin/HEAD)
 
 2014-07-10 10:35:18 -0500 Vid Luther 
 
-	* git log alias, and change to editor (origin/master, origin/HEAD)
+	* git log alias, and change to editor
 
 2014-07-08 07:57:52 -0500 Vid Luther 
 

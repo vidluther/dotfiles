@@ -34,7 +34,9 @@ PATH=/usr/local/mysql/bin:/usr/local/php5/bin:~/bin:/Users/vluther/.chefdk/gem/r
 
 source "/Users/vluther/.apikeys.sh"
 
-export EDITOR="vim"
+#export EDITOR="vim"
+
+export EDITOR="/usr/local/bin/mate -w"
 
 # This changes sometimes..
 export DOCKER_HOST=tcp://192.168.59.103:2375
