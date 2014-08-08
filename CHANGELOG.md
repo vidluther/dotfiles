@@ -1,10 +1,14 @@
+2014-08-08 04:59:01 -0500 Vid Luther 
+
+	* modified to work with the Beta 5 DMG (HEAD, master)
+
 2014-07-22 14:42:59 -0500 Vid Luther 
 
-	* background docs (HEAD, master)
+	* background docs (origin/master, origin/HEAD)
 
 2014-07-22 01:32:04 -0500 Vid Luther 
 
-	* yosemite boot disk creator.. for those days when you want a fresh install (origin/master, origin/HEAD)
+	* yosemite boot disk creator.. for those days when you want a fresh install
 
 2014-07-10 10:35:18 -0500 Vid Luther 
 
