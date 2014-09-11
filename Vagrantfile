@@ -4,6 +4,15 @@
 
 
 Vagrant.configure("2") do |c|
+
+	# If a local VM becomes in-accessible (firewall rule testing)
+	# Re-create the machine, but set uncomment the vb.gui line.
+	# Then you can use the vmware/virtualbox console. 
+	c.vm.provider "virtualbox" do |vb|
+        	#vb.gui = true
+	end
+
+
 	
 	## This will speed up future provisioning of machines
 	## considerably, after the first run.

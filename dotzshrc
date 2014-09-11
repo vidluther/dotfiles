@@ -23,25 +23,27 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git textmate ruby lighthouse)
-plugins=(git textmate github git-flow ssh-agent osx rbenv)
+plugins=(git github git-flow ssh-agent osx rbenv berkshelf jsontools)
 
 source $ZSH/oh-my-zsh.sh
 setopt append_history no_inc_append_history no_share_history
 
-PATH=/usr/local/mysql/bin:/usr/local/php5/bin:~/bin:/Users/vluther/.chefdk/gem/ruby/2.1.0/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
+PATH=~/bin/packer:/usr/local/mysql/bin:/usr/local/php5/bin:~/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
 
 ## These should not be public :)..
 
 source "/Users/vluther/.apikeys.sh"
 
-#export EDITOR="vim"
+export EDITOR="vim"
 
-export EDITOR="/usr/local/bin/mate -w"
+#export EDITOR='subl -w'
 
 # This changes sometimes..
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 
+
 # vmware fusion doesn't work in Yosemite Beta's yet, so we're
 # back to Virtualbox for now (the default)
 #export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+eval "$(chef shell-init zsh)"

@@ -1,10 +1,14 @@
+2014-09-11 11:46:23 -0500 Vid Luther 
+
+	* vagrant cachier stuff, iterm prefs changed for 4k displays.. (HEAD, master)
+
 2014-08-08 04:59:01 -0500 Vid Luther 
 
-	* modified to work with the Beta 5 DMG (HEAD, master)
+	* modified to work with the Beta 5 DMG (origin/master, origin/HEAD)
 
 2014-07-22 14:42:59 -0500 Vid Luther 
 
-	* background docs (origin/master, origin/HEAD)
+	* background docs
 
 2014-07-22 01:32:04 -0500 Vid Luther 
 
