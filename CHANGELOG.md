@@ -1,6 +1,10 @@
+2014-10-06 11:46:40 -0500 Vid Luther 
+
+	* added git-extras plugin and moved chefdk after rbenv (HEAD, master)
+
 2014-10-06 11:45:32 -0500 Vid Luther 
 
-	* moved files around and stuff (HEAD, master)
+	* moved files around and stuff
 
 2014-09-11 11:46:23 -0500 Vid Luther 
 
