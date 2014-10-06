@@ -1,6 +1,10 @@
+2014-10-06 11:47:14 -0500 Vid Luther 
+
+	* removed themes into their own folder (HEAD, master)
+
 2014-10-06 11:46:40 -0500 Vid Luther 
 
-	* added git-extras plugin and moved chefdk after rbenv (HEAD, master)
+	* added git-extras plugin and moved chefdk after rbenv
 
 2014-10-06 11:45:32 -0500 Vid Luther 
 
