@@ -1,6 +1,10 @@
+2014-10-06 11:47:43 -0500 Vid Luther 
+
+	* git push's are simple (HEAD, master)
+
 2014-10-06 11:47:14 -0500 Vid Luther 
 
-	* removed themes into their own folder (HEAD, master)
+	* removed themes into their own folder
 
 2014-10-06 11:46:40 -0500 Vid Luther 
 
