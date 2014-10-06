@@ -1,6 +1,10 @@
+2014-10-06 11:45:32 -0500 Vid Luther 
+
+	* moved files around and stuff (HEAD, master)
+
 2014-09-11 11:46:23 -0500 Vid Luther 
 
-	* vagrant cachier stuff, iterm prefs changed for 4k displays.. (HEAD, master)
+	* vagrant cachier stuff, iterm prefs changed for 4k displays..
 
 2014-08-08 04:59:01 -0500 Vid Luther 
 
