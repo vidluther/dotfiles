@@ -1,6 +1,10 @@
+2014-11-05 07:17:37 -0600 Vid Luther 
+
+	* icons, and changes to brewstrap (HEAD, master)
+
 2014-10-06 11:47:43 -0500 Vid Luther 
 
-	* git push's are simple (HEAD, master)
+	* git push's are simple
 
 2014-10-06 11:47:14 -0500 Vid Luther 
 

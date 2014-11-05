@@ -18,8 +18,10 @@ Vagrant.configure("2") do |c|
 	## considerably, after the first run.
 	## To see what's cached, look in ~/.vagrant.d/cache/boxname..
 
-	if Vagrant.has_plugin?("vagrant-cachier")
-	    c.cache.scope = :box
-	end
+	 if Vagrant.has_plugin?("vagrant-cachier")
+    		c.cache.scope       = :machine # or :box
+    		c.cache.auto_detect = false
+  	end
+
 end
 
