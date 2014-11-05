@@ -1,6 +1,10 @@
+2014-11-05 07:18:16 -0600 Vid Luther 
+
+	* install/setup powerline (HEAD, master)
+
 2014-11-05 07:17:37 -0600 Vid Luther 
 
-	* icons, and changes to brewstrap (HEAD, master)
+	* icons, and changes to brewstrap
 
 2014-10-06 11:47:43 -0500 Vid Luther 
 
