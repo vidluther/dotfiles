@@ -1,6 +1,10 @@
+2014-11-07 12:22:51 -0600 Vid Luther 
+
+	* more bootstrapping stuff. (HEAD, master)
+
 2014-11-05 07:18:16 -0600 Vid Luther 
 
-	* install/setup powerline (HEAD, master)
+	* install/setup powerline
 
 2014-11-05 07:17:37 -0600 Vid Luther 
 

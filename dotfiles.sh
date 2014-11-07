@@ -13,3 +13,8 @@ ln -s ~/Dropbox\ \(Personal\)/dotfiles/gitconfig /Users/vluther/.gitconfig
 
 ln -s ~/Dropbox\ \(Personal\)/pcli/ssh /Users/vluther/.ssh
 ln -s ~/Dropbox\ \(Personal\)/pcli/apikeys.sh /Users/vluther/.apikeys.sh
+
+# Powerline stuff.. still undecided about how useful it is.
+
+# Docs here: https://powerline.readthedocs.org/en/latest/usage.html
+pip install git+git://github.com/Lokaltog/powerline

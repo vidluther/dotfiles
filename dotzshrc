@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh configuration.
-#ZSH=$HOME/Dropbox/oh-my-zsh
 ZSH=/Users/vluther/Dropbox\ \(Personal\)/oh-my-zsh
+
+DOTFILES=/Users/vluther/Dropbox\ \(Personal\)/dotfiles
 
 ## This resides in $ZSH/themes/
 ZSH_THEME="vidluther"
@@ -11,42 +12,54 @@ ZSH_THEME="vidluther"
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git textmate ruby lighthouse)
-plugins=(brew git git-extras github git-flow ssh-agent osx jsontools)
+plugins=(brew git git-extras github ssh-agent osx jsontools sublime berkshelf atom)
+
+
+
+# Powerline stuff.
+# https://powerline.readthedocs.org/en/latest/usage/shell-prompts.html#zsh-prompt
+# On a new install, this won't do anything until powerline is installed.
+# Powerline daemon needs to be running first as well.
+
+
+/usr/local/bin/powerline-daemon -q
+source '/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh'
 
 source $ZSH/oh-my-zsh.sh
+
+
+
+
+export DEFAULT_USER="vluther"
+
 setopt append_history no_inc_append_history no_share_history
 
-#PATH=~/bin/packer:/usr/local/mysql/bin:/usr/local/php5/bin:~/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:$PATH
 
 ## These should not be public :)..
-
 source "/Users/vluther/.apikeys.sh"
 
+# Aliases that are handy
+source "$DOTFILES/aliases.sh"
 export EDITOR="vim"
 
-#export EDITOR='subl -w'
 
 # This changes sometimes..
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
+# If you don't have a vmware license. "virtualbox"
+export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
 
-# vmware fusion doesn't work in Yosemite Beta's yet, so we're
-# back to Virtualbox for now (the default)
-export VAGRANT_DEFAULT_PROVIDER="virtualbox"
-#export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
 eval "$(rbenv init -)"
 export PATH="/opt/chefdk/bin:$PATH"
