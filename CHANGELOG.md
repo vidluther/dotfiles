@@ -1,6 +1,10 @@
+2014-11-10 12:10:08 -0600 Vid Luther 
+
+	* new gitignore (HEAD, master)
+
 2014-11-10 12:09:39 -0600 Vid Luther 
 
-	* changed name (HEAD, master)
+	* changed name
 
 2014-11-10 12:09:03 -0600 Vid Luther 
 
