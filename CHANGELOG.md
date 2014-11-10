@@ -1,6 +1,10 @@
+2014-11-10 12:08:39 -0600 Vid Luther 
+
+	* common config file (HEAD, master)
+
 2014-11-07 12:22:51 -0600 Vid Luther 
 
-	* more bootstrapping stuff. (HEAD, master)
+	* more bootstrapping stuff. (origin/master, origin/HEAD)
 
 2014-11-05 07:18:16 -0600 Vid Luther 
 
@@ -32,7 +36,7 @@
 
 2014-08-08 04:59:01 -0500 Vid Luther 
 
-	* modified to work with the Beta 5 DMG (origin/master, origin/HEAD)
+	* modified to work with the Beta 5 DMG
 
 2014-07-22 14:42:59 -0500 Vid Luther 
 
