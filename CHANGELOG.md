@@ -1,6 +1,10 @@
+2014-11-10 12:09:39 -0600 Vid Luther 
+
+	* changed name (HEAD, master)
+
 2014-11-10 12:09:03 -0600 Vid Luther 
 
-	* nicer vagrant aliases (HEAD, master)
+	* nicer vagrant aliases
 
 2014-11-10 12:08:39 -0600 Vid Luther 
 
