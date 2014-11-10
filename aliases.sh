@@ -5,13 +5,15 @@ alias bd='brew doctor'
 
 # Vagrant / Vmware stuff
 
-alias 'kl'='kitchen list'
+alias kl='kitchen list'
 alias cb='rm -rf ~/.berkshelf/'
 alias ck='rm -rf .kitchen'
 alias kv='kitchen verify '
 alias kc='kitchen converge '
+alias kd='kitchen destroy'
 
 
-alias makebox_vmware='packer build -var 'chef_version=latest' -only=vmware-iso '
-alias makebox_virtualbox='packer build -var 'chef_version=latest' -only=virtualbox-iso '
+
+alias makebox_vmware='packer build -var 'chef_version=$chef_client_version' -only=vmware-iso '
+alias makebox_virtualbox='packer build -var 'chef_version=$chef_client_version' -only=virtualbox-iso '
 alias boxadd='vagrant box add '

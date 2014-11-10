@@ -1,6 +1,10 @@
+2014-11-10 12:09:03 -0600 Vid Luther 
+
+	* nicer vagrant aliases (HEAD, master)
+
 2014-11-10 12:08:39 -0600 Vid Luther 
 
-	* common config file (HEAD, master)
+	* common config file
 
 2014-11-07 12:22:51 -0600 Vid Luther 
 

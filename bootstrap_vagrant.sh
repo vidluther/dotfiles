@@ -21,3 +21,5 @@ vagrant plugin install vagrant-vmware-fusion
 
 cd $personal_dropbox
 vagrant plugin license vagrant-vmware-fusion vagrant-vmware-7.lic
+
+brew install homebrew/binary/packer
