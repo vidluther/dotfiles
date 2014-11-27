@@ -1,6 +1,10 @@
+2014-11-27 17:53:02 -0600 Vid Luther 
+
+	* added the .boto file, for faster uploads to google storage and others that can do parallel uploads (HEAD, master)
+
 2014-11-27 14:36:23 -0600 Vid Luther 
 
-	* setup rbenv and chefdk (HEAD, master)
+	* setup rbenv and chefdk (origin/master, origin/HEAD)
 
 2014-11-27 14:35:58 -0600 Vid Luther 
 
@@ -24,7 +28,7 @@
 
 2014-11-07 12:22:51 -0600 Vid Luther 
 
-	* more bootstrapping stuff. (origin/master, origin/HEAD)
+	* more bootstrapping stuff.
 
 2014-11-05 07:18:16 -0600 Vid Luther 
 
