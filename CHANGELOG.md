@@ -1,6 +1,10 @@
+2014-11-27 14:35:58 -0600 Vid Luther 
+
+	* some scripts to speed up setup of new boxes (HEAD, master)
+
 2014-11-10 12:10:08 -0600 Vid Luther 
 
-	* new gitignore (HEAD, master)
+	* new gitignore
 
 2014-11-10 12:09:39 -0600 Vid Luther 
 

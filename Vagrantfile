@@ -1,27 +1,22 @@
-## Put this in your ~/.vagrant.d/ folder
-## To enable/install the vagrant cachier plugin execute
-## vagrant plugin install vagrant-cachier
+Vagrant.configure("2") do |config|
+  config.vm.box = '1404'
+  if Vagrant.has_plugin?("vagrant-cachier")
+    # Configure cached packages to be shared between instances of the same base box.
+    # More info on the "Usage" link above
+    config.cache.scope = :box
 
+config.vm.network "private_network", type: "dhcp"
 
-Vagrant.configure("2") do |c|
-
-	# If a local VM becomes in-accessible (firewall rule testing)
-	# Re-create the machine, but set uncomment the vb.gui line.
-	# Then you can use the vmware/virtualbox console. 
-	c.vm.provider "virtualbox" do |vb|
-        	#vb.gui = true
-	end
-
-
-	
-	## This will speed up future provisioning of machines
-	## considerably, after the first run.
-	## To see what's cached, look in ~/.vagrant.d/cache/boxname..
-
-	 if Vagrant.has_plugin?("vagrant-cachier")
-    		c.cache.scope       = :machine # or :box
-    		c.cache.auto_detect = false
-  	end
-
+    # OPTIONAL: If you are using VirtualBox, you might want to use that to enable
+    # NFS for shared folders. This is also very useful for vagrant-libvirt if you
+    # want bi-directional sync
+    config.cache.synced_folder_opts = {
+      type: :nfs,
+      # The nolock option can be useful for an NFSv3 client that wants to avoid the
+      # NLM sideband protocol. Without this option, apt-get might hang if it tries
+      # to lock files needed for /var/cache/* operations. All of this can be avoided
+      # by using NFSv4 everywhere. Please note that the tcp option is not the default.
+      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+    }
+  end
 end
-

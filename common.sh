@@ -5,6 +5,7 @@ personal_dropbox=/Users/vluther/Dropbox\ \(Personal\)
 
 DOTFILES="$personal_dropbox/dotfiles"
 
-source "$DOTFILES/aliases.sh"
+RUBY_VERSION="2.1.4"
+RUBIES_PATH="$HOME/.rbenv/versions/$RUBY_VERSION"
 
-echo "Installing Homebrew.. and setting up the basics. \n"
+source "$DOTFILES/aliases.sh"
