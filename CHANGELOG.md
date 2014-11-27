@@ -1,6 +1,10 @@
+2014-11-27 14:36:23 -0600 Vid Luther 
+
+	* setup rbenv and chefdk (HEAD, master)
+
 2014-11-27 14:35:58 -0600 Vid Luther 
 
-	* some scripts to speed up setup of new boxes (HEAD, master)
+	* some scripts to speed up setup of new boxes
 
 2014-11-10 12:10:08 -0600 Vid Luther 
 
