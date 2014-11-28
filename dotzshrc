@@ -4,8 +4,9 @@ ZSH=/Users/vluther/Dropbox\ \(Personal\)/oh-my-zsh
 DOTFILES=/Users/vluther/Dropbox\ \(Personal\)/dotfiles
 
 ## This resides in $ZSH/themes/
-ZSH_THEME="vidluther"
+#ZSH_THEME="newagnoster"
 
+ZSH_THEME="vidluther"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -22,7 +23,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(git textmate ruby lighthouse)
-plugins=(brew chruby git git-extras github ssh-agent osx jsontools sublime berkshelf atom)
+plugins=(brew git git-extras github ssh-agent osx jsontools sublime berkshelf atom)
 
 
 
@@ -37,11 +38,6 @@ source '/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.
 
 
 
-# Chruby Stuff. 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
-
 source $ZSH/oh-my-zsh.sh
 
 
@@ -51,7 +47,7 @@ export DEFAULT_USER="vluther"
 
 setopt append_history no_inc_append_history no_share_history
 
-export chef_client_version='12.0.0.rc.0'
+#export chef_client_version='12.0.0.rc.0'
 ## These should not be public :)..
 source "/Users/vluther/.apikeys.sh"
 
@@ -64,6 +60,51 @@ export EDITOR="vim"
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 # If you don't have a vmware license. "virtualbox"
-export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+# export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
-# export PATH="/opt/chefdk/bin:$PATH"
+export VAGRANT_DEFAULT_PROVIDER="virtualbox"
+
+
+
+
+eval "$(chef shell-init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/vluther/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables bash completion for gcloud.
+source '/Users/vluther/google-cloud-sdk/completion.zsh.inc'
+
+
+## NOTE TO SELF. DO NOT MESS WITH THE ORDER UNLESS 
+## POSITIVELY COHERRENT. 
+
+
+# The order of setting the paths here ensures 
+# whether custom installs of command line utils
+# will run or stuff that comes pre-packaged by Apple.
+ 
+
+# Add the Liip PHP stuff to the path if we have it.
+# this ensures we're not using the more than likely out of date
+# version of PHP and getting our php.ini overriden every update.
+  
+export PATH="/usr/local/php5/bin/:$PATH" #:/opt/chefdk/bin:$PATH"
+
+# this ensures that commands like knife, kitchen, chef,
+# berks, and so on are called from ChefDK, not rbenv.
+# this confusion of paths has cost me hours of time away from
+# Indi.  
+
+# Remember, commands like knife, kitchen, chef, 
+# will now run from /opt/chefdk/bin/chef
+
+export PATH="/opt/chefdk/bin:$PATH"
+
+# Now give rbenv the the rest of the common ruby commands
+# This ensures commands like ruby, gem, bundle run from rbenv
+# so now we can have our ruby version for the rails app be 2.1.5, 
+# or whatever, and the Chef stuff updates as they need to. 
+
+eval "$(rbenv init -)"
+
