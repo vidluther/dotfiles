@@ -17,10 +17,13 @@ alias kv='kitchen verify '
 alias kc='kitchen converge '
 alias kd='kitchen destroy'
 
-
+alias iad='export RACKSPACE_REGION="iad" '
+alias ord='export RACKSPACE_REGION="ord" ; export OS_REGION_NAME='ORD' '
+alias kr='knife rackspace'
 
 alias kll='kitchen login '
 
+#alias git='hub'
 
 alias rbex='rbenv exec '
 alias be='bundle exec '

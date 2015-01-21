@@ -1,10 +1,14 @@
+2015-01-21 14:25:44 -0600 Vid Luther 
+
+	* more stuff to share with Rob (HEAD, master)
+
 2014-11-27 18:06:17 -0600 Vid Luther 
 
-	* paths and some clean up (HEAD, master)
+	* paths and some clean up (origin/master, origin/HEAD)
 
 2014-11-27 17:53:02 -0600 Vid Luther 
 
-	* added the .boto file, for faster uploads to google storage and others that can do parallel uploads (origin/master, origin/HEAD)
+	* added the .boto file, for faster uploads to google storage and others that can do parallel uploads
 
 2014-11-27 14:36:23 -0600 Vid Luther 
 
