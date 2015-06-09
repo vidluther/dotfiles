@@ -1,6 +1,10 @@
+2015-06-09 12:24:25 -0500 Vid Luther 
+
+	* ignoring kitchen (HEAD, master)
+
 2015-06-09 12:23:50 -0500 Vid Luther 
 
-	* fixes for ROberto (HEAD, master)
+	* fixes for ROberto
 
 2015-01-21 14:25:44 -0600 Vid Luther 
 
