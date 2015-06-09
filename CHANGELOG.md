@@ -1,6 +1,10 @@
+2015-06-09 12:23:50 -0500 Vid Luther 
+
+	* fixes for ROberto (HEAD, master)
+
 2015-01-21 14:25:44 -0600 Vid Luther 
 
-	* more stuff to share with Rob (HEAD, master)
+	* more stuff to share with Rob
 
 2014-11-27 18:06:17 -0600 Vid Luther 
 

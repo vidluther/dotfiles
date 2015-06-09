@@ -7,6 +7,9 @@ DOTFILES=/Users/vluther/Dropbox\ \(Personal\)/dotfiles
 #ZSH_THEME="newagnoster"
 
 ZSH_THEME="vidluther"
+
+#ZSH_THEME="vidluther_2015"
+#ZSH_THEME="superjarin"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -33,8 +36,8 @@ plugins=(brew git git-extras github ssh-agent osx jsontools sublime berkshelf at
 # Powerline daemon needs to be running first as well.
 
 
-/usr/local/bin/powerline-daemon -q
-source '/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh'
+#/usr/local/bin/powerline-daemon -q
+#source '/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh'
 
 
 
@@ -66,14 +69,11 @@ export VAGRANT_DEFAULT_PROVIDER="virtualbox"
 
 
 
-
-eval "$(chef shell-init zsh)"
-
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/vluther/google-cloud-sdk/path.zsh.inc'
+# source '/Users/vluther/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables bash completion for gcloud.
-source '/Users/vluther/google-cloud-sdk/completion.zsh.inc'
+# source '/Users/vluther/google-cloud-sdk/completion.zsh.inc'
 
 
 ## NOTE TO SELF. DO NOT MESS WITH THE ORDER UNLESS 
@@ -108,3 +108,8 @@ export PATH="/opt/chefdk/bin:$PATH"
 
 eval "$(rbenv init -)"
 
+
+#eval "$(chef shell-init zsh)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
