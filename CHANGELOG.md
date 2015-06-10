@@ -1,6 +1,10 @@
+2015-06-10 04:44:49 -0500 Vid Luther 
+
+	* removed hardcoded key (HEAD, master)
+
 2015-06-09 12:24:25 -0500 Vid Luther 
 
-	* ignoring kitchen (HEAD, master)
+	* ignoring kitchen (origin/master, origin/HEAD)
 
 2015-06-09 12:23:50 -0500 Vid Luther 
 
@@ -12,7 +16,7 @@
 
 2014-11-27 18:06:17 -0600 Vid Luther 
 
-	* paths and some clean up (origin/master, origin/HEAD)
+	* paths and some clean up
 
 2014-11-27 17:53:02 -0600 Vid Luther 
 

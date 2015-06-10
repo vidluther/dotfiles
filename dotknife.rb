@@ -19,5 +19,5 @@ knife[:rackspace_region] = "#{ENV['RACKSPACE_REGION']}"
 knife[:rackspace_version] = 'v2'
 
 
-knife[:aws_access_key_id] = "AKIAJGBQOEMJFHTL4BRQ"
-knife[:aws_secret_access_key] = "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"
+knife[:aws_access_key_id] = "#{ENV['aws_access_key_id']}"
+knife[:aws_secret_access_key] = "#{ENV['aws_secret_access_key']}"
