@@ -1,4 +1,16 @@
-# Dot Files
+# Vid Luther's Dot Files
+
+This is a collection of scripts and settings I use on my laptop/desktop environments. 
+
+You can use these scripts for yourself but YMMV, if anything, use this is a starting point for your
+own custom environment. Just as I have. 
+
+### Inspiration
+
+These settings, files have been curated over the years, and have been inspired by others like.
+
+ - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
+ - https://github.com/mathiasbynens/dotfiles
 
 ### bin
 
