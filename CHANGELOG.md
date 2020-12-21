@@ -1,6 +1,10 @@
+2020-12-21 10:41:06 -0600 Vid Luther 
+
+	* deleting more old files (HEAD -> master)
+
 2020-12-21 10:37:32 -0600 Vid Luther 
 
-	* testing post-commit (HEAD -> master)
+	* testing post-commit
 
 2020-12-21 10:18:44 -0600 Vid Luther 
 
