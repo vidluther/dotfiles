@@ -1,6 +1,10 @@
+2020-12-21 10:57:57 -0600 Vid Luther 
+
+	* more clean up/moving of files (HEAD -> master)
+
 2020-12-21 10:41:06 -0600 Vid Luther 
 
-	* deleting more old files (HEAD -> master)
+	* deleting more old files
 
 2020-12-21 10:37:32 -0600 Vid Luther 
 
