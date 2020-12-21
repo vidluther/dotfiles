@@ -1,10 +1,22 @@
+2020-12-21 10:37:32 -0600 Vid Luther 
+
+	* testing post-commit (HEAD -> master)
+
+2020-12-21 10:18:44 -0600 Vid Luther 
+
+	* changed email address for gitconfig
+
+2020-12-21 10:08:35 -0600 Vid Luther 
+
+	* beginning of refactoring
+
 2015-06-10 04:44:49 -0500 Vid Luther 
 
-	* removed hardcoded key (HEAD, master)
+	* removed hardcoded key (origin/master, origin/HEAD)
 
 2015-06-09 12:24:25 -0500 Vid Luther 
 
-	* ignoring kitchen (origin/master, origin/HEAD)
+	* ignoring kitchen
 
 2015-06-09 12:23:50 -0500 Vid Luther 
 
