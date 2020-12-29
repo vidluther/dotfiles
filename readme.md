@@ -12,6 +12,14 @@ These settings, files have been curated over the years, and have been inspired b
  - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
  - https://github.com/mathiasbynens/dotfiles
 
+### Requirements / Pre-Requisites
+
+Some things may not work on older laptops, as of this update **(December 21st 2020 aka The Great Conjunction)**, the dotfiles work on a default install of MacOS 11.1 Big Sur. 
+
+In order for things to work, you must have your shell be Zsh, and you must have the Oh My Zsh package.
+
+## Installation 
+
 ### bin
 
 Some shell/ruby/python scripts that I use very often.

@@ -1,115 +1,90 @@
-# Path to your oh-my-zsh configuration.
-ZSH=/Users/vluther/Dropbox\ \(Personal\)/oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-DOTFILES=/Users/vluther/Dropbox\ \(Personal\)/dotfiles
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/vluther/.oh-my-zsh"
 
-## This resides in $ZSH/themes/
-#ZSH_THEME="newagnoster"
-
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="vidluther"
 
-#ZSH_THEME="vidluther_2015"
-#ZSH_THEME="superjarin"
-# Set to this to use case-sensitive completion
+
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(git textmate ruby lighthouse)
-plugins=(brew git git-extras github ssh-agent osx jsontools sublime berkshelf atom)
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
 
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(brew git git-extras github ssh-agent osx jsontools)
 
-# Powerline stuff.
-# https://powerline.readthedocs.org/en/latest/usage/shell-prompts.html#zsh-prompt
-# On a new install, this won't do anything until powerline is installed.
-# Powerline daemon needs to be running first as well.
-
-
-#/usr/local/bin/powerline-daemon -q
-#source '/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh'
-
-
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
 
+# export MANPATH="/usr/local/man:$MANPATH"
 
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-export DEFAULT_USER="vluther"
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-setopt append_history no_inc_append_history no_share_history
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-#export chef_client_version='12.0.0.rc.0'
-## These should not be public :)..
-source "/Users/vluther/.apikeys.sh"
-
-# Aliases that are handy
-source "$DOTFILES/aliases.sh"
-export EDITOR="vim"
-
-
-# This changes sometimes..
-export DOCKER_HOST=tcp://192.168.59.103:2375
-
-# If you don't have a vmware license. "virtualbox"
-# export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
-
-export VAGRANT_DEFAULT_PROVIDER="virtualbox"
-
-
-
-# The next line updates PATH for the Google Cloud SDK.
-# source '/Users/vluther/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables bash completion for gcloud.
-# source '/Users/vluther/google-cloud-sdk/completion.zsh.inc'
-
-
-## NOTE TO SELF. DO NOT MESS WITH THE ORDER UNLESS 
-## POSITIVELY COHERRENT. 
-
-
-# The order of setting the paths here ensures 
-# whether custom installs of command line utils
-# will run or stuff that comes pre-packaged by Apple.
- 
-
-# Add the Liip PHP stuff to the path if we have it.
-# this ensures we're not using the more than likely out of date
-# version of PHP and getting our php.ini overriden every update.
-  
-export PATH="/usr/local/php5/bin/:$PATH" #:/opt/chefdk/bin:$PATH"
-
-# this ensures that commands like knife, kitchen, chef,
-# berks, and so on are called from ChefDK, not rbenv.
-# this confusion of paths has cost me hours of time away from
-# Indi.  
-
-# Remember, commands like knife, kitchen, chef, 
-# will now run from /opt/chefdk/bin/chef
-
-export PATH="/opt/chefdk/bin:$PATH"
-
-# Now give rbenv the the rest of the common ruby commands
-# This ensures commands like ruby, gem, bundle run from rbenv
-# so now we can have our ruby version for the rails app be 2.1.5, 
-# or whatever, and the Chef stuff updates as they need to. 
-
-eval "$(rbenv init -)"
-
-
-#eval "$(chef shell-init zsh)"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.

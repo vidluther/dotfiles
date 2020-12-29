@@ -1,11 +1,9 @@
 #set -e
 #set -x
 
-personal_dropbox=/Users/vluther/Dropbox\ \(Personal\)
 
-DOTFILES="$personal_dropbox/dotfiles"
+DOTFILES="/Users/vluther/dotfiles"
+source "$DOTFILES/functions.sh"
 
-RUBY_VERSION="2.2.2"
-RUBIES_PATH="$HOME/.rbenv/versions/$RUBY_VERSION"
+DOTZSHRC="$DOTFILES/dotzshrc"
 
-source "$DOTFILES/aliases.sh"

@@ -1,6 +1,10 @@
+2020-12-29 11:04:13 -0600 Vid Luther 
+
+	* better setup and teardown. (HEAD -> master)
+
 2020-12-21 10:57:57 -0600 Vid Luther 
 
-	* more clean up/moving of files (HEAD -> master)
+	* more clean up/moving of files
 
 2020-12-21 10:41:06 -0600 Vid Luther 
 
