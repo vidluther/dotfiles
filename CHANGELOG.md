@@ -1,6 +1,10 @@
+2020-12-30 15:57:57 -0600 Vid Luther 
+
+	* latest php composer... that I can use globally (HEAD -> master)
+
 2020-12-29 11:04:13 -0600 Vid Luther 
 
-	* better setup and teardown. (HEAD -> master)
+	* better setup and teardown. (origin/master, origin/HEAD)
 
 2020-12-21 10:57:57 -0600 Vid Luther 
 
@@ -24,7 +28,7 @@
 
 2015-06-10 04:44:49 -0500 Vid Luther 
 
-	* removed hardcoded key (origin/master, origin/HEAD)
+	* removed hardcoded key
 
 2015-06-09 12:24:25 -0500 Vid Luther 
 
