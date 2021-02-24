@@ -1,10 +1,14 @@
+2021-02-24 10:45:57 -0600 Vid Luther 
+
+	* removed old aliases (HEAD -> master)
+
 2020-12-30 15:57:57 -0600 Vid Luther 
 
-	* latest php composer... that I can use globally (HEAD -> master)
+	* latest php composer... that I can use globally (origin/master, origin/HEAD)
 
 2020-12-29 11:04:13 -0600 Vid Luther 
 
-	* better setup and teardown. (origin/master, origin/HEAD)
+	* better setup and teardown.
 
 2020-12-21 10:57:57 -0600 Vid Luther 
 
