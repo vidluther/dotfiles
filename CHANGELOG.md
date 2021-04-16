@@ -1,10 +1,22 @@
+2021-04-16 17:26:11 -0500 Vid Luther 
+
+	* info on Ruby (HEAD -> master)
+
+2021-04-16 16:51:43 -0500 Vid Luther 
+
+	* Create CNAME (origin/master, origin/HEAD)
+
+2021-04-16 16:35:37 -0500 Vid Luther 
+
+	* Set theme jekyll-theme-midnight
+
 2021-04-16 16:32:16 -0500 Vid Luther 
 
-	* Update index.md (HEAD -> master)
+	* Update index.md
 
 2021-04-16 16:29:01 -0500 Vid Luther 
 
-	* sub directory for page2? (origin/master, origin/HEAD)
+	* sub directory for page2?
 
 2021-04-16 16:22:49 -0500 Vid Luther 
 
