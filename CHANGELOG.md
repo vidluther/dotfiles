@@ -1,6 +1,10 @@
+2021-04-16 18:35:57 -0500 Vid Luther 
+
+	* frontmatter (HEAD -> master)
+
 2021-04-16 18:33:39 -0500 Vid Luther 
 
-	* Update .gitignore (HEAD -> master)
+	* Update .gitignore (origin/master, origin/HEAD)
 
 2021-04-16 18:32:48 -0500 Vid Luther 
 
@@ -8,7 +12,7 @@
 
 2021-04-16 18:29:30 -0500 Vid Luther 
 
-	* YML FrontMatter (origin/master, origin/HEAD)
+	* YML FrontMatter
 
 2021-04-16 18:21:49 -0500 Vid Luther 
 
