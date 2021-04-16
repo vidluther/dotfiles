@@ -1,6 +1,10 @@
+2021-04-16 17:32:20 -0500 Vid Luther 
+
+	* deleta page 2 sub folder (HEAD -> master)
+
 2021-04-16 17:32:07 -0500 Vid Luther 
 
-	* Update ruby.md (HEAD -> master)
+	* Update ruby.md
 
 2021-04-16 17:26:17 -0500 Vid Luther 
 
