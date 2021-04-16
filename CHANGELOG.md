@@ -1,6 +1,10 @@
+2021-04-16 18:21:28 -0500 Vid Luther 
+
+	* more jekyll stuff (HEAD -> master)
+
 2021-04-16 17:32:20 -0500 Vid Luther 
 
-	* deleta page 2 sub folder (HEAD -> master)
+	* deleta page 2 sub folder
 
 2021-04-16 17:32:07 -0500 Vid Luther 
 
