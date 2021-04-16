@@ -1,6 +1,10 @@
+2021-04-16 18:21:49 -0500 Vid Luther 
+
+	* load rbenv (HEAD -> master)
+
 2021-04-16 18:21:28 -0500 Vid Luther 
 
-	* more jekyll stuff (HEAD -> master)
+	* more jekyll stuff (origin/master, origin/HEAD)
 
 2021-04-16 17:32:20 -0500 Vid Luther 
 
@@ -12,7 +16,7 @@
 
 2021-04-16 17:26:17 -0500 Vid Luther 
 
-	* Update index.md (origin/master, origin/HEAD)
+	* Update index.md
 
 2021-04-16 17:26:11 -0500 Vid Luther 
 
