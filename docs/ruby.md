@@ -18,4 +18,6 @@ Check what the latest version is at https://www.ruby-lang.org/en/
 
 ```
  rbenv install 3.0.1
+ rbenv global 3.0.1
+ ruby -v 
 ```

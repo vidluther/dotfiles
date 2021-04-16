@@ -1,6 +1,10 @@
+2021-04-16 17:32:07 -0500 Vid Luther 
+
+	* Update ruby.md (HEAD -> master)
+
 2021-04-16 17:26:17 -0500 Vid Luther 
 
-	* Update index.md (HEAD -> master)
+	* Update index.md (origin/master, origin/HEAD)
 
 2021-04-16 17:26:11 -0500 Vid Luther 
 
@@ -8,7 +12,7 @@
 
 2021-04-16 16:51:43 -0500 Vid Luther 
 
-	* Create CNAME (origin/master, origin/HEAD)
+	* Create CNAME
 
 2021-04-16 16:35:37 -0500 Vid Luther 
 
