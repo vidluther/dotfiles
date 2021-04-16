@@ -1,10 +1,14 @@
+2021-04-16 16:29:01 -0500 Vid Luther 
+
+	* sub directory for page2? (HEAD -> master)
+
 2021-04-16 16:22:49 -0500 Vid Luther 
 
-	* test page (HEAD -> master)
+	* test page (origin/master, origin/HEAD)
 
 2021-04-16 16:17:43 -0500 Vid Luther 
 
-	* Create index.md (origin/master, origin/HEAD)
+	* Create index.md
 
 2021-04-16 16:17:22 -0500 Vid Luther 
 
