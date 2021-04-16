@@ -1,10 +1,14 @@
+2021-04-16 18:39:03 -0500 Vid Luther 
+
+	* Update index.md (HEAD -> master)
+
 2021-04-16 18:37:31 -0500 Vid Luther 
 
-	* page/site title (HEAD -> master)
+	* page/site title (origin/master, origin/HEAD)
 
 2021-04-16 18:35:57 -0500 Vid Luther 
 
-	* frontmatter (origin/master, origin/HEAD)
+	* frontmatter
 
 2021-04-16 18:33:39 -0500 Vid Luther 
 
