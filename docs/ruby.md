@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Things to do with Ruby"
 permalink: /ruby.html
 ---

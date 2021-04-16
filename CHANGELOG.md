@@ -1,10 +1,14 @@
+2021-04-16 18:32:48 -0500 Vid Luther 
+
+	* Update ruby.md (HEAD -> master)
+
 2021-04-16 18:29:30 -0500 Vid Luther 
 
-	* YML FrontMatter (HEAD -> master)
+	* YML FrontMatter (origin/master, origin/HEAD)
 
 2021-04-16 18:21:49 -0500 Vid Luther 
 
-	* load rbenv (origin/master, origin/HEAD)
+	* load rbenv
 
 2021-04-16 18:21:28 -0500 Vid Luther 
 
