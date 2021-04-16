@@ -1,10 +1,14 @@
+2021-04-16 16:32:16 -0500 Vid Luther 
+
+	* Update index.md (HEAD -> master)
+
 2021-04-16 16:29:01 -0500 Vid Luther 
 
-	* sub directory for page2? (HEAD -> master)
+	* sub directory for page2? (origin/master, origin/HEAD)
 
 2021-04-16 16:22:49 -0500 Vid Luther 
 
-	* test page (origin/master, origin/HEAD)
+	* test page
 
 2021-04-16 16:17:43 -0500 Vid Luther 
 
