@@ -1,7 +1,8 @@
+---
 layout: page
 title: "Things to do with Ruby"
 permalink: /ruby.html
-
+---
 
 # Getting The right Ruby Working locally. 
 

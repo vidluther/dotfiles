@@ -1,1 +1,11 @@
+title: Vid Luther's Dot Files
+email: vid@luther.io
+description: >- # this means to ignore newlines until "baseurl:"
+  A site for me to store my dotfiles and other tips and tricks I need
+  to work on a daily basis. 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://dotfiles.luther.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: vidluther
+github_username:  vidluther
+
 theme: jekyll-theme-midnight

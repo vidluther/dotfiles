@@ -1,10 +1,14 @@
+2021-04-16 18:29:30 -0500 Vid Luther 
+
+	* YML FrontMatter (HEAD -> master)
+
 2021-04-16 18:21:49 -0500 Vid Luther 
 
-	* load rbenv (HEAD -> master)
+	* load rbenv (origin/master, origin/HEAD)
 
 2021-04-16 18:21:28 -0500 Vid Luther 
 
-	* more jekyll stuff (origin/master, origin/HEAD)
+	* more jekyll stuff
 
 2021-04-16 17:32:20 -0500 Vid Luther 
 
