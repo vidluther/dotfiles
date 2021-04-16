@@ -3,6 +3,7 @@
 # SCRIPT     : Analyzing Apache Log file             #
 # DESCRIPTION: Select option for desired request     #
 # CREATED by : TechNotesDesk blog 2015               #
+# URL: https://blog.technotesdesk.com/analyzing-apache-web-server-logs-simple-script #
 ######################################################
 ​cd /var/log/apache2
 

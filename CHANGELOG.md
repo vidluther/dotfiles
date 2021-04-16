@@ -1,10 +1,14 @@
+2021-04-16 15:20:45 -0500 Vid Luther 
+
+	* Update log_analyzer.sh (HEAD -> master)
+
 2021-04-16 14:59:55 -0500 Vid Luther 
 
-	* added a script to analyze apache log files (HEAD -> master)
+	* added a script to analyze apache log files (origin/master, origin/HEAD)
 
 2021-02-24 10:45:57 -0600 Vid Luther 
 
-	* removed old aliases (origin/master, origin/HEAD)
+	* removed old aliases
 
 2020-12-30 15:57:57 -0600 Vid Luther 
 
