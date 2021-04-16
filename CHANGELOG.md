@@ -1,10 +1,14 @@
+2021-04-16 18:37:31 -0500 Vid Luther 
+
+	* page/site title (HEAD -> master)
+
 2021-04-16 18:35:57 -0500 Vid Luther 
 
-	* frontmatter (HEAD -> master)
+	* frontmatter (origin/master, origin/HEAD)
 
 2021-04-16 18:33:39 -0500 Vid Luther 
 
-	* Update .gitignore (origin/master, origin/HEAD)
+	* Update .gitignore
 
 2021-04-16 18:32:48 -0500 Vid Luther 
 

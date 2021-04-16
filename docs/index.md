@@ -1,5 +1,3 @@
----
----
 ## Welcome to my Dotfiles
 
 This is my attempt to document things that I use often on the CLI .
