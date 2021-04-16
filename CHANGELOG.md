@@ -1,6 +1,10 @@
+2021-04-16 17:26:17 -0500 Vid Luther 
+
+	* Update index.md (HEAD -> master)
+
 2021-04-16 17:26:11 -0500 Vid Luther 
 
-	* info on Ruby (HEAD -> master)
+	* info on Ruby
 
 2021-04-16 16:51:43 -0500 Vid Luther 
 
