@@ -1,10 +1,22 @@
+2021-04-16 16:22:49 -0500 Vid Luther 
+
+	* test page (HEAD -> master)
+
+2021-04-16 16:17:43 -0500 Vid Luther 
+
+	* Create index.md (origin/master, origin/HEAD)
+
+2021-04-16 16:17:22 -0500 Vid Luther 
+
+	* Set theme jekyll-theme-leap-day
+
 2021-04-16 15:20:45 -0500 Vid Luther 
 
-	* Update log_analyzer.sh (HEAD -> master)
+	* Update log_analyzer.sh
 
 2021-04-16 14:59:55 -0500 Vid Luther 
 
-	* added a script to analyze apache log files (origin/master, origin/HEAD)
+	* added a script to analyze apache log files
 
 2021-02-24 10:45:57 -0600 Vid Luther 
 
