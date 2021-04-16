@@ -1,2 +1,4 @@
+Gemfile.lock
+docs/_site/
 .kitchen
 .DS_Store

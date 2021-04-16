@@ -1,6 +1,10 @@
+2021-04-16 18:33:39 -0500 Vid Luther 
+
+	* Update .gitignore (HEAD -> master)
+
 2021-04-16 18:32:48 -0500 Vid Luther 
 
-	* Update ruby.md (HEAD -> master)
+	* Update ruby.md
 
 2021-04-16 18:29:30 -0500 Vid Luther 
 
