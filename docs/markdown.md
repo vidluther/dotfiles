@@ -1,12 +1,6 @@
 ---
-title: "Dotfiles & Documentation"
-last_modified_date: 4/17/2021
+title: "Markdown cheatsheet"
 ---
-
-## Welcome to my Dotfiles
-
-This is my attempt to document things that I use often on the CLI .
-
 
 ### Markdown
 

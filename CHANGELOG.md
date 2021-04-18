@@ -1,10 +1,14 @@
+2021-04-18 00:03:21 -0500 Vid Luther 
+
+	* using a different jekyll theme (HEAD -> master)
+
 2021-04-16 18:39:03 -0500 Vid Luther 
 
-	* Update index.md (HEAD -> master)
+	* Update index.md (origin/master, origin/HEAD)
 
 2021-04-16 18:37:31 -0500 Vid Luther 
 
-	* page/site title (origin/master, origin/HEAD)
+	* page/site title
 
 2021-04-16 18:35:57 -0500 Vid Luther 
 
