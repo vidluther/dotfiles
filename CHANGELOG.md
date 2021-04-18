@@ -1,10 +1,14 @@
+2021-04-18 00:06:37 -0500 Vid Luther 
+
+	* changed remote_theme (HEAD -> master)
+
 2021-04-18 00:03:21 -0500 Vid Luther 
 
-	* using a different jekyll theme (HEAD -> master)
+	* using a different jekyll theme (origin/master, origin/HEAD)
 
 2021-04-16 18:39:03 -0500 Vid Luther 
 
-	* Update index.md (origin/master, origin/HEAD)
+	* Update index.md
 
 2021-04-16 18:37:31 -0500 Vid Luther 
 
