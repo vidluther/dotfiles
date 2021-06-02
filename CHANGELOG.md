@@ -1,6 +1,10 @@
+2021-06-02 15:13:39 -0500 Vid Luther 
+
+	* remove old docs. (HEAD -> master)
+
 2021-06-02 15:12:33 -0500 Vid Luther 
 
-	* removed old docs. (HEAD -> master)
+	* removed old docs. (origin/master, origin/HEAD)
 
 2021-06-02 15:11:50 -0500 Vid Luther 
 
@@ -16,7 +20,7 @@
 
 2021-04-18 00:06:37 -0500 Vid Luther 
 
-	* changed remote_theme (origin/master, origin/HEAD)
+	* changed remote_theme
 
 2021-04-18 00:03:21 -0500 Vid Luther 
 
