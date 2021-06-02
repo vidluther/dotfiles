@@ -1,6 +1,10 @@
+2021-06-02 15:11:50 -0500 Vid Luther 
+
+	* sqlite in path, and default branch for git (HEAD -> master)
+
 2021-06-02 15:11:27 -0500 Vid Luther 
 
-	* ipinfo binary (HEAD -> master)
+	* ipinfo binary
 
 2021-06-02 15:11:16 -0500 Vid Luther 
 
