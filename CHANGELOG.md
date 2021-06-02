@@ -1,10 +1,14 @@
+2021-06-02 15:11:16 -0500 Vid Luther 
+
+	* alias to start jekyll with a local dev config file. (HEAD -> master)
+
 2021-04-18 00:06:37 -0500 Vid Luther 
 
-	* changed remote_theme (HEAD -> master)
+	* changed remote_theme (origin/master, origin/HEAD)
 
 2021-04-18 00:03:21 -0500 Vid Luther 
 
-	* using a different jekyll theme (origin/master, origin/HEAD)
+	* using a different jekyll theme
 
 2021-04-16 18:39:03 -0500 Vid Luther 
 
