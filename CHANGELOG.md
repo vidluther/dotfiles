@@ -1,6 +1,10 @@
+2021-06-02 15:11:27 -0500 Vid Luther 
+
+	* ipinfo binary (HEAD -> master)
+
 2021-06-02 15:11:16 -0500 Vid Luther 
 
-	* alias to start jekyll with a local dev config file. (HEAD -> master)
+	* alias to start jekyll with a local dev config file.
 
 2021-04-18 00:06:37 -0500 Vid Luther 
 
