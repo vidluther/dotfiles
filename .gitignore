@@ -2,4 +2,5 @@ Gemfile.lock
 docs/_site/
 .kitchen
 .DS_Store
-.mmdb # Ignore maxmind dbs 
+maxmind/*.mmdb
+*.mmdb # Ignore maxmind dbs 
