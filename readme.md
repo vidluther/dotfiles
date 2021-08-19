@@ -29,6 +29,10 @@ Some shell/ruby/python scripts that I use very often.
 Fonts that I use to make my life better in iTerm, these fonts are necessary
 for the battery charge/github indicators to show properly in the zsh prompt.
 
+##### Powerline Fonts 
+Clone and install the fonts here https://github.com/powerline/fonts
+
+
 ### iterm
 
 My iterm settings, and some themes I like. Basically, it's just the Pastel (Dark
@@ -41,3 +45,9 @@ My custom theme for oh-my-zsh, credits/inspiration can be found within the file.
 ### githooks
 
 Hooks I use/need often with git. 
+
+## goacess.conf 
+My config file for goaccess also references maxmind/geo stuff.
+```zsh
+ gunzip -c *.gz | goaccess - -p ~/dotfiles/goaccess.conf -o report.html 
+```
