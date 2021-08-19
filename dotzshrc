@@ -61,7 +61,7 @@ ZSH_THEME="vidluther"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew git git-extras github ssh-agent osx jsontools)
+plugins=(brew git git-extras github ssh-agent osx)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
@@ -94,4 +94,6 @@ source $HOME/dotfiles/aliases.sh
 # export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 eval "$(rbenv init -)"
 
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:/Users/vluther/.composer/vendor/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
