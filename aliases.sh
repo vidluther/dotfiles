@@ -1,4 +1,4 @@
-alias code='code-insiders'
+#alias code='code-insiders'
 alias wp="docker-compose run --rm wpcli"
 alias wip='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com' 
 alias brewinstall='ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
