@@ -7,8 +7,8 @@ alias bd='brew doctor'
 
 # Aliases for ruby environment
 
-alias newrubies='brew install rbenv ruby-build rbenv-gemset rbenv-vars rbenv-gem-rehash'
-alias cleanrubies='brew uninstall rbenv ruby-build rbenv-gemset rbenv-vars rbenv-gem-rehash'
+alias newrubies='brew install rbenv ruby-build rbenv-gemset rbenv-vars'
+alias cleanrubies='brew uninstall rbenv ruby-build rbenv-gemset rbenv-vars'
 alias newbundler='rbenv exec gem install bundler'
 
 # Start local jekyll server with dev file as option

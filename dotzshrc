@@ -90,10 +90,14 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 source $HOME/dotfiles/aliases.sh
 
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
 # export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 # export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 eval "$(rbenv init -)"
 
 export PATH="/usr/local/opt/sqlite/bin:/Users/vluther/.composer/vendor/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+#export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
