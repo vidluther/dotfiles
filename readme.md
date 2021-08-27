@@ -44,3 +44,4 @@ My custom theme for oh-my-zsh, credits/inspiration can be found within the file.
 ## goacess.conf 
 My config file for goaccess also references maxmind/geo stuff.
 
+Added post-commit hook to this repo

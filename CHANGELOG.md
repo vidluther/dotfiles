@@ -1,10 +1,50 @@
+2021-08-27 16:54:46 -0500 Vid Luther 
+
+	* Update readme.md (HEAD -> master)
+
+2021-08-27 16:53:09 -0500 Vid Luther 
+
+	* ruby alias, and modified dotzshrc for rbenv
+
+2021-08-19 18:14:16 -0500 Vid Luther 
+
+	* updating relevant READMEs (origin/master, origin/HEAD)
+
+2021-08-19 18:04:07 -0500 Vid Luther 
+
+	* moved location of goaccess.conf
+
+2021-08-19 18:01:22 -0500 Vid Luther 
+
+	* ignore maxmind/*.mmdb
+
+2021-08-19 18:00:22 -0500 Vid Luther 
+
+	* docs for maxmind
+
+2021-08-19 17:58:26 -0500 Vid Luther 
+
+	* ignoring .mmdb files
+
+2021-08-19 17:45:26 -0500 Vid Luther 
+
+	* goaccess config and better docs
+
+2021-08-19 17:41:43 -0500 Vid Luther 
+
+	* added path to openjdk, so that I can run jmeter and other java things
+
+2021-08-19 17:41:15 -0500 Vid Luther 
+
+	* not using code-insiders anymore, but the stable visual studio code
+
 2021-06-02 15:13:39 -0500 Vid Luther 
 
-	* remove old docs. (HEAD -> master)
+	* remove old docs.
 
 2021-06-02 15:12:33 -0500 Vid Luther 
 
-	* removed old docs. (origin/master, origin/HEAD)
+	* removed old docs.
 
 2021-06-02 15:11:50 -0500 Vid Luther 
 
