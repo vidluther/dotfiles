@@ -1,10 +1,14 @@
+2021-08-30 22:51:27 -0500 Vid Luther 
+
+	* ignore spaceship in the custom zsh folder (HEAD -> master)
+
 2021-08-30 22:49:58 -0500 Vid Luther 
 
-	* added things to try and setup spaceship for zsh (HEAD -> master)
+	* added things to try and setup spaceship for zsh (origin/master, origin/HEAD)
 
 2021-08-27 16:54:46 -0500 Vid Luther 
 
-	* Update readme.md (origin/master, origin/HEAD)
+	* Update readme.md
 
 2021-08-27 16:53:09 -0500 Vid Luther 
 
