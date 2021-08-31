@@ -1,6 +1,10 @@
+2021-08-30 22:49:58 -0500 Vid Luther 
+
+	* added things to try and setup spaceship for zsh (HEAD -> master)
+
 2021-08-27 16:54:46 -0500 Vid Luther 
 
-	* Update readme.md (HEAD -> master)
+	* Update readme.md (origin/master, origin/HEAD)
 
 2021-08-27 16:53:09 -0500 Vid Luther 
 
@@ -8,7 +12,7 @@
 
 2021-08-19 18:14:16 -0500 Vid Luther 
 
-	* updating relevant READMEs (origin/master, origin/HEAD)
+	* updating relevant READMEs
 
 2021-08-19 18:04:07 -0500 Vid Luther 
 

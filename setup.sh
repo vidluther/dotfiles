@@ -30,14 +30,14 @@ source "$PWD/common.sh"
 
 p "Setting up ~/bin"
 ln -s $DOTFILES/bin /Users/vluther/bin
-p "Setting up .zshrc"
+p "Using my custom .zshrc in the dotfiles folder.."
 ln -s $DOTFILES/dotzshrc /Users/vluther/.zshrc
 p "Setting up .gitconfig"
 ln -s $DOTFILES/gitconfig /Users/vluther/.gitconfig
-p "Setting up Zsh theme"
-ln -s $DOTFILES/oh-my-zsh/themes/vidluther.zsh-theme $HOME/.oh-my-zsh/themes/vidluther.zsh-theme
+#p "Setting up Zsh theme"
+#ln -s $DOTFILES/oh-my-zsh/themes/vidluther.zsh-theme $HOME/.oh-my-zsh/themes/vidluther.zsh-theme
 
 p "Going to install Homebrew"
-install_brew
+#install_brew
 p "done"
 
