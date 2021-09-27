@@ -2,6 +2,6 @@ oh-my-zsh/themes/spaceship*
 Gemfile.lock
 docs/_site/
 .kitchen
-.DS_Store
+*.DS_Store
 maxmind/*.mmdb
 *.mmdb # Ignore maxmind dbs 

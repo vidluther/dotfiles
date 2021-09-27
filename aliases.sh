@@ -14,6 +14,11 @@ alias cleanrubies='brew uninstall rbenv ruby-build rbenv-gemset rbenv-vars'
 alias newbundler='rbenv exec gem install bundler'
 
 # Start local jekyll server with dev file as option
-
 alias lj='bundle exec jekyll s --config _config.yml,_config_dev.yml' 
+
+#preview test jekyll
+alias ptj='export JEKYLL_ENV=test; bundle exec jekyll s --config _config.yml,_config_test.yml' 
+
+# generate test.luther.io
+alias gentest='export JEKYLL_ENV=test; bundle exec jekyll build --config _config.yml,_config_test.yml -d ./_to_cloudflare/ ' 
 

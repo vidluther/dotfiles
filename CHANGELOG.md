@@ -1,10 +1,14 @@
+2021-09-26 21:42:53 -0500 Vid Luther 
+
+	* my ublock origin config, and modified some aliases (HEAD -> master)
+
 2021-08-30 22:51:27 -0500 Vid Luther 
 
-	* ignore spaceship in the custom zsh folder (HEAD -> master)
+	* ignore spaceship in the custom zsh folder (origin/master, origin/HEAD)
 
 2021-08-30 22:49:58 -0500 Vid Luther 
 
-	* added things to try and setup spaceship for zsh (origin/master, origin/HEAD)
+	* added things to try and setup spaceship for zsh
 
 2021-08-27 16:54:46 -0500 Vid Luther 
 
