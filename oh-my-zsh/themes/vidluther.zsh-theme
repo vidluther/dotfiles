@@ -117,6 +117,10 @@ function battery_charge {
   echo `~/bin/batcharge.py`
 }
 
+function aws_profile {
+	echo $AWS_PROFILE; 
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -126,7 +130,8 @@ build_prompt() {
   prompt_end
 }
 
-RPROMPT='$(prompt_online) $(battery_charge)'
+#RPROMPT='$(prompt_online) $(battery_charge)'
+RPROMPT='aws:$(aws_profile) $(battery_charge)'
 
 PROMPT='%{%f%b%k%}$(build_prompt) 
 » '

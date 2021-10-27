@@ -1,6 +1,10 @@
+2021-10-27 12:09:04 -0500 Vid Luther 
+
+	* updated composer, and modified prompt so i know which aws client i'm working with (HEAD -> master)
+
 2021-09-26 21:42:53 -0500 Vid Luther 
 
-	* my ublock origin config, and modified some aliases (HEAD -> master)
+	* my ublock origin config, and modified some aliases
 
 2021-08-30 22:51:27 -0500 Vid Luther 
 

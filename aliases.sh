@@ -22,3 +22,5 @@ alias ptj='export JEKYLL_ENV=test; bundle exec jekyll s --config _config.yml,_co
 # generate test.luther.io
 alias gentest='export JEKYLL_ENV=test; bundle exec jekyll build --config _config.yml,_config_test.yml -d ./_to_cloudflare/ ' 
 
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
