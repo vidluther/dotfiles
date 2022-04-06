@@ -1,4 +1,4 @@
-# Vid Luther's Dot Files
+# My Dot Files
 
 This is a collection of scripts and settings I use on my laptop/desktop environments. 
 

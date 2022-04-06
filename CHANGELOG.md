@@ -1,6 +1,10 @@
+2022-04-05 21:14:48 -0500 Vid Luther 
+
+	* changes over time.. (HEAD -> master)
+
 2021-10-27 12:09:04 -0500 Vid Luther 
 
-	* updated composer, and modified prompt so i know which aws client i'm working with (HEAD -> master)
+	* updated composer, and modified prompt so i know which aws client i'm working with (origin/master, origin/HEAD)
 
 2021-09-26 21:42:53 -0500 Vid Luther 
 
@@ -8,7 +12,7 @@
 
 2021-08-30 22:51:27 -0500 Vid Luther 
 
-	* ignore spaceship in the custom zsh folder (origin/master, origin/HEAD)
+	* ignore spaceship in the custom zsh folder
 
 2021-08-30 22:49:58 -0500 Vid Luther 
 

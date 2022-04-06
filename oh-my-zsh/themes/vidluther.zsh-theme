@@ -131,7 +131,7 @@ build_prompt() {
 }
 
 #RPROMPT='$(prompt_online) $(battery_charge)'
-RPROMPT='aws:$(aws_profile) $(battery_charge)'
+RPROMPT='aws:$(aws_profile) $(battery_pct_prompt)'
 
 PROMPT='%{%f%b%k%}$(build_prompt) 
 » '
