@@ -23,10 +23,10 @@ alias lj='bundle exec jekyll s --config _config.yml,_config_dev.yml --drafts'
 alias ptj='export JEKYLL_ENV=test; bundle exec jekyll s --config _config.yml,_config_test.yml' 
 
 # generate test.luther.io
-alias gentest='export JEKYLL_ENV=test; bundle exec jekyll build --config _config.yml,_config_test.yml -d ./_to_cloudflare/ ' 
+alias build_test='export JEKYLL_ENV=test; bundle exec jekyll build --config _config.yml,_config_test.yml -d ./_to_cloudflare/ ' 
 
 # generate static files to be deployed at cloudflare worker sites https://luther.io
-alias genprod='export JEKYLL_ENV=production; bundle exec jekyll build --config _config.yml,_config_prod.yml -d ./_prod_to_cloudflare/ ' 
+alias build_prod='export JEKYLL_ENV=production; bundle exec jekyll build --config _config.yml,_config_prod.yml -d ./_prod_to_cloudflare/ ' 
 
 
 

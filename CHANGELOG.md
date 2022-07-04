@@ -1,10 +1,14 @@
+2022-07-04 09:51:38 -0500 Vid Luther 
+
+	* pipenv and powerlevel 10k stuff (HEAD -> master)
+
 2022-04-05 21:14:48 -0500 Vid Luther 
 
-	* changes over time.. (HEAD -> master)
+	* changes over time.. (origin/master, origin/HEAD)
 
 2021-10-27 12:09:04 -0500 Vid Luther 
 
-	* updated composer, and modified prompt so i know which aws client i'm working with (origin/master, origin/HEAD)
+	* updated composer, and modified prompt so i know which aws client i'm working with
 
 2021-09-26 21:42:53 -0500 Vid Luther 
 
