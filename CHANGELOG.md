@@ -1,10 +1,14 @@
+2022-08-18 23:08:44 -0500 Vid Luther 
+
+	* backup script modified to be more efficient (HEAD -> master)
+
 2022-08-14 21:19:55 -0500 Vid Luther 
 
-	* upgraded composer, and added a script to backup things to my jump drive (HEAD -> master)
+	* upgraded composer, and added a script to backup things to my jump drive (origin/master, origin/HEAD)
 
 2022-07-04 09:51:38 -0500 Vid Luther 
 
-	* pipenv and powerlevel 10k stuff (origin/master, origin/HEAD)
+	* pipenv and powerlevel 10k stuff
 
 2022-04-05 21:14:48 -0500 Vid Luther 
 
