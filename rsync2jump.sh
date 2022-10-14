@@ -10,6 +10,8 @@ BASE_BACKUP_PATH="/Volumes/vlutherJump"
 folders_to_backup=(
     "/Users/vluther/.aws"
     "/Users/vluther/.ssh"
+    "/Users/vluther/.gnupg"
+    "/Users/vluther/keys"
     "/Users/vluther/dotfiles"
     "/Users/vluther/work"
     "/Users/vluther/Downloads"

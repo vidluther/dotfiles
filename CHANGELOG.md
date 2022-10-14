@@ -1,10 +1,14 @@
+2022-10-14 11:11:31 -0500 Vid Luther 
+
+	* dotfiles and gnupg (HEAD -> master)
+
 2022-08-18 23:08:44 -0500 Vid Luther 
 
-	* backup script modified to be more efficient (HEAD -> master)
+	* backup script modified to be more efficient (origin/master, origin/HEAD)
 
 2022-08-14 21:19:55 -0500 Vid Luther 
 
-	* upgraded composer, and added a script to backup things to my jump drive (origin/master, origin/HEAD)
+	* upgraded composer, and added a script to backup things to my jump drive
 
 2022-07-04 09:51:38 -0500 Vid Luther 
 
