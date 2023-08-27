@@ -1,10 +1,14 @@
+2023-08-27 13:40:16 -0500 Vid Luther 
+
+	* feat: add Brewfile with updated dependencies and VS Code extensions (HEAD -> master)
+
 2022-10-14 11:11:31 -0500 Vid Luther 
 
-	* dotfiles and gnupg (HEAD -> master)
+	* dotfiles and gnupg (origin/master, origin/HEAD)
 
 2022-08-18 23:08:44 -0500 Vid Luther 
 
-	* backup script modified to be more efficient (origin/master, origin/HEAD)
+	* backup script modified to be more efficient
 
 2022-08-14 21:19:55 -0500 Vid Luther 
 

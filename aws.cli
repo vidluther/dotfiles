@@ -1,8 +1,13 @@
-# inspired by this blog post 
+# inspired by this blog post
 # https://www.middlewareinventory.com/blog/aws-cli-ec2/
 
 
 
 alias ec2instances='aws ec2 describe-instances \
-    --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,Type:InstanceType,Name:Tags[?Key=='\''Name'\'']|[0].Value,Status:State.Name}"  \
+    --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,InstanceID:InstanceId,Type:InstanceType,Name:Tags[?Key=='\''Name'\'']|[0].Value,Status:State.Name}"  \
     --filters "Name=instance-state-name,Values=*" "Name=tag:Name,Values='\''*'\''"  '
+
+alias lsinstances='aws lightsail get-instances \
+    --query "instances[].{name:name,createdAt:createdAt,blueprintId:blueprintId,blueprintName:blueprintName,publicIpAddress:publicIpAddress}" \
+	--output table'
+
