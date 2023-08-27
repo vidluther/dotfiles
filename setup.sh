@@ -10,23 +10,7 @@ esac
 # Load some common/shared variables and functions
 source "$PWD/common.sh"
 
-# _dotfiles="$HOME/.zshrc
-# $HOME/.gitconfig
-# $HOME/bin
-# $HOME/work"
 
-# #printf "%s\n" "${_dotfiles}" | \
-# #  while IFS="$(printf '\t')" read d; do
-# #    p "Checking ${d}"
-# #    test -f "${d}" || p "${d} does exist"
-# #  done
-
-# #p "Done"
-# #exit 0; 
-# ##########
-# The lines above should be modified and setup to things properly.
-# but the assumption/laziness here says that assume you have a clean install and 
-# that there are not .zshrc, gitconfig, or bin directories already setup.
 
 p "Setting up ~/bin"
 ln -s $DOTFILES/bin /Users/vluther/bin

@@ -1,10 +1,14 @@
+2023-08-27 13:45:00 -0500 Vid Luther 
+
+	* chore(Brewfile): add homebrew/cask-fonts tap to support installing fonts feat(Brewfile): add ansible to install Ansible tool for automation feat(Brewfile): add htop to install htop for monitoring system processes feat(Brewfile): add font-hack-nerd-font cask to install Hack Nerd Font feat(Brewfile): add raycast cask to install Raycast productivity app feat(Brewfile): add visual-studio-code cask to install Visual Studio Code feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add ansible to install Ansible tool for automation feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): add vscode extensions for various functionalities feat(Brewfile): (HEAD -> master)
+
 2023-08-27 13:40:16 -0500 Vid Luther 
 
-	* feat: add Brewfile with updated dependencies and VS Code extensions (HEAD -> master)
+	* feat: add Brewfile with updated dependencies and VS Code extensions (origin/master, origin/HEAD)
 
 2022-10-14 11:11:31 -0500 Vid Luther 
 
-	* dotfiles and gnupg (origin/master, origin/HEAD)
+	* dotfiles and gnupg
 
 2022-08-18 23:08:44 -0500 Vid Luther 
 
