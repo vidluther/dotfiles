@@ -35,5 +35,5 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 source $DOTFILES/aws.cli
 
 # One Password CLI stuff
-OP_BIOMETRIC_UNLOCK_ENABLED=true
-source /Users/vluther/.config/op/plugins.sh
+#OP_BIOMETRIC_UNLOCK_ENABLED=true
+#source /Users/vluther/.config/op/plugins.sh
