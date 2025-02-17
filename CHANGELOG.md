@@ -1,6 +1,10 @@
+2025-02-17 16:30:16 -0600 Vid Luther 
+
+	* removing more things (HEAD -> master)
+
 2025-02-17 16:27:57 -0600 Vid Luther 
 
-	* switched to fish.. no more zsh stuff (HEAD -> master)
+	* switched to fish.. no more zsh stuff
 
 2025-02-17 16:27:08 -0600 Vid Luther 
 
