@@ -1,6 +1,10 @@
+2025-02-17 16:31:33 -0600 Vid Luther 
+
+	* more spring cleaning (HEAD -> master)
+
 2025-02-17 16:30:16 -0600 Vid Luther 
 
-	* removing more things (HEAD -> master)
+	* removing more things (origin/master, origin/HEAD)
 
 2025-02-17 16:27:57 -0600 Vid Luther 
 
@@ -8,7 +12,7 @@
 
 2025-02-17 16:27:08 -0600 Vid Luther 
 
-	* updated things (origin/master, origin/HEAD)
+	* updated things
 
 2024-02-12 21:55:20 -0600 Vid Luther 
 
