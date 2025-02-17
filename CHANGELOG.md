@@ -1,10 +1,14 @@
+2025-02-17 16:27:57 -0600 Vid Luther 
+
+	* switched to fish.. no more zsh stuff (HEAD -> master)
+
 2025-02-17 16:27:08 -0600 Vid Luther 
 
-	* updated things (HEAD -> master)
+	* updated things (origin/master, origin/HEAD)
 
 2024-02-12 21:55:20 -0600 Vid Luther 
 
-	* better git branch, and deleting old bins (origin/master, origin/HEAD)
+	* better git branch, and deleting old bins
 
 2024-02-12 21:54:08 -0600 Vid Luther 
 
