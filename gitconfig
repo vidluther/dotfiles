@@ -1,33 +1,47 @@
 [user]
 	name = Vid Luther
 	email = vid@luther.io
-[mergetool]
-	keepBackup = true
-	prompt = false
-[alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[gitbutler]
+	aiModelProvider = anthropic
+	aiAnthropicKeyOption = bringYourOwn
+	aiAnthropicModelName = claude-3-7-sonnet-latest
+	aiOpenAIKeyOption = bringYourOwn
+	aiOpenAIModelName = o3-mini
+	aiOllamaModelName = gemma3:27b
+[credential "https://gitbutler.com/com.gitbutler.app.dev-gitbutler_access_token"]
+	provider = generic
+[credential "https://gitbutler.com/com.gitbutler.app.dev-github_access_token"]
+	provider = generic
+[credential "https://gitbutler.com/gitbutler-aiOpenAIKey"]
+	provider = generic
+[credential "https://gitbutler.com/gitbutler-aiAnthropicKey"]
+	provider = generic
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
 [init]
 	defaultBranch = main
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
 [diff]
-	tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-	trustExitCode = true
-[merge]
-	tool = Kaleidoscope
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+
+# why the hell not?
+
+[help]
+        autocorrect = prompt
+

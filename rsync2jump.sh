@@ -17,6 +17,7 @@ folders_to_backup=(
     "/Users/vluther/Music"
     "/Users/vluther/Movies"
     "/Users/vluther/Desktop"
+	"/Users/vluther/Parallels"
 )
 
 # Ensure the backup directory exists
