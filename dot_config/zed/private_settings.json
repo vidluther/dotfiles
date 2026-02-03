@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "agent": {
     "default_model": {
@@ -38,5 +38,9 @@
     "mode": "dark",
     "light": "One Light",
     "dark": "Gruvbox Dark Hard",
+  },
+  "terminal": {
+    "font_family": "RobotoMono Nerd Font Mono",
+    "copy_on_select": true,
   },
 }
