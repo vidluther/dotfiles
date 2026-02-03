@@ -19,7 +19,6 @@
     "model_parameters": [],
   },
   "base_keymap": "VSCode",
-  "buffer_font_family": "Courier Prime Code",
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
