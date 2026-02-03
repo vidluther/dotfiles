@@ -7,29 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "right"
+  },
   "agent": {
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-opus-4-5-thinking-latest"
+      "model": "claude-opus-4-5-thinking-latest",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Courier Prime Code",
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
+  "buffer_font_features": {
+    // Disable ligatures:
+    "calt": false,
+  },
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "Gruvbox Dark Hard",
   },
 }
