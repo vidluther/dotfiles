@@ -1,0 +1,14 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMtjt4Zl7OHuqa2nidi85ch6Ghm3O7n0/d4rp9F3ieW
+	name = Vid Luther
+	email = vid@luther.io
+[gitbutler]
+	aiModelProvider = openai
+	aiAnthropicKeyOption = butlerAPI
+	aiOpenAIKeyOption = butlerAPI
