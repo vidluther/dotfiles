@@ -14,5 +14,6 @@
     "claude-md-management@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
     "posthog@claude-plugins-official": true
-  }
+  },
+  "model": "sonnet"
 }

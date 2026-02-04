@@ -4,7 +4,7 @@ if status is-interactive
 end
 
 # change the $EDITOR variable
-set -gx EDITOR hx
+set -gx EDITOR nvim
 
 # Added by Antigravity
 fish_add_path /Users/vluther/.antigravity/antigravity/bin
