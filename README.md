@@ -29,7 +29,18 @@ home-manager switch
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 chsh -s $(which fish)
 ```
-#### Open a new terminal to make sure all is well. 
+#### Open a new terminal to make sure all is well.
+
+#### Keeping Things Up to Date
+```
+nix-channel --update
+home-manager build
+home-manager switch
+
+brew update
+brew upgrade
+```
+
 ```
 fnm install --lts
 gh auth login
