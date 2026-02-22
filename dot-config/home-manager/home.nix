@@ -19,7 +19,32 @@
     neovim
     fnm
     pnpm
-  ];
+
+ # Nerd Fonts
+  nerd-fonts.fira-code
+  nerd-fonts.fira-mono
+  nerd-fonts.droid-sans-mono
+  nerd-fonts.hack
+  nerd-fonts.inconsolata
+  nerd-fonts.inconsolata-go
+  nerd-fonts.inconsolata-lgc
+  nerd-fonts.jetbrains-mono
+  nerd-fonts.meslo-lg
+  nerd-fonts.monofur
+  nerd-fonts.profont
+  nerd-fonts.roboto-mono
+  nerd-fonts.sauce-code-pro
+  nerd-fonts.shure-tech-mono
+  nerd-fonts.space-mono
+  nerd-fonts.terminess-ttf
+  nerd-fonts.ubuntu
+  nerd-fonts.ubuntu-mono
+  nerd-fonts.heavy-data
+  nerd-fonts.go-mono
+  nerd-fonts.code-new-roman
+
+
+];
 
   # ---------------------------------------------------------------------------
   # Session variables
