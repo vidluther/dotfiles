@@ -1,0 +1,33 @@
+{
+  "project_panel": { "dock": "right" },
+  "outline_panel": { "dock": "right" },
+  "agent": {
+    "dock": "left",
+    "default_model": {
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-thinking-latest"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "base_keymap": "VSCode",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Colored Zed Icons Theme Dark"
+  },
+  "session": { "trust_all_worktrees": true },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_features": { "calt": false },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Gruvbox Dark Hard"
+  },
+  "terminal": {
+    "font_family": "RobotoMono Nerd Font Mono",
+    "copy_on_select": true
+  }
+}
