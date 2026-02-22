@@ -3,7 +3,7 @@
 1. Clone this repo 
 1. Install Nix
 ```
-sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+curl -L https://nixos.org/nix/install | sh
 
 ```
 1. Install nix-home-manager 
