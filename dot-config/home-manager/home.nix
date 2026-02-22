@@ -20,6 +20,8 @@
     fnm
     pnpm
 
+  oxlint
+  oxfmt
  # Nerd Fonts
   nerd-fonts.fira-code
   nerd-fonts.fira-mono
