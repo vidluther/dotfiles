@@ -1,6 +1,9 @@
 # Dotfiles
 
-1. Clone this repo 
+1. Clone this repo
+```
+git clone https://github.com/vidluther/dotfiles.git ~/dotfiles
+```
 1. Install Nix
 ```
 curl -L https://nixos.org/nix/install | sh
