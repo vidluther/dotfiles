@@ -15,8 +15,9 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/release-
 nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
-1. Install brew 
-```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+1. Install homebrew 
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 1. Install packages from Brewfile 
 ```
