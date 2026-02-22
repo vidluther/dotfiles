@@ -1,25 +1,25 @@
 # Dotfiles
 
-1. Clone this repo
+#### Clone this repo
 ```
 git clone https://github.com/vidluther/dotfiles.git ~/dotfiles
 ```
-1. Install Nix
+#### Install Nix
 ```
 curl -L https://nixos.org/nix/install | sh
 
 ```
-1. Install nix-home-manager 
+#### Install nix-home-manager 
 ```
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
-1. Install homebrew 
+#### Install homebrew 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-1. Install packages from Brewfile 
+#### Install packages from Brewfile 
 ```
 cd dotfiles/
 brew bundle install
@@ -29,7 +29,7 @@ home-manager switch
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 chsh -s $(which fish)
 ```
-### Open a new terminal to make sure all is well. 
+#### Open a new terminal to make sure all is well. 
 ```
 fnm install --lts
 gh auth login
