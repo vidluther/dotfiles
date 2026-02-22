@@ -17,8 +17,7 @@
     jq
     gh
     neovim
-starship
-fnm
+    fnm
     pnpm
   ];
 
