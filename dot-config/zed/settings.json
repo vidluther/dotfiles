@@ -1,4 +1,7 @@
 {
+  "git": {
+    "disable_git": true
+  },
   "project_panel": { "dock": "right" },
   "outline_panel": { "dock": "right" },
   "agent": {
