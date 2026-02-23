@@ -1,54 +1,71 @@
 # Dotfiles
 
-#### Clone this repo
-```
+## Setup
+
+### 1. Clone this repo
+```sh
 git clone https://github.com/vidluther/dotfiles.git ~/dotfiles
 ```
-#### Install Nix
-```
-curl -L https://nixos.org/nix/install | sh
 
+### 2. Install Nix
+```sh
+curl -L https://nixos.org/nix/install | sh
 ```
-#### Install nix-home-manager 
-```
+
+### 3. Install nix-home-manager
+```sh
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
-#### Install homebrew 
-```
+
+### 4. Install Homebrew
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-#### Install packages from Brewfile 
-```
+
+### 5. Install packages and configure shell
+```sh
 cd dotfiles/
 brew bundle install --verbose
-stow --dotfiles . 
+stow --dotfiles .
 home-manager build
 home-manager switch
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 chsh -s $(which fish)
 ```
 
-Open a new terminal to make sure all is well.
+> Open a new terminal to make sure all is well.
 
-#### Change the remote for dotfiles repo to use SSH
-```
+### 6. Switch dotfiles remote to SSH
+```sh
 git remote set-url origin git@github.com:vidluther/dotfiles.git
 ```
 
-#### Keeping Things Up to Date
+### 7. Install Claude Code
+```sh
+curl -fsSL https://claude.ai/install.sh | bash
 ```
+
+---
+
+## Keeping Things Up to Date
+
+### Nix & Home Manager
+```sh
 nix-channel --update
 home-manager build
 home-manager switch
+```
 
+### Homebrew
+```sh
 brew update
 brew upgrade
 ```
 
-```
+### Miscellaneous
+```sh
 fnm install --lts
 gh auth login
 ```
-
