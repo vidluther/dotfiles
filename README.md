@@ -62,6 +62,14 @@ home-manager switch
 ```sh
 brew update
 brew upgrade
+
+```
+
+
+### Keep The Brewfile Up to Date
+```
+cd ~/dotfiles/
+brew bundle dump --force
 ```
 
 ### Miscellaneous
