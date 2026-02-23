@@ -29,7 +29,13 @@ home-manager switch
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 chsh -s $(which fish)
 ```
-#### Open a new terminal to make sure all is well.
+
+Open a new terminal to make sure all is well.
+
+#### Change the remote for dotfiles repo to use SSH
+```
+git remote set-url origin git@github.com:vidluther/dotfiles.git
+```
 
 #### Keeping Things Up to Date
 ```
