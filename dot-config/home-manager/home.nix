@@ -56,36 +56,9 @@
     PNPM_HOME = "/Users/vluther/Library/pnpm";
   };
 
-  # ---------------------------------------------------------------------------
-  # Git
-  # ---------------------------------------------------------------------------
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "Vid Luther";
-        email = "vid@luther.io";
-        signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMtjt4Zl7OHuqa2nidi85ch6Ghm3O7n0/d4rp9F3ieW";
-      };
-      commit.gpgsign = true;
-      gpg = {
-        format = "ssh";
-        ssh.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
-      };
-      gitbutler = {
-        aiModelProvider = "openai";
-        aiAnthropicKeyOption = "butlerAPI";
-        aiOpenAIKeyOption = "butlerAPI";
-      };
-    };
-  };
 
-  # Global gitignore
-  xdg.configFile."git/ignore".text = ''
-    **/.claude/settings.local.json
-    .config/zed/conversations/*
-    .config/zed/prompts/*
-  '';
+
+
 
   # ---------------------------------------------------------------------------
   # SSH
