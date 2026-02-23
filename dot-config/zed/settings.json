@@ -12,6 +12,7 @@
   },
   "bottom_dock_layout": "right_aligned",
   "agent": {
+    "dock": "left",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-6",
