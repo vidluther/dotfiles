@@ -22,7 +22,7 @@ nix-shell '<home-manager>' -A install
 #### Install packages from Brewfile 
 ```
 cd dotfiles/
-brew bundle install
+brew bundle install --verbose
 stow --dotfiles . 
 home-manager build
 home-manager switch
