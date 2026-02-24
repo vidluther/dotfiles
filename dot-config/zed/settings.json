@@ -9,19 +9,22 @@
 {
   "icon_theme": "Material Icon Theme",
   "project_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "bottom_dock_layout": "right_aligned",
+  "buffer_font_features": {
+    "calt": false, // Disable ligatures
+  },
   "agent": {
     "dock": "left",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-6",
       "enable_thinking": true,
-      "effort": "high"
+      "effort": "high",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
