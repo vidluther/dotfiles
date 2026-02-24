@@ -24,6 +24,10 @@
 	<integer>128000</integer>
 	<key>AitermURL</key>
 	<string>https://api.openai.com/v1/responses</string>
+	<key>AllowClipboardAccess</key>
+	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>891C376B-954F-4B62-A46B-E22FBA01A96B</string>
 	<key>HapticFeedbackForEsc</key>
@@ -997,7 +1001,7 @@
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
