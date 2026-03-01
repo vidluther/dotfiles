@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "git_panel": {
+    "status_style": "icon"
+  },
+  "tabs": {
+    "git_status": true
+  },
   "agent_servers": {
     "opencode": {
       "type": "registry"
@@ -14,6 +20,7 @@
   },
   "icon_theme": "Material Icon Theme",
   "project_panel": {
+    "git_status": true,
     "dock": "right",
   },
   "bottom_dock_layout": "right_aligned",
