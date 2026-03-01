@@ -8,15 +8,15 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "git_panel": {
-    "status_style": "icon"
+    "status_style": "icon",
   },
   "tabs": {
-    "git_status": true
+    "git_status": true,
   },
   "agent_servers": {
     "opencode": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "icon_theme": "Material Icon Theme",
   "project_panel": {
@@ -44,5 +44,11 @@
     "mode": "dark",
     "light": "One Light",
     "dark": "macOS Classic Dark",
+  },
+
+  // Disable three buttons I do not use.
+
+  "collaboration_panel": {
+    "button": false,
   },
 }

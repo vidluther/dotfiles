@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "vluther";
@@ -19,34 +19,37 @@
     neovim
     fnm
     pnpm
+    ruby
 
-  oxlint
-  oxfmt
- # Nerd Fonts
-  nerd-fonts.fira-code
-  nerd-fonts.fira-mono
-  nerd-fonts.droid-sans-mono
-  nerd-fonts.hack
-  nerd-fonts.inconsolata
-  nerd-fonts.inconsolata-go
-  nerd-fonts.inconsolata-lgc
-  nerd-fonts.jetbrains-mono
-  nerd-fonts.meslo-lg
-  nerd-fonts.monofur
-  nerd-fonts.profont
-  nerd-fonts.roboto-mono
-  nerd-fonts.sauce-code-pro
-  nerd-fonts.shure-tech-mono
-  nerd-fonts.space-mono
-  nerd-fonts.terminess-ttf
-  nerd-fonts.ubuntu
-  nerd-fonts.ubuntu-mono
-  nerd-fonts.heavy-data
-  nerd-fonts.go-mono
-  nerd-fonts.code-new-roman
+    oxlint
+    oxfmt
+    nixd
+    nil
 
+    # Nerd Fonts
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.hack
+    nerd-fonts.inconsolata
+    nerd-fonts.inconsolata-go
+    nerd-fonts.inconsolata-lgc
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
+    nerd-fonts.monofur
+    nerd-fonts.profont
+    nerd-fonts.roboto-mono
+    nerd-fonts.sauce-code-pro
+    nerd-fonts.shure-tech-mono
+    nerd-fonts.space-mono
+    nerd-fonts.terminess-ttf
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
+    nerd-fonts.heavy-data
+    nerd-fonts.go-mono
+    nerd-fonts.code-new-roman
 
-];
+  ];
 
   # ---------------------------------------------------------------------------
   # Session variables
@@ -56,22 +59,26 @@
     PNPM_HOME = "/Users/vluther/Library/pnpm";
   };
 
-
-
-
+  # ---------------------------------------------------------------------------
+  # mise
+  # ---------------------------------------------------------------------------
+  programs.mise = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
   # ---------------------------------------------------------------------------
   # SSH
   # ---------------------------------------------------------------------------
- programs.ssh = {
-  enable = true;
-  enableDefaultConfig = false;
-  matchBlocks."*" = {
-    extraOptions = {
-      IdentityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    matchBlocks."*" = {
+      extraOptions = {
+        IdentityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+      };
     };
   };
-};
   # ---------------------------------------------------------------------------
   # Fish shell
   # ---------------------------------------------------------------------------
@@ -178,11 +185,11 @@
   '';
 
   xdg.configFile."1Password/ssh/agent.toml".text = ''
-  [[ssh-keys]]
-  vault = "Private"
-  [[ssh-keys]]
-  vault = "Employee"
-  [[ssh-keys]]
-  vault = "SSH"
-'';
+    [[ssh-keys]]
+    vault = "Private"
+    [[ssh-keys]]
+    vault = "Employee"
+    [[ssh-keys]]
+    vault = "SSH"
+  '';
 }
