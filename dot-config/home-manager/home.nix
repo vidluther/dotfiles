@@ -131,6 +131,13 @@
         description = "alias vim nvim";
         body = "nvim $argv";
       };
+
+      npm = {
+        wraps = "pnpm";
+        description = "alias npm pnpm";
+        body = "pnpm $argv";
+      };
+
     };
   };
 
