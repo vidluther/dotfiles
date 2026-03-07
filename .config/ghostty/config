@@ -1,2 +1,5 @@
 theme = Github Dark High Contrast
+mouse-scroll-multiplier = 2
 split-divider-color = yellow
+shell-integration = fish
+

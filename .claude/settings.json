@@ -27,5 +27,6 @@
   "outputStyle": "Explanatory",
   "preferences": {
     "tmuxSplitPanes": true
-  }
+  },
+  "effortLevel": "high"
 }
