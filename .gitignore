@@ -1,4 +1,5 @@
 .DS_Store
 result
-dot-config/zed/prompts
-dot-config/home-manager/result
+.claude/settings.local.json
+.config/ized/prompts
+.config/home-manager/result
