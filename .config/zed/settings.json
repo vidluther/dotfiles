@@ -1,0 +1,54 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "git_panel": {
+    "status_style": "icon"
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "icon_theme": "Material Icon Theme",
+  "project_panel": {
+    "git_status": true,
+    "dock": "right"
+  },
+  "bottom_dock_layout": "right_aligned",
+  "buffer_font_features": {
+    "calt": false // Disable ligatures
+  },
+  "agent": {
+    "dock": "left",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
+      "effort": "max"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "macOS Classic Dark"
+  },
+
+  // Disable three buttons I do not use.
+
+  "collaboration_panel": {
+    "button": false
+  }
+}
