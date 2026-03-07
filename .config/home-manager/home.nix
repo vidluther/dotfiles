@@ -85,10 +85,6 @@
   programs.fish = {
     enable = true;
 
-    interactiveShellInit = ''
-      starship init fish | source
-    '';
-
     shellInit = ''
       fish_add_path /nix/var/nix/profiles/default/bin
       fish_add_path $HOME/.nix-profile/bin
@@ -99,33 +95,6 @@
     '';
 
     functions = {
-      fish_prompt = {
-        description = "Write out the prompt";
-        body = ''
-          set -l last_status $status
-          set -l normal (set_color normal)
-          set -l status_color (set_color brgreen)
-          set -l cwd_color (set_color $fish_color_cwd)
-          set -l vcs_color (set_color brpurple)
-          set -l prompt_status ""
-          set -q fish_prompt_pwd_dir_length
-          or set -lx fish_prompt_pwd_dir_length 0
-          set -l suffix '❯'
-          if functions -q fish_is_root_user; and fish_is_root_user
-            if set -q fish_color_cwd_root
-              set cwd_color (set_color $fish_color_cwd_root)
-            end
-            set suffix '#'
-          end
-          if test $last_status -ne 0
-            set status_color (set_color $fish_color_error)
-            set prompt_status $status_color "[" $last_status "]" $normal
-          end
-          echo -s (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal ' ' $prompt_status
-          echo -n -s $status_color $suffix ' ' $normal
-        '';
-      };
-
       vim = {
         wraps = "nvim";
         description = "alias vim nvim";
@@ -156,9 +125,97 @@
     enableFishIntegration = true;
     settings = {
       add_newline = true;
+
+      format = builtins.concatStringsSep "" [
+        "[](fg:#1f6feb)"
+        "[  ](bg:#1f6feb fg:#ffffff)"
+        "[](bg:#161b22 fg:#1f6feb)"
+        "$directory"
+        "[](fg:#161b22 bg:#0d1117)"
+        "$git_branch"
+        "$git_status"
+        "[](fg:#0d1117)"
+        "$fill"
+        "[](fg:#0d1117)"
+        "$nodejs"
+        "$rust"
+        "$golang"
+        "$php"
+        "$python"
+        "[](fg:#161b22 bg:#0d1117)"
+        "$time"
+        "[](fg:#161b22)"
+        "\n$character"
+      ];
+
+      fill.symbol = " ";
+
+      directory = {
+        style = "fg:#ffffff bg:#161b22";
+        format = "[ $path ]($style)";
+        truncation_length = 3;
+        truncation_symbol = ".../";
+        substitutions = {
+          Documents = "󰈙 ";
+          Downloads = " ";
+          Music = " ";
+          Pictures = " ";
+        };
+      };
+
+      git_branch = {
+        symbol = "";
+        style = "bg:#0d1117";
+        format = "[[ $symbol $branch ](fg:#3fb950 bg:#0d1117)]($style)";
+      };
+
+      git_status = {
+        style = "bg:#0d1117";
+        format = "[[($all_status$ahead_behind )](fg:#f78166 bg:#0d1117)]($style)";
+      };
+
+      nodejs = {
+        symbol = "";
+        style = "bg:#0d1117";
+        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+      };
+
+      rust = {
+        symbol = "";
+        style = "bg:#0d1117";
+        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+      };
+
+      golang = {
+        symbol = "";
+        style = "bg:#0d1117";
+        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+      };
+
+      php = {
+        symbol = "";
+        style = "bg:#0d1117";
+        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+      };
+
+      python = {
+        symbol = "";
+        style = "bg:#0d1117";
+        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+      };
+
+      time = {
+        disabled = false;
+        time_format = "%R";
+        style = "bg:#161b22";
+        format = "[[  $time ](fg:#79c0ff bg:#161b22)]($style)";
+      };
+
       character = {
         success_symbol = "[➜](bold green)";
+        error_symbol = "[➜](bold red)";
       };
+
       package.disabled = true;
     };
   };

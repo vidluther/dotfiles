@@ -1,20 +1,40 @@
-See the @README.md to learn more about the project's code styles and tool preferences.
+# Claude Rules
+
+See @README.md for project-specific code styles and tool preferences.
 
 ## Workflow
 
-- Always check for a ./plan.md file , if it doesn't exist Ask Me what I plan to work on.
-- Review the ./plan.md for lines that start with %%, these are my annotations to you, use them to revise the plan.
-- Rewrite the ./plan.md before implementing any tasks.
-- If there is an issue id referenced in the ./plan.md reference it for commits and branch names.
+- At the start of every session, check for `./.plan.md`.
+  - If it doesn't exist, ask what I want to work on and create it before proceeding.
+  - If it exists, read it fully and summarize the current state back to me before doing anything.
+- Lines starting with `%%` are my annotations — use them to revise the plan, then remove them after incorporating.
+- Task status markers:
+  - `[ ]` = not started
+  - `[~]` = in progress
+  - `[x]` = complete
+  - `[!]` = blocked — note the reason inline
+- Update task status in `plan.md` as you complete work. Do not wait until the end.
+- Never start implementing until the plan is written and I have confirmed it.
+- If an issue ID is referenced in `plan.md`, use it in all branch names and commit messages.
+  - Branch format: `issue-{id}/short-description`
+  - Commit format: `[{id}] short description`
 
-## Code Styles
+## Code Style
 
-- Use TypeScript instead of JavaScript for new projects.
-- For new projects, use oxfmt and oxlint. For existing projects, follow whatever is already configured.
-  - Always run the project's formatter before committing code.
-- Use vitest instead of Jest for testing.
+- Use TypeScript for all new code.
+- New projects: use `oxlint` for linting and `oxfmt` for formatting.
+- Existing projects: follow whatever tooling is already configured — do not introduce new tools without asking.
+- Run the project's formatter before every commit.
+- Use `vitest` for testing, not Jest.
 
 ## Tool Preferences
 
-- Use `rg` (ripgrep) for searching file contents and finding files, not `find` or `grep`
-- Use `pnpm` instead of `npm`, `yarn`, or `bun` for package management
+- Search: use `rg` (ripgrep) — never `find` or `grep`
+- Package manager: use `pnpm` — never `npm`, `yarn`, or `bun`
+- Git: use `but` (GitButler CLI) for branch and commit operations
+
+## Session Continuity
+
+- `.plan.md` is the handoff record between sessions — treat it as the source of truth, not the chat history.
+- If state looks stale or ambiguous on session start, ask before assuming.
+- Run `/exit` at the end of each session to trigger the wrap-up ritual.

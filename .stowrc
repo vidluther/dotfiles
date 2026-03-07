@@ -13,4 +13,6 @@
 --ignore=.secretlintrc.json
 --ignore=node_modules
 --ignore=index.ts
+--ignore=Brewfile
+--ignore=plan.md
 --ignore=.ignore
