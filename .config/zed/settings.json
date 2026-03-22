@@ -7,11 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_line_height": "comfortable",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_icon": false
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "font_size": 15.0,
+    "font_family": "FiraCode Nerd Font Mono",
+    "shell": "system"
+  },
   "git_panel": {
-    "status_style": "icon"
+    "tree_view": false,
+    "status_style": "label_color"
   },
   "tabs": {
-    "git_status": true
+    "show_diagnostics": "all",
+    "close_position": "left",
+    "file_icons": false
   },
   "agent_servers": {
     "claude-acp": {
@@ -21,36 +36,33 @@
       "type": "registry"
     }
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Catppuccin Macchiato",
   "project_panel": {
-    "git_status": true,
+    "git_status": false,
     "dock": "right"
   },
-  "bottom_dock_layout": "right_aligned",
   "buffer_font_features": {
     "calt": false // Disable ligatures
   },
   "agent": {
     "dock": "left",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-6",
-      "enable_thinking": true,
-      "effort": "max"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-thinking-latest",
+      "enable_thinking": true
     },
     "favorite_models": [],
     "model_parameters": []
   },
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 14.5,
   "theme": {
     "mode": "dark",
     "light": "One Light",
     "dark": "macOS Classic Dark"
   },
 
-  // Disable three buttons I do not use.
-
+  // Disable the buttons I do not use.
   "collaboration_panel": {
     "button": false
   }

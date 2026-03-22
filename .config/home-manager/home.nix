@@ -90,6 +90,7 @@
       fish_add_path $HOME/.nix-profile/bin
       fish_add_path /Users/vluther/.antigravity/antigravity/bin
       fish_add_path $HOME/.local/bin
+      fish_add_path $HOME/.opencode/bin
       fish_add_path $PNPM_HOME
       set -gx OPENCODE_EXPERIMENTAL_OXFMT true
     '';
