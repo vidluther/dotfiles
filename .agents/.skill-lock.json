@@ -18,6 +18,33 @@
       "skillFolderHash": "2ae0a0c7f8ba9ab76d6c531e78d980663af90577",
       "installedAt": "2026-03-07T09:28:57.180Z",
       "updatedAt": "2026-03-07T09:28:57.180Z"
+    },
+    "shadcn-ui": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/google-labs-code/stitch-skills.git",
+      "skillPath": "skills/shadcn-ui/SKILL.md",
+      "skillFolderHash": "def8b780a6f3857ca964d1a02c144ef6f86fb21c",
+      "installedAt": "2026-03-31T07:21:32.528Z",
+      "updatedAt": "2026-03-31T07:21:32.528Z"
+    },
+    "react:components": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/google-labs-code/stitch-skills.git",
+      "skillPath": "skills/react-components/SKILL.md",
+      "skillFolderHash": "c201fcfad2b656a7e4276bd2a4d10611a79321f8",
+      "installedAt": "2026-03-31T07:25:04.156Z",
+      "updatedAt": "2026-03-31T07:25:04.156Z"
+    },
+    "migrate-oxlint": {
+      "source": "oxc-project/oxc",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/oxc-project/oxc.git",
+      "skillPath": ".agents/skills/migrate-oxlint/SKILL.md",
+      "skillFolderHash": "a1953f2692634e51c45f4501dc495e9b6eb5d930",
+      "installedAt": "2026-03-31T09:35:13.419Z",
+      "updatedAt": "2026-03-31T09:35:13.419Z"
     }
   },
   "dismissed": {
@@ -25,13 +52,16 @@
   },
   "lastSelectedAgents": [
     "amp",
+    "antigravity",
     "cline",
     "codex",
     "cursor",
+    "deepagents",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
     "opencode",
+    "warp",
     "claude-code"
   ]
 }
