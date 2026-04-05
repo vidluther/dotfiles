@@ -1,5 +1,13 @@
 .DS_Store
 result
+.claude/plans
+.claude/plugins
+.claude/projects
+.claude/file-history
+.claude/history.jsonl
+.claude/mcp-needs-auth-cache.json
+.claude/backups
+.claude/cache
 .claude/settings.local.json
 .config/ized/prompts
 .config/home-manager/result
