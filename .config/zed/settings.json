@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "right"
+  },
   "buffer_line_height": "comfortable",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "title_bar": {
@@ -20,6 +23,7 @@
     "shell": "system"
   },
   "git_panel": {
+    "dock": "right",
     "tree_view": false,
     "status_style": "label_color"
   },
@@ -29,7 +33,13 @@
     "file_icons": false
   },
   "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
     "claude-acp": {
+      "favorite_config_option_values": {
+        "model": ["default"]
+      },
       "type": "registry"
     },
     "opencode": {
@@ -45,11 +55,16 @@
     "calt": false // Disable ligatures
   },
   "agent": {
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
+      "enable_thinking": false
+    },
     "dock": "left",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6-thinking-latest",
-      "enable_thinking": true
+      "effort": "high",
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
     },
     "favorite_models": [],
     "model_parameters": []
@@ -64,6 +79,18 @@
 
   // Disable the buttons I do not use.
   "collaboration_panel": {
+    "dock": "right",
     "button": false
+  },
+  "context_servers": {
+    "posthog": {
+      "settings": {},
+
+      "enabled": true,
+      "url": "https://mcp.posthog.com/mcp?features=experiments,surveys,annotations,sql,llm_analytics,prompts,flags,cohorts,data_warehouse,data_schema,hog_functions,hog_function_templates,workflows,workspace,docs,notebooks,alerts,activity_logs,search,reverse_proxy,debug",
+      "headers": {
+        "Authorization": "Bearer undefined"
+      }
+    }
   }
 }

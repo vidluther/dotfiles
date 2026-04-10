@@ -13,3 +13,7 @@
 - Search: use `rg` (ripgrep) — never `find` or `grep`
 - Package manager: use `pnpm` — never `npm`, `yarn`, or `bun`
 - Git: use `but` (GitButler CLI) for branch and commit operations
+
+## Commits
+
+- Do not add a `Co-Authored-By` trailer to commit messages.
