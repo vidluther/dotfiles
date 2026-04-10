@@ -16,3 +16,5 @@
 --ignore=Brewfile
 --ignore=plan.md
 --ignore=.ignore
+--ignore=flake.nix
+--ignore=flake.lock
