@@ -11,3 +11,4 @@ result
 .claude/settings.local.json
 .config/ized/prompts
 .config/home-manager/result
+.config/opencode/package-lock.json
