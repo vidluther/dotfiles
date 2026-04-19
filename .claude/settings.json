@@ -33,7 +33,7 @@
     }
   },
   "outputStyle": "Explanatory",
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "preferences": {
     "tmuxSplitPanes": true
   }

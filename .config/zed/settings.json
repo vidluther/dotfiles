@@ -7,8 +7,40 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "on",
+  "formatter": "language_server",
+  "languages": {
+    "TypeScript": {
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    },
+    "TSX": {
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    },
+    "JavaScript": {
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    },
+    "JSX": {
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    }
+  }, // languages
   "outline_panel": {
-    "dock": "right"
+    "dock": "left"
   },
   "buffer_line_height": "comfortable",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
@@ -76,7 +108,6 @@
     "light": "One Light",
     "dark": "macOS Classic Dark"
   },
-
   // Disable the buttons I do not use.
   "collaboration_panel": {
     "dock": "right",
@@ -84,8 +115,6 @@
   },
   "context_servers": {
     "posthog": {
-      "settings": {},
-
       "enabled": true,
       "url": "https://mcp.posthog.com/mcp?features=experiments,surveys,annotations,sql,llm_analytics,prompts,flags,cohorts,data_warehouse,data_schema,hog_functions,hog_function_templates,workflows,workspace,docs,notebooks,alerts,activity_logs,search,reverse_proxy,debug",
       "headers": {
