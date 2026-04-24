@@ -36,5 +36,7 @@
   "effortLevel": "xhigh",
   "preferences": {
     "tmuxSplitPanes": true
-  }
+  },
+  "theme": "dark-daltonized",
+  "agentPushNotifEnabled": false
 }
