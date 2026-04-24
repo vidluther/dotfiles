@@ -31,7 +31,7 @@
         }
       }
     },
-    "JSX": {
+    "Astro": {
       "formatter": {
         "language_server": {
           "name": "oxfmt"
@@ -45,8 +45,7 @@
   "buffer_line_height": "comfortable",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "title_bar": {
-    "show_menus": true,
-    "show_branch_icon": false
+    "show_menus": true
   },
   "terminal": {
     "copy_on_select": true,
@@ -56,11 +55,11 @@
   },
   "git_panel": {
     "dock": "right",
-    "tree_view": false,
+    "tree_view": true,
     "status_style": "label_color"
   },
   "tabs": {
-    "show_diagnostics": "all",
+    "show_diagnostics": "errors",
     "close_position": "left",
     "file_icons": false
   },
@@ -89,7 +88,7 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6-latest",
+      "model": "claude-opus-4-7-latest",
       "enable_thinking": false
     },
     "dock": "left",

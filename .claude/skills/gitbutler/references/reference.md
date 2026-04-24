@@ -12,6 +12,7 @@ Comprehensive reference for all `but` commands.
 - [Conflict Resolution](#conflict-resolution) - `resolve`
 - [Remote Operations](#remote-operations) - `push`, `pull`, `pr`, `merge`
 - [Automation](#automation) - `mark`, `unmark`
+- [Workspace Maintenance](#workspace-maintenance) - `clean`
 - [History & Undo](#history--undo) - `undo`, `oplog`
 - [Setup & Configuration](#setup--configuration) - `setup`, `teardown`, `config`, `gui`, `update`, `alias`
 - [Global Options](#global-options)
@@ -132,12 +133,18 @@ but branch show <id> -r       # Fetch and display review information (PRs/MRs)
 Move an existing branch on top of another branch, stacking them.
 
 ```bash
-but branch move feature/frontend feature/backend    # Stack frontend on top of backend
+but branch move feature/frontend feature/backend
+but branch move --unstack feature/frontend
 ```
 
-**This is the primary command for stacking existing branches.** Use it when two branches already exist and one needs to depend on the other. Uses full branch **names**, not CLI IDs.
+Equivalent top-level syntax:
 
-Alias: `but stack <branch> <target-branch>`
+```bash
+but move feature/frontend feature/backend
+but move feature/frontend zz
+```
+
+Uses branch names or branch CLI IDs.
 
 ### `but pick <source> [target]`
 
@@ -312,16 +319,20 @@ but amend <file-id> <commit-id> --status-after   # Amend then show workspace sta
 
 Alias for `but rub <file> <commit>`.
 
-### `but move <commit> <target>`
+### `but move <source> <target>`
 
-Move a commit to a different location.
+Move commits or branches to a different location.
 
 ```bash
-but move <source> <target>           # Move before target
-but move <source> <target> --after   # Move after target
-but move <commit> <branch>           # Move to top of branch
-but move <commit> <branch> --status-after  # Move then show workspace status
+but move <commit> <target-commit>            # Move before target commit
+but move <commit> <target-commit> --after    # Move after target commit
+but move <commit> <branch>                   # Move commit to top of branch
+but move <branch> <target-branch>            # Stack branch on top of target branch
+but move <branch> zz                          # Tear off (unstack) branch
+but move <source> <target> --status-after    # Move then show workspace status
 ```
+
+`--after` is valid only for commit-to-commit moves.
 
 ### `but uncommit <source>`
 
@@ -330,6 +341,8 @@ Uncommit changes back to unstaged area.
 ```bash
 but uncommit <commit-id>      # Uncommit entire commit
 but uncommit <file-id>        # Uncommit specific file from its commit
+but uncommit <commit-id> -d   # Discard committed changes instead of moving to unassigned
+but uncommit <file-id> --discard  # Discard committed file changes completely
 but uncommit <commit-id> --status-after  # Uncommit then show workspace status
 ```
 
@@ -477,6 +490,23 @@ but unmark
 ```
 
 Use marks when working on a focused area to automatically organize changes.
+
+## Workspace Maintenance
+
+### `but clean`
+
+Remove empty branches from the workspace.
+
+```bash
+but clean                   # Delete all empty branches
+but clean --dry-run         # Preview which branches would be deleted
+but clean --pull            # Pull latest changes first, then clean
+but clean --include-upstream # Also remove branches with upstream-only commits
+```
+
+A branch is considered empty if it has no local commits and no assigned changes. Branches with upstream-only commits are preserved by default unless `--include-upstream` is used.
+
+The entire operation is a single oplog entry — use `but undo` to restore all deleted branches.
 
 ## History & Undo
 

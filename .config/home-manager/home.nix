@@ -111,7 +111,7 @@
       claude-work = {
         wraps = "claude";
         description = "alias claude-work claude";
-        body = "CLAUDE_CONFIG_DIR="$HOME/.claude-work  claude $argv";
+        body = "CLAUDE_CONFIG_DIR=\"$HOME/.claude-work\" claude $argv";
       };
 
     };
