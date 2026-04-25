@@ -20,7 +20,7 @@
     fnm
     pnpm
     ruby
-
+    direnv
     oxlint
     oxfmt
     nixd

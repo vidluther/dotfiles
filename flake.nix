@@ -18,6 +18,11 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [
+          (final: prev: {
+            direnv = prev.direnv.overrideAttrs (_: { doCheck = false; });
+          })
+        ];
       };
     in {
       homeConfigurations.vluther = home-manager.lib.homeManagerConfiguration {
