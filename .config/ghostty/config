@@ -1,6 +1,9 @@
 font-family = FiraCode Nerd Font
-theme = Github Dark High Contrast
+theme = Github Dark Colorblind
 mouse-scroll-multiplier = 2
 split-divider-color = yellow
 shell-integration = fish
 auto-update-channel = tip
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+split-inherit-working-directory = true
