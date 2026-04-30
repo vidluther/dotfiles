@@ -41,7 +41,7 @@
     }
   }, // languages
   "outline_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "buffer_line_height": "comfortable",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
