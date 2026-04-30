@@ -9,6 +9,7 @@ result
 .claude/backups
 .claude/cache
 .claude/settings.local.json
+.claude/sessions
 .config/ized/prompts
 .config/home-manager/result
 .config/opencode/package-lock.json
