@@ -1,5 +1,63 @@
 { pkgs, ... }:
 
+let
+  starshipWeather = pkgs.writeShellScript "starship-weather" ''
+    set -f
+    cache=/tmp/claude/statusline-weather-cache.json
+    max_age=3600
+    mkdir -p /tmp/claude
+
+    fresh=false
+    if [ -f "$cache" ]; then
+      mtime=$(stat -f %m "$cache" 2>/dev/null || stat -c %Y "$cache" 2>/dev/null)
+      now=$(date +%s)
+      if [ -n "$mtime" ] && [ $(( now - mtime )) -lt $max_age ] 2>/dev/null; then
+        fresh=true
+      fi
+    fi
+
+    if ! $fresh; then
+      tmp=$(${pkgs.curl}/bin/curl -fsS --max-time 3 'https://wttr.in/?format=j1' 2>/dev/null) || tmp=""
+      if [ -n "$tmp" ] && echo "$tmp" | ${pkgs.jq}/bin/jq -e '.current_condition[0]' >/dev/null 2>&1; then
+        echo "$tmp" > "$cache"
+      fi
+    fi
+
+    [ -f "$cache" ] || exit 0
+    json=$(cat "$cache")
+    echo "$json" | ${pkgs.jq}/bin/jq -e '.current_condition[0]' >/dev/null 2>&1 || exit 0
+
+    code=$(echo "$json"  | ${pkgs.jq}/bin/jq -r '.current_condition[0].weatherCode // empty')
+    tempF=$(echo "$json" | ${pkgs.jq}/bin/jq -r '.current_condition[0].temp_F // empty')
+    tempC=$(echo "$json" | ${pkgs.jq}/bin/jq -r '.current_condition[0].temp_C // empty')
+    city=$(echo "$json"  | ${pkgs.jq}/bin/jq -r '.nearest_area[0].areaName[0].value // empty')
+
+    case "$code" in
+      113) icon="☀️" ;;
+      116) icon="⛅" ;;
+      119|122) icon="☁️" ;;
+      143|248|260) icon="🌫️" ;;
+      176|263|266|293|296|353) icon="🌦️" ;;
+      179|182|185|281|284|311|314|317|350|362|365|374|377) icon="🌧️" ;;
+      200|386|389) icon="⛈️" ;;
+      227|230|320|323|326|329|332|335|338|368|371|392|395) icon="🌨️" ;;
+      299|302|305|308|356|359) icon="🌧️" ;;
+      *) icon="🌡️" ;;
+    esac
+
+    [ -z "$tempF" ] && exit 0
+    if [ -n "$tempC" ]; then
+      temps=$(printf '%s°F · %s°C' "$tempF" "$tempC")
+    else
+      temps=$(printf '%s°F' "$tempF")
+    fi
+    if [ -n "$city" ]; then
+      printf '%s %s  %s' "$icon" "$temps" "$city"
+    else
+      printf '%s %s' "$icon" "$temps"
+    fi
+  '';
+in
 {
   home.username = "vluther";
   home.homeDirectory = "/Users/vluther";
@@ -145,12 +203,13 @@
         "$fill"
         "[](fg:#0d1117)"
         "$nodejs"
+        "$bun"
         "$rust"
         "$golang"
         "$php"
         "$python"
         "[](fg:#161b22 bg:#0d1117)"
-        "$time"
+        "\${custom.weather}"
         "[](fg:#161b22)"
         "\n$character"
       ];
@@ -187,6 +246,12 @@
         format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
       };
 
+      bun = {
+        symbol = "🥟";
+        style = "bg:#0d1117";
+        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+      };
+
       rust = {
         symbol = "";
         style = "bg:#0d1117";
@@ -212,10 +277,18 @@
       };
 
       time = {
-        disabled = false;
+        disabled = true;
         time_format = "%R";
         style = "bg:#161b22";
         format = "[[  $time ](fg:#79c0ff bg:#161b22)]($style)";
+      };
+
+      custom.weather = {
+        command = "${starshipWeather}";
+        when = "true";
+        shell = [ "bash" "--noprofile" "--norc" ];
+        style = "bg:#161b22";
+        format = "[[ $output ](fg:#79c0ff bg:#161b22)]($style)";
       };
 
       character = {

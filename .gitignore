@@ -9,6 +9,7 @@ result
 .claude/backups
 .claude/cache
 .claude/settings.local.json
+.claude/shell-snapshots
 .claude/sessions
 .config/ized/prompts
 .config/home-manager/result
