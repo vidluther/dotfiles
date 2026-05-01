@@ -1,6 +1,6 @@
 ---
 name: but
-version: 0.5.1983
+version: 0.5.2006
 description: "Commit, push, branch, and manage version control with GitButler. Use for: commit my changes, check what changed, create a PR, push my branch, view diff, create branches, stage files, edit commit history, squash commits, amend commits, undo commits, pull requests, merge, stash work. Replaces git - use 'but' instead of git commit, git status, git push, git checkout, git add, git diff, git branch, git rebase, git stash, git merge. Covers all git, version control, and source control operations."
 author: GitButler Team
 ---
@@ -45,7 +45,6 @@ but <mutation> ... --status-after
 - Reorder commits: `but move <source-commit-id> <target-commit-id> --status-after` (**commit IDs**, not branch names)
 - Stack branches: `but move <branch-name-or-id> <target-branch-name-or-id> --status-after` (**branch names or branch CLI IDs**)
 - Tear off a branch: `but move <branch-name-or-id> zz --status-after` (`zz` = unassigned; branch name or branch CLI ID)
-- Equivalent branch subcommand syntax remains available: `but branch move <branch-name> <target-branch-name>` and `but branch move --unstack <branch-name>`
 - Push: `but push` or `but push <branch-id>`
 - Pull: `but pull --check` then `but pull --status-after`
 
@@ -83,13 +82,7 @@ but move feature/frontend feature/backend
 
 This moves the frontend branch on top of the backend branch in one step.
 
-Equivalent subcommand syntax:
-
-```bash
-but branch move feature/frontend feature/backend
-```
-
-**DO NOT** use `uncommit` + `branch delete` + `branch new -a` to stack existing branches. That approach fails because git branch names persist even after `but branch delete`. Always use `but move <branch> <target-branch>` (or the equivalent `but branch move ...`).
+**DO NOT** use `uncommit` + `branch delete` + `branch new -a` to stack existing branches. That approach fails because git branch names persist even after `but branch delete`. Always use `but move <branch> <target-branch>`.
 
 **To unstack** (make a stacked branch independent again):
 
@@ -97,18 +90,11 @@ but branch move feature/frontend feature/backend
 but move feature/logging zz
 ```
 
-Equivalent subcommand syntax:
-
-```bash
-but branch move --unstack feature/logging
-```
-
 **Note:** branch stack/tear-off operations use branch **names** (like `feature/frontend`) or branch CLI IDs, while commit reordering uses commit **IDs** (like `c3`). Do NOT use `but undo` to unstack — it may revert more than intended and lose commits.
 
 ### Stacked dependency / commit-lock recovery
 
 A **dependency lock** occurs when a file was originally committed on branch A, but you're trying to commit changes to it on branch B. Symptoms:
-
 - `but commit` succeeds but the file still appears in `unassignedChanges` in the `--status-after` output
 - The file shows as "unassigned" instead of being staged to any branch
 
@@ -138,15 +124,15 @@ If `but move` causes conflicts (conflicted commits in status):
 
 ## Git-to-But Map
 
-| git                      | but                                    |
-| ------------------------ | -------------------------------------- |
-| `git status`             | `but status -fv`                       |
-| `git add` + `git commit` | `but commit ... --changes ...`         |
-| `git checkout -b`        | `but branch new <name>`                |
-| `git push`               | `but push`                             |
-| `git rebase -i`          | `but move`, `but squash`, `but reword` |
-| `git rebase --onto`      | `but branch move <branch> <new-base>`  |
-| `git cherry-pick`        | `but pick`                             |
+| git | but |
+|---|---|
+| `git status` | `but status -fv` |
+| `git add` + `git commit` | `but commit ... --changes ...` |
+| `git checkout -b` | `but branch new <name>` |
+| `git push` | `but push` |
+| `git rebase -i` | `but move`, `but squash`, `but reword` |
+| `git rebase --onto` | `but move <branch> <new-base>` |
+| `git cherry-pick` | `but pick` |
 
 ## Notes
 

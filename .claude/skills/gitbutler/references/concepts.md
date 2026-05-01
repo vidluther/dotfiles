@@ -87,8 +87,6 @@ Example: Adding a new API endpoint and updating button styles are independent.
 
 **To stack an existing branch** on top of another: `but move <child-branch-name> <parent-branch-name>`.
 
-Equivalent syntax: `but branch move <child-branch-name> <parent-branch-name>`.
-
 **To create a new stacked branch** from scratch: `but branch new <name> -a <anchor>` — only use this when the child branch doesn't exist yet.
 
 ```
@@ -105,7 +103,6 @@ Use when:
 Example: User profile page needs authentication to be implemented first.
 
 **Stacking two existing branches:** If both branches already exist and you need to make one depend on the other, use top-level `move`:
-
 ```bash
 but move feature/frontend feature/backend
 # Now frontend is stacked on top of backend — both in the same stack

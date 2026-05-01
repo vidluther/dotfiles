@@ -198,7 +198,7 @@ but commit bu -m "Add caching layer" --changes <id> --status-after   # To backen
 but commit bv -m "Add dialog component" --changes <id> --status-after # To frontend
 ```
 
-**Key point:** branch stack moves use branch **names** (like `feature/frontend`) or branch CLI IDs. The equivalent subcommand syntax is `but branch move <branch> <target-branch>`. Commit reordering still uses commit IDs.
+**Key point:** branch stack moves use branch **names** (like `feature/frontend`) or branch CLI IDs. Commit reordering still uses commit IDs.
 
 ## Example 6: Using Marks for Focused Work
 
@@ -516,6 +516,7 @@ but status -fv    # File-centric view for quick overview
 but absorb <file-id> --dry-run  # See where specific file would be absorbed
 but push --dry-run              # See what would be pushed
 ```
+
 
 ### Auto-completion
 

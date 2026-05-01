@@ -128,24 +128,6 @@ but branch show <id> --check  # Check if branch merges cleanly into upstream
 but branch show <id> -r       # Fetch and display review information (PRs/MRs)
 ```
 
-### `but branch move <branch> <target-branch>`
-
-Move an existing branch on top of another branch, stacking them.
-
-```bash
-but branch move feature/frontend feature/backend
-but branch move --unstack feature/frontend
-```
-
-Equivalent top-level syntax:
-
-```bash
-but move feature/frontend feature/backend
-but move feature/frontend zz
-```
-
-Uses branch names or branch CLI IDs.
-
 ### `but pick <source> [target]`
 
 Cherry-pick commits from unapplied branches into applied branches.
@@ -158,7 +140,6 @@ but pick <commit-sha>                # Auto-select target if only one branch
 ```
 
 The source can be:
-
 - A commit SHA (full or short)
 - A CLI ID from `but status`
 - An unapplied branch name (shows interactive commit picker)
@@ -212,7 +193,6 @@ but commit empty --after <target>        # Insert empty commit after target
 **Important:** Without `--only`, ALL uncommitted changes are committed to the branch, not just staged files. Use `--only` when you've staged specific files and want to commit only those.
 
 **Committing specific files or hunks:** Use `--changes` (or `-p`) with comma-separated CLI IDs to commit only those files or hunks:
-
 - **File IDs** from `but status`: commits entire files
 - **Hunk IDs** from `but diff`: commits individual hunks
 - `--changes` takes one argument per flag. Use `--changes a1,b2` or `--changes a1 --changes b2`, not `--changes a1 b2`.
@@ -313,7 +293,6 @@ but amend <file-id> <commit-id> --status-after   # Amend then show workspace sta
 ```
 
 **When to use `amend` vs `absorb`:**
-
 - `but amend` - You know the target commit; explicit control
 - `but absorb` - Let GitButler auto-detect the target; smart matching based on dependencies
 
@@ -424,7 +403,7 @@ but push <branch-id>          # Push specific branch
 but push --dry-run            # Preview what would be pushed
 but push --with-force         # Force push (use carefully!)
 but push -s                   # Skip force push protection checks
-but push -r                   # Run pre-push hooks
+but push --no-hooks           # Bypass pre-push hooks
 ```
 
 ### `but pull`
@@ -447,11 +426,13 @@ but pr new <branch-id>        # Push branch and create PR (recommended)
 but pr new <branch-id> -F pr_message.txt    # Use file: first line is title, rest is description
 but pr new <branch-id> -m "Title..."        # Inline message: first line is title, rest is description
 but pr new <branch-id> -t     # Use default content (commit message), skip prompts
+but pr new <branch-id> --no-hooks  # Bypass pre-push hooks
 but pr                        # Create PR (prompts for branch)
 but pr template               # Configure PR description template
 ```
 
-**Key behavior:** `but pr new` automatically pushes the branch to remote before creating the PR. No need to run `but push` first. Force push (`--with-force`) and pre-push hooks (`--run-hooks`) are enabled by default.
+**Key behavior:** `but pr new` automatically pushes the branch to remote before creating the PR. No need to run `but push` first. Force push (`--with-force`) and pre-push hooks run by default.
+Use `--no-hooks` to bypass pre-push hooks when needed.
 
 In non-interactive environments, use `--message (-m)`, `--file (-F)`, or `--default (-t)` to avoid editor prompts. The `-t` flag uses the commit message as title/description for single-commit branches; for multi-commit branches it falls back to the branch name as the title.
 
