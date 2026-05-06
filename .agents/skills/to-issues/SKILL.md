@@ -7,7 +7,7 @@ description: Break a plan, spec, or PRD into independently-grabbable issues on t
 
 Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
+The issue tracker and triage label vocabulary should have been provided to you — run `/marshal` if not.
 
 ## Process
 
@@ -51,7 +51,7 @@ Iterate until the user approves the breakdown.
 
 ### 5. Publish the issues to the issue tracker
 
-For each approved slice, publish a new issue to the issue tracker. Use the issue body template below. Apply the `needs-triage` triage label so each issue enters the normal triage flow.
+For each approved slice, publish a new issue to the issue tracker. Use the issue body template below. Apply the `new` provenance label so each issue is identifiable as agent-created. They enter the inbox state automatically (no state label means inbox).
 
 Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
 

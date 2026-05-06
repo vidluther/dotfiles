@@ -20,24 +20,29 @@ Every comment or issue posted to the issue tracker during triage **must** start 
 
 ## Roles
 
-Two **category** roles:
+Two **category** roles (mutually exclusive):
 
 - `bug` — something is broken
 - `enhancement` — new feature or improvement
 
-Five **state** roles:
+Four **state** roles (mutually exclusive):
 
-- `needs-triage` — maintainer needs to evaluate
 - `needs-info` — waiting on reporter for more information
 - `ready-for-agent` — fully specified, ready for an AFK agent
 - `ready-for-human` — needs human implementation
 - `wontfix` — will not be actioned
 
-Every triaged issue should carry exactly one category role and one state role. If state roles conflict, flag it and ask the maintainer before doing anything else.
+An issue with **no state role** is in the inbox — it hasn't been triaged yet.
 
-These are canonical role names — the actual label strings used in the issue tracker may differ. The mapping should have been provided to you - run `/setup-matt-pocock-skills` if not.
+One **provenance** marker (optional, independent of state):
 
-State transitions: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
+- `new` — created via `to-issues`/`to-prd` (agent-flow). Issues opened directly by humans carry no provenance label.
+
+Every triaged issue should carry exactly one category role and one state role. The provenance marker is independent — it can coexist with any state. Other (non-canonical) labels in the repo — `security`, severity, area tags, etc. — also coexist freely; surface them in agent briefs but don't try to classify them.
+
+These are canonical role names — the actual label strings used in the issue tracker may differ. The mapping should have been provided to you. Run `/marshal` if not.
+
+State transitions: a fresh issue (no state label) is in the inbox; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to the inbox (state label removed) once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
 
 ## Invocation
 
@@ -50,13 +55,12 @@ The maintainer invokes `/triage` and describes what they want in natural languag
 
 ## Show what needs attention
 
-Query the issue tracker and present three buckets, oldest first:
+Query the issue tracker and present two buckets, oldest first:
 
-1. **Unlabeled** — never triaged.
-2. **`needs-triage`** — evaluation in progress.
-3. **`needs-info` with reporter activity since the last triage notes** — needs re-evaluation.
+1. **Inbox** — issues with no state label, whether `new`-labeled (agent-created) or unlabeled (human-opened). These haven't been triaged yet.
+2. **`needs-info` with reporter activity since the last triage notes** — needs re-evaluation.
 
-Show counts and a one-line summary per issue. Let the maintainer pick.
+Show counts and a one-line summary per issue. Surface any non-canonical labels in the summary (e.g. `[security, p1]`) so the maintainer can prioritize. Let them pick what to triage next.
 
 ## Triage a specific issue
 
@@ -74,7 +78,6 @@ Show counts and a one-line summary per issue. Let the maintainer pick.
    - `needs-info` — post triage notes (template below).
    - `wontfix` (bug) — polite explanation, then close.
    - `wontfix` (enhancement) — write to `.out-of-scope/`, link to it from a comment, then close ([OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)).
-   - `needs-triage` — apply the role. Optional comment if there's partial progress.
 
 ## Quick state override
 

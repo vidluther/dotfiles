@@ -27,7 +27,7 @@ Describe **what** the system should do, not **how** to implement it. The agent w
 
 The agent needs to know when it's done. Every agent brief must have concrete, testable acceptance criteria. Each criterion should be independently verifiable.
 
-- **Good:** "Running `gh issue list --label needs-triage` returns issues that have been through initial classification"
+- **Good:** "Running `gh issue list --label new` returns issues that have been through initial classification"
 - **Bad:** "Triage should work correctly"
 
 ### Explicit scope boundaries
@@ -40,6 +40,7 @@ State what is out of scope. This prevents the agent from gold-plating or making 
 ## Agent Brief
 
 **Category:** bug / enhancement
+**Labels:** all labels currently on the issue (e.g. `security`, `p1`, `area:auth`, `ready-for-agent`)
 **Summary:** one-line description of what needs to happen
 
 **Current behavior:**
@@ -65,6 +66,8 @@ Be specific about edge cases and error conditions.
 - Adjacent feature that might seem related but is separate
 ```
 
+The `Labels:` field is critical context. Severity tags (`p0`, `critical`), security flags, and component/area markers belong here so the implementing agent can't miss them — an issue with `security` should be approached very differently from a routine bug, and reading the label list in the brief is faster than scanning the full issue body.
+
 ## Examples
 
 ### Good agent brief (bug)
@@ -73,6 +76,7 @@ Be specific about edge cases and error conditions.
 ## Agent Brief
 
 **Category:** bug
+**Labels:** ready-for-agent, area:skills, p2
 **Summary:** Skill description truncation drops mid-word, producing broken output
 
 **Current behavior:**
@@ -108,6 +112,7 @@ and append "..." to indicate truncation.
 ## Agent Brief
 
 **Category:** enhancement
+**Labels:** ready-for-agent, area:triage
 **Summary:** Add `.out-of-scope/` directory support for tracking rejected feature requests
 
 **Current behavior:**
