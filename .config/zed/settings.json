@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "cli_default_open_behavior": "new_window",
   "format_on_save": "on",
   "formatter": "language_server",
@@ -73,9 +76,6 @@
         "model": ["default"]
       },
       "type": "registry"
-    },
-    "opencode": {
-      "type": "registry"
     }
   },
   "icon_theme": "Catppuccin Macchiato",
@@ -87,9 +87,10 @@
     "calt": false // Disable ligatures
   },
   "agent": {
+    "notify_when_agent_waiting": "never",
     "inline_assistant_model": {
-      "provider": "anthropic",
-      "model": "claude-opus-4-7-latest",
+      "provider": "openai",
+      "model": "gpt-5.5",
       "enable_thinking": false
     },
     "dock": "left",
