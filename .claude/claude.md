@@ -13,6 +13,7 @@
 - Package manager: use `pnpm` — never `npm`, `yarn`, or `bun`
 - Git: use `but` (GitButler CLI) for branch and commit operations
 - Shell: I use the fish shell, so when you ask me to run commands, remember things related to fish.
+- Prisma: do not run/test migrations yourself, make sure I run them 
 
 ## Version Control
 

@@ -30,13 +30,18 @@
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       }
+    },
+    "PostHog-skills": {
+      "source": {
+        "source": "github",
+        "repo": "PostHog/skills"
+      }
     }
   },
-  "outputStyle": "Explanatory",
   "effortLevel": "xhigh",
+  "theme": "dark-daltonized",
+  "agentPushNotifEnabled": false,
   "preferences": {
     "tmuxSplitPanes": true
-  },
-  "theme": "dark-daltonized",
-  "agentPushNotifEnabled": false
+  }
 }
