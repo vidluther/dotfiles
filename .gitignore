@@ -16,3 +16,4 @@ result
 .config/ized/prompts
 .config/home-manager/result
 .config/opencode/package-lock.json
+.claude/.last-cleanup
