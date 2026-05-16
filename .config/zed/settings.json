@@ -90,11 +90,6 @@
   },
   "agent": {
     "notify_when_agent_waiting": "never",
-    "inline_assistant_model": {
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "enable_thinking": false
-    },
     "dock": "left",
     "default_model": {
       "effort": "high",
