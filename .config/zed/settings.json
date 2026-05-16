@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "edit_predictions": {
-    "provider": "copilot"
+    "provider": "zed"
   },
   "cli_default_open_behavior": "new_window",
   "format_on_save": "on",
@@ -73,7 +73,9 @@
     },
     "claude-acp": {
       "favorite_config_option_values": {
-        "model": ["default"]
+        "model": [
+          "default"
+        ]
       },
       "type": "registry"
     }
@@ -96,8 +98,8 @@
     "dock": "left",
     "default_model": {
       "effort": "high",
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "provider": "zed.dev",
+      "model": "gpt-5.5-pro"
     },
     "favorite_models": [],
     "model_parameters": []
