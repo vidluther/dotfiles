@@ -1,69 +1,119 @@
-tap "anomalyco/tap"
 tap "mongodb/brew"
-tap "oven-sh/bun"
 tap "supabase/tap"
 tap "teamookla/speedtest"
+# Code searching, linting, rewriting
 brew "ast-grep"
+# Cryptographic recipes and primitives for Python
 brew "cryptography"
+# Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
+# Digital camera RAW photo decoding software
 brew "dcraw"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
+# Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
+# Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
+# Command-line fuzzy finder written in Go
 brew "fzf"
-brew "ghostscript"
+# GitHub command-line tool
+brew "gh"
+# Access GitHub's .gitignore boilerplates
 brew "gibo"
+# GIF image/animation creator/editor
 brew "gifsicle"
+# Ping, but with a graph
 brew "gping"
+# Image processing tools collection
 brew "graphicsmagick"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Object-relational database system
 brew "postgresql@18", link: true
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Utility that provides fast incremental file transfer
 brew "rsync"
+# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Generate passwords using SecurityFoundation framework
 brew "sf-pwgen"
+# Cross-platform application to monitor your network traffic
 brew "sniffnet"
+# Prettier way to inspect network connections
 brew "snitch"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Postgres development platform
 brew "supabase"
+# User interface to the TELNET protocol
 brew "telnet"
+# Terminal multiplexer
 brew "tmux"
+# Ultra fast grep with query UI, fuzzy search, archive search, and more
 brew "ugrep"
+# Internet file retriever
 brew "wget"
+# Personal information dashboard for your terminal
 brew "wtfutil"
-brew "anomalyco/tap/opencode"
-brew "mongodb/brew/mongodb-community"
-brew "oven-sh/bun/bun"
-brew "teamookla/speedtest/speedtest"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Command-line interface for 1Password
 cask "1password-cli"
-cask "bruno"
+# Visualise and analyse Claude Code session executions
 cask "claude-devtools"
+# Voice and text chat software
 cask "discord@ptb"
+# Email client
 cask "fastmail"
+# Web browser
 cask "firefox@developer-edition"
 cask "font-consolas-for-powerline"
 cask "font-fira-code"
 cask "font-inconsolata-dz-for-powerline"
 cask "font-meslo-for-powerline"
 cask "font-powerline-symbols"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Desktop client for GitHub repositories
 cask "github"
+# Web browser
 cask "google-chrome"
+# Web browser
 cask "google-chrome@canary"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-cask "libreoffice"
+# Free and open-source RSS reader
 cask "netnewswire"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# AI coding agent desktop client
 cask "opencode-desktop"
+# Replacement for Docker Desktop
 cask "orbstack"
+# WebKit based web browser
 cask "orion"
+# Collaboration platform for API development
 cask "postman"
+# VPN client focusing on security
 cask "protonvpn"
-cask "raycast"
+# Team communication and collaboration software
 cask "slack@beta"
+# Native desktop client for WhatsApp
 cask "whatsapp@beta"
-cask "zed"
+# Multiplayer code editor
 cask "zed@preview"
+npm "corepack"
