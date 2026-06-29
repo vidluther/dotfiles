@@ -47,5 +47,6 @@
   "agentPushNotifEnabled": false,
   "preferences": {
     "tmuxSplitPanes": true
-  }
+  },
+  "tui": "fullscreen"
 }
