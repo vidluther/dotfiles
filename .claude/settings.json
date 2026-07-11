@@ -5,6 +5,7 @@
   "permissions": {
     "defaultMode": "plan"
   },
+  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "bash /Users/vluther/.claude/statusline-command.sh"
@@ -20,7 +21,6 @@
     "skill-creator@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "posthog@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
@@ -43,10 +43,10 @@
     }
   },
   "effortLevel": "xhigh",
+  "tui": "fullscreen",
   "theme": "dark-daltonized",
   "agentPushNotifEnabled": false,
   "preferences": {
     "tmuxSplitPanes": true
-  },
-  "tui": "fullscreen"
+  }
 }
