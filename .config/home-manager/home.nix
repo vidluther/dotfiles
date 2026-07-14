@@ -123,12 +123,42 @@ in
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*" = {
-      extraOptions = {
-        IdentityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
-      };
+    settings."*" = {
+      IdentityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
     };
   };
+  # ---------------------------------------------------------------------------
+  # Git — SSH signing via 1Password, gh as https credential helper
+  # ---------------------------------------------------------------------------
+  programs.git = {
+    enable = true;
+    signing = {
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMtjt4Zl7OHuqa2nidi85ch6Ghm3O7n0/d4rp9F3ieW";
+      signByDefault = true;
+      format = "ssh";
+      signer = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+    };
+    settings = {
+      user.name = "Vid Luther";
+      user.email = "vidluther@users.noreply.github.com";
+      tag.gpgsign = true;
+      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+      credential."https://github.com".helper = "!gh auth git-credential";
+      credential."https://gist.github.com".helper = "!gh auth git-credential";
+    };
+    ignores = [
+      "**/.claude/settings.local.json"
+      ".config/zed/conversations/*"
+      ".config/zed/prompts/*"
+      ".plan.md"
+    ];
+  };
+
+  home.file.".ssh/allowed_signers".text = ''
+    vidluther@users.noreply.github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMtjt4Zl7OHuqa2nidi85ch6Ghm3O7n0/d4rp9F3ieW
+    vid@luther.io ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMtjt4Zl7OHuqa2nidi85ch6Ghm3O7n0/d4rp9F3ieW
+  '';
+
   # ---------------------------------------------------------------------------
   # Fish shell
   # ---------------------------------------------------------------------------
@@ -143,6 +173,15 @@ in
       fish_add_path $HOME/.opencode/bin
       fish_add_path $PNPM_HOME
       set -gx OPENCODE_EXPERIMENTAL_OXFMT true
+    '';
+
+    # Keep GH_TOKEN/GITHUB_TOKEN in sync with gh's keyring token so CLI tools
+    # never see a stale PAT. Interactive-only to keep script startup fast.
+    interactiveShellInit = ''
+      if command -q gh
+        set -gx GH_TOKEN (gh auth token 2>/dev/null)
+        set -gx GITHUB_TOKEN $GH_TOKEN
+      end
     '';
 
     functions = {
@@ -301,7 +340,7 @@ in
   # ---------------------------------------------------------------------------
   xdg.configFile."gh/config.yml".text = ''
     version: 1
-    git_protocol: https
+    git_protocol: ssh
     editor:
     prompt: enabled
     prefer_editor_prompt: disabled
@@ -318,7 +357,7 @@ in
 
   xdg.configFile."gh/hosts.yml".text = ''
     github.com:
-        git_protocol: https
+        git_protocol: ssh
         users:
             vidluther:
         user: vidluther

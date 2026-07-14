@@ -67,6 +67,42 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 ---
 
+## Git Authentication & Commit Signing
+
+_As of 2026-07-14, git config is fully managed by Home Manager (`programs.git` in `.config/home-manager/home.nix` → `~/.config/git/config`). There is no stow-managed git config anymore._
+
+How it fits together:
+
+- **SSH auth**: all SSH keys live in 1Password; `~/.ssh/config` points every host at the 1Password agent socket. Nothing expires.
+- **Commit signing**: SSH signing via 1Password's `op-ssh-sign` with an ed25519 key. Commits *and* tags are signed (`commit.gpgsign`, `tag.gpgsign`), and `~/.ssh/allowed_signers` is managed by Home Manager so `git log --show-signature` / `git verify-commit` work locally. The public key is registered on GitHub as a signing key, so commits show **Verified**.
+- **https auth**: `gh` is the git credential helper for `github.com` (`gh auth git-credential`), so private repos cloned over https authenticate with gh's keyring token — no PATs in the macOS keychain. `gh auth login` is the only token setup step.
+- **Tokens for tools**: interactive fish shells export `GH_TOKEN`/`GITHUB_TOKEN` from `gh auth token`, so CLI tools always see a fresh token.
+- **Commit email** is intentionally `vidluther@users.noreply.github.com` (GitHub email privacy).
+
+### Switching an https-cloned repo to SSH
+
+Prefer SSH remotes — they ride the 1Password agent and never hit token/OAuth problems. `gh repo clone` already clones over SSH (`git_protocol: ssh`); for a repo that was cloned over https:
+
+```sh
+cd /path/to/repo
+git remote -v                                              # see the current https URL
+git remote set-url origin git@github.com:<owner>/<repo>.git
+```
+
+Example:
+
+```sh
+git remote set-url origin git@github.com:edgemarkets/edgeboost-api.git
+```
+
+### Gotchas
+
+- **`~/.gitconfig` is unmanaged and wins.** Git reads it *after* the Home Manager config, so anything there overrides the dotfiles. GitButler stores its runtime settings in it — that's fine — but if git identity/signing ever drifts, check that no `[user]` or `[commit]` section has crept back into `~/.gitconfig`.
+- **GUI apps don't inherit any of this.** GitKraken etc. never see fish env vars or git credential helpers; they need their own GitHub login (with org access granted) — or SSH remotes plus their "use local SSH agent" setting.
+- **Fresh machine**: the 1Password *desktop app* provides both the SSH agent socket and `op-ssh-sign` (the Brewfile's `1password-cli` alone is not enough), and its Settings → Developer → "Use the SSH agent" toggle must be enabled once per machine. The agent socket path (`~/Library/Group Containers/2BUA8C4S2C.com.1password/...`) is 1Password's Apple Team ID — identical on every Mac, nothing machine-specific to edit.
+
+---
+
 ## Keeping Things Up to Date
 
 ### Nix & Home Manager

@@ -1,4 +1,1 @@
-**/.claude/settings.local.json
-.config/zed/conversations/*
-.config/zed/prompts/*
-.plan.md
+/nix/store/36alczv0z8qrp5f65fqsd795bmnvacby-home-manager-files/.config/git/ignore
