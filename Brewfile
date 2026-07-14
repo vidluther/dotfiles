@@ -1,8 +1,10 @@
-tap "mongodb/brew"
-tap "supabase/tap"
+tap "mongodb/brew", trusted: true
+tap "supabase/tap", trusted: true
 tap "teamookla/speedtest"
 # Code searching, linting, rewriting
 brew "ast-grep"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Cryptographic recipes and primitives for Python
 brew "cryptography"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
@@ -65,16 +67,24 @@ brew "telnet"
 brew "tmux"
 # Ultra fast grep with query UI, fuzzy search, archive search, and more
 brew "ugrep"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Internet file retriever
 brew "wget"
 # Personal information dashboard for your terminal
 brew "wtfutil"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community", trusted: true
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Visualise and analyse Claude Code session executions
 cask "claude-devtools"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Voice and text chat software
 cask "discord@ptb"
 # Email client
@@ -92,8 +102,6 @@ cask "ghostty"
 cask "github"
 # Web browser
 cask "google-chrome"
-# Web browser
-cask "google-chrome@canary"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Free and open-source RSS reader
@@ -116,4 +124,5 @@ cask "slack@beta"
 cask "whatsapp@beta"
 # Multiplayer code editor
 cask "zed@preview"
+uv "skillspector", source: "git+https://github.com/NVIDIA/skillspector.git"
 npm "corepack"
