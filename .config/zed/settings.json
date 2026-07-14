@@ -69,6 +69,12 @@
     "file_icons": false
   },
   "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "fast-mode": false
+      },
+      "type": "registry"
+    },
     "github-copilot-cli": {
       "type": "registry"
     },
