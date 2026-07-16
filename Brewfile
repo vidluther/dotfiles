@@ -79,8 +79,6 @@ brew "yazi"
 brew "mongodb/brew/mongodb-community", trusted: true
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest", trusted: true
-# 1Password GUI
-cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Visualise and analyse Claude Code session executions
