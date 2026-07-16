@@ -172,6 +172,7 @@ in
       fish_add_path $HOME/.local/bin
       fish_add_path $HOME/.opencode/bin
       fish_add_path $PNPM_HOME
+      fish_add_path $PNPM_HOME/bin
       set -gx OPENCODE_EXPERIMENTAL_OXFMT true
     '';
 
