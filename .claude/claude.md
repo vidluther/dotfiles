@@ -1,5 +1,7 @@
 # Claude Rules
 
+Be extremely concise in your responses.  
+
 ## Code Style
 
 - Use TypeScript for all new code.
@@ -11,7 +13,7 @@
 
 - Search: use `rg` (ripgrep) — never `find` or `grep`
 - Package manager: use `pnpm` — never `npm`, `yarn`, or `bun`
-- Git: use `but` (GitButler CLI) for branch and commit operations
+- Git: if the current branch is `gitbutler/workspace`, use `but` (GitButler CLI) for branch and commit operations; otherwise use plain `git`
 - Shell: I use the fish shell, so when you ask me to run commands, remember things related to fish.
 - Prisma: do not run/test migrations yourself, make sure I run them 
 
