@@ -47,7 +47,7 @@
     "dock": "right"
   },
   "buffer_line_height": "comfortable",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "FiraMono Nerd Font Mono",
   "title_bar": {
     "show_menus": true
   },
@@ -69,17 +69,23 @@
     "file_icons": false
   },
   "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "model": "opencode-go/kimi-k3",
+        "mode": "plan"
+      },
+      "type": "registry"
+    },
     "codex-acp": {
       "default_config_options": {
+        "collaboration_mode": "plan",
         "fast-mode": false
       },
       "type": "registry"
     },
-    "github-copilot-cli": {
-      "type": "registry"
-    },
     "claude-acp": {
       "default_config_options": {
+        "model": "claude-fable-5[1m]",
         "mode": "plan"
       },
       "favorite_config_option_values": {
@@ -88,7 +94,11 @@
       "type": "registry"
     }
   },
-  "icon_theme": "Catppuccin Macchiato",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Macchiato",
+    "dark": "Material Icon Theme"
+  },
   "project_panel": {
     "git_status": false,
     "dock": "right"
@@ -97,6 +107,10 @@
     "calt": false // Disable ligatures
   },
   "agent": {
+    "auto_compact": {
+      "threshold": "90%"
+    },
+    "play_sound_when_agent_done": "never",
     "notify_when_agent_waiting": "never",
     "dock": "left",
     "default_model": {
@@ -112,7 +126,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "macOS Classic Dark"
+    "dark": "Ayu Dark"
   },
   // Disable the buttons I do not use.
   "collaboration_panel": {

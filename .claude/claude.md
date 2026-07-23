@@ -1,6 +1,7 @@
-# Claude Rules
+# Global Rules
 
-Be extremely concise in your responses.  
+
+I have ADHD. Be extremely concise in your responses.
 
 ## Code Style
 
@@ -14,11 +15,11 @@ Be extremely concise in your responses.
 - Search: use `rg` (ripgrep) — never `find` or `grep`
 - Package manager: use `pnpm` — never `npm`, `yarn`, or `bun`
 - Git: if the current branch is `gitbutler/workspace`, use `but` (GitButler CLI) for branch and commit operations; otherwise use plain `git`
-- Shell: I use the fish shell, so when you ask me to run commands, remember things related to fish.
-- Prisma: do not run/test migrations yourself, make sure I run them 
+- Shell: my interactive shell is fish — when suggesting commands for me to run, use fish syntax (`set -gx` not `export`, `(cmd)` not `$(cmd)`).
+- Prisma: never run migrations yourself — give me the command to run instead.
 
 ## Version Control
 
-- Do not offer to make commits. Do not commit, unless explicitly told to in the chat.
-- Do not offer to make PRs. Do not make PRs, unless explicitly told to in the chat.
+- Never commit, and don't offer to, unless explicitly told in the chat.
+- Never make PRs, and don't offer to, unless explicitly told in the chat.
 - Do not add a `Co-Authored-By` trailer to commit messages.

@@ -192,12 +192,6 @@ in
         body = "nvim $argv";
       };
 
-      npm = {
-        wraps = "pnpm";
-        description = "alias npm pnpm";
-        body = "pnpm $argv";
-      };
-
       claude-work = {
         wraps = "claude";
         description = "alias claude-work claude";
