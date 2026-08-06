@@ -72,13 +72,13 @@
     "opencode": {
       "default_config_options": {
         "model": "opencode-go/kimi-k3",
-        "mode": "plan"
+        "mode": "build"
       },
       "type": "registry"
     },
     "codex-acp": {
       "default_config_options": {
-        "collaboration_mode": "plan",
+        "collaboration_mode": "default",
         "fast-mode": false
       },
       "type": "registry"

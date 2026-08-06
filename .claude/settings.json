@@ -5,7 +5,6 @@
   "permissions": {
     "defaultMode": "plan"
   },
-  "model": "claude-fable-5[1m]",
   "deniedMcpServers": [
     {
       "serverUrl": "https://mcp.notion.com/*"
@@ -47,5 +46,6 @@
   "agentPushNotifEnabled": false,
   "preferences": {
     "tmuxSplitPanes": true
-  }
+  },
+  "model": "claude-fable-5[1m]"
 }
