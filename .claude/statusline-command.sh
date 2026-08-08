@@ -1,12 +1,10 @@
 #!/bin/bash
 set -f
-# Claude Code statusLine — starship-themed, 3-line layout, width-aware.
-# Line 1:  opus-4-7 │ ✍ 76% │ workspace  main* │ ✎ session │  12m │ ⛅ 86°F · 30°C │ ◐ thinking
-# Line 2: current ●●●○○○○○○○ 28%  ⟳ 7:00pm
-# Line 3: weekly  ●●●●●●●●○○ 79%  ⟳ may 10, 10:00am
+# Claude Code statusLine — starship-themed, single line, width-aware.
+#  opus-4-7·high │ ✍ 76% │ workspace  main* │ ✎ session │  12m │ ◇ concise │ ◐ thinking   ⛅ 86°F · 30°C │ Austin │  3:14pm
 #
 # Drops segments in this order on narrow terminals:
-#   weather → session name → duration → thinking → git dirty marker
+#   weather → session name → duration → style/effort → thinking → git dirty marker
 
 input=$(cat)
 if [ -z "$input" ]; then
@@ -71,19 +69,6 @@ color_for_pct() {
     fi
 }
 
-build_bar() {
-    local pct=$1 width=$2
-    [ "$pct" -lt 0 ] 2>/dev/null && pct=0
-    [ "$pct" -gt 100 ] 2>/dev/null && pct=100
-    local filled=$(( pct * width / 100 ))
-    local empty=$(( width - filled ))
-    local bar_color filled_str="" empty_str=""
-    bar_color=$(color_for_pct "$pct")
-    for ((i=0; i<filled; i++)); do filled_str+="●"; done
-    for ((i=0; i<empty; i++)); do empty_str+="○"; done
-    printf "${bar_color}${filled_str}${dim}${empty_str}${reset}"
-}
-
 iso_to_epoch() {
     local iso_str="$1" epoch
     epoch=$(date -d "${iso_str}" +%s 2>/dev/null)
@@ -99,24 +84,6 @@ iso_to_epoch() {
     fi
     [ -n "$epoch" ] && { echo "$epoch"; return 0; }
     return 1
-}
-
-format_reset_time() {
-    local iso_str="$1" style="$2"
-    [ -z "$iso_str" ] || [ "$iso_str" = "null" ] && return
-    local epoch
-    epoch=$(iso_to_epoch "$iso_str")
-    [ -z "$epoch" ] && return
-    case "$style" in
-        time)
-            date -j -r "$epoch" +"%l:%M%p" 2>/dev/null | sed 's/^ //; s/\.//g' | tr '[:upper:]' '[:lower:]' \
-              || date -d "@$epoch" +"%l:%M%P" 2>/dev/null | sed 's/^ //; s/\.//g'
-            ;;
-        datetime)
-            date -j -r "$epoch" +"%b %-d, %l:%M%p" 2>/dev/null | sed 's/  / /g; s/^ //; s/\.//g' | tr '[:upper:]' '[:lower:]' \
-              || date -d "@$epoch" +"%b %-d, %l:%M%P" 2>/dev/null | sed 's/  / /g; s/^ //; s/\.//g'
-            ;;
-    esac
 }
 
 # Map wttr.in WMO weatherCode → emoji.
@@ -195,12 +162,20 @@ if [ -n "$session_start" ] && [ "$session_start" != "null" ]; then
     fi
 fi
 
-# ── Thinking flag ───────────────────────────────────────────────
+# ── Thinking flag, output style, effort ─────────────────────────
+# Output style can change mid-session, so prefer the stdin payload and fall back
+# to settings.json. Effort level isn't in the payload — settings.json only.
 thinking_on=false
+output_style=$(echo "$input" | jq -r '.output_style.name // empty' 2>/dev/null)
+effort=""
 settings_path="$HOME/.claude/settings.json"
 if [ -f "$settings_path" ]; then
-    thinking_val=$(jq -r '.alwaysThinkingEnabled // false' "$settings_path" 2>/dev/null)
+    # IFS=tab, not the default — style names may contain spaces.
+    IFS=$'\t' read -r thinking_val settings_style effort <<<"$(jq -r '[(.alwaysThinkingEnabled // false), (.outputStyle // "-"), (.effortLevel // "-")] | @tsv' "$settings_path" 2>/dev/null)"
     [ "$thinking_val" = "true" ] && thinking_on=true
+    [ -z "$output_style" ] && [ "$settings_style" != "-" ] && output_style="$settings_style"
+    [ "$effort" = "-" ] && effort=""
+    effort=$(printf "%s" "$effort" | tr '[:upper:]' '[:lower:]')
 fi
 
 # ── Weather (cached 1h) ─────────────────────────────────────────
@@ -221,14 +196,37 @@ if [ -f "$weather_cache" ]; then
 fi
 
 if $weather_needs_refresh; then
-    fresh=$(curl -s --max-time 3 'https://wttr.in/?format=j1' 2>/dev/null)
-    if [ -n "$fresh" ] && echo "$fresh" | jq -e '.current_condition[0]' >/dev/null 2>&1; then
-        weather_json="$fresh"
-        echo "$fresh" > "$weather_cache"
+    # Refresh OUT OF BAND. A foreground fetch costs ~1s (ceiling 3s) and the
+    # statusline renders synchronously, so a stale cache used to stall the first
+    # render of every session started >1h after the last one. Instead: render
+    # from the stale cache now, and let a detached child replace it for the next
+    # render. First run ever shows no weather; it appears a render later.
+    #
+    # The attempt stamp throttles retries to once a minute — without it a failing
+    # fetch would spawn a new curl on every single render.
+    weather_stamp="/tmp/claude/statusline-weather-attempt"
+    attempt_ok=true
+    if [ -f "$weather_stamp" ]; then
+        smtime=$(stat -f %m "$weather_stamp" 2>/dev/null || stat -c %Y "$weather_stamp" 2>/dev/null)
+        [ -n "$smtime" ] && [ $(( $(date +%s) - smtime )) -lt 60 ] && attempt_ok=false
     fi
-    if [ -z "$weather_json" ] && [ -f "$weather_cache" ]; then
-        weather_json=$(cat "$weather_cache" 2>/dev/null)
+    if $attempt_ok; then
+        : > "$weather_stamp"
+        # Write to a PID-scoped temp and mv into place, so a concurrent render
+        # never reads a half-written cache file.
+        (
+            tmp="${weather_cache}.$$.tmp"
+            if curl -s --max-time 10 'https://wttr.in/?format=j1' > "$tmp" 2>/dev/null \
+               && jq -e '.current_condition[0]' "$tmp" >/dev/null 2>&1; then
+                mv -f "$tmp" "$weather_cache"
+            else
+                rm -f "$tmp"
+            fi
+        ) >/dev/null 2>&1 &
+        disown 2>/dev/null || true
     fi
+    # Render from the stale cache if we have one.
+    [ -f "$weather_cache" ] && weather_json=$(cat "$weather_cache" 2>/dev/null)
 fi
 
 weather_block=""
@@ -270,6 +268,7 @@ fi
 
 # ── Build line 1 with progressive drop ──────────────────────────
 seg_model="${accent} ${model_name}${reset}"
+[ -n "$effort" ] && seg_model+="${dim}·${reset}${accent}${effort}${reset}"
 pct_color=$(color_for_pct "$used_pct")
 seg_pct="${dim}✍${reset} ${pct_color}${used_pct}%${reset}"
 seg_dir="${white}${dir_name}${reset}"
@@ -284,10 +283,13 @@ if $thinking_on; then
 else
     seg_thinking="${dim}◑ thinking${reset}"
 fi
+seg_style=""
+style_txt=$(printf "%s" "$output_style" | tr '[:upper:]' '[:lower:]')
+[ -n "$style_txt" ] && seg_style="${info}◇ ${style_txt}${reset}"
 
 # Left side only — weather is right-aligned separately below.
 build_left() {
-    local inc_session=$1 inc_duration=$2 inc_thinking=$3 inc_dirty=$4
+    local inc_session=$1 inc_duration=$2 inc_style=$3 inc_thinking=$4 inc_dirty=$5
     local out="${seg_model}${sep}${seg_pct}${sep}${seg_dir}"
     if [ -n "$seg_branch" ]; then
         out+="$seg_branch"
@@ -295,6 +297,7 @@ build_left() {
     fi
     [ "$inc_session"  = "1" ] && [ -n "$seg_session"  ] && out+="${sep}${seg_session}"
     [ "$inc_duration" = "1" ] && [ -n "$seg_duration" ] && out+="${sep}${seg_duration}"
+    [ "$inc_style"    = "1" ] && [ -n "$seg_style"    ] && out+="${sep}${seg_style}"
     [ "$inc_thinking" = "1" ] && out+="${sep}${seg_thinking}"
     printf "%s" "$out"
 }
@@ -305,7 +308,7 @@ inc_weather=1
 weather_visible=0
 if [ -n "$weather_block" ]; then
     weather_visible=$(visible_len "$weather_block")
-    left_min_visible=$(visible_len "$(build_left 0 0 0 0)")
+    left_min_visible=$(visible_len "$(build_left 0 0 0 0 0)")
     [ $(( left_min_visible + 1 + weather_visible )) -gt "$usable_cols" ] && inc_weather=0
 fi
 
@@ -317,23 +320,23 @@ else
 fi
 
 # Progressive drop on the left in user's chosen order.
-inc_session=1; inc_duration=1; inc_thinking=1; inc_dirty=1
-left=$(build_left $inc_session $inc_duration $inc_thinking $inc_dirty)
-for drop in session duration thinking dirty; do
+inc_session=1; inc_duration=1; inc_style=1; inc_thinking=1; inc_dirty=1
+left=$(build_left $inc_session $inc_duration $inc_style $inc_thinking $inc_dirty)
+for drop in session duration style thinking dirty; do
     [ "$(visible_len "$left")" -le "$left_budget" ] && break
     case "$drop" in
         session)  inc_session=0 ;;
         duration) inc_duration=0 ;;
+        style)    inc_style=0 ;;
         thinking) inc_thinking=0 ;;
         dirty)    inc_dirty=0 ;;
     esac
-    left=$(build_left $inc_session $inc_duration $inc_thinking $inc_dirty)
+    left=$(build_left $inc_session $inc_duration $inc_style $inc_thinking $inc_dirty)
 done
 
 # Compose with right-aligned weather (or just left if weather dropped).
 # Pad to usable_cols, NOT cols — leaves a buffer at the right edge so Claude
-# Code's renderer doesn't ellipsize and (more importantly) so the line doesn't
-# wrap into the row reserved for usage bars.
+# Code's renderer doesn't ellipsize and the line doesn't wrap onto a second row.
 if [ "$inc_weather" = "1" ] && [ -n "$weather_block" ]; then
     left_visible=$(visible_len "$left")
     gap=$(( usable_cols - left_visible - weather_visible ))
@@ -344,89 +347,6 @@ else
     line1="$left"
 fi
 
-# ── OAuth token resolution ──────────────────────────────────────
-get_oauth_token() {
-    if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
-        echo "$CLAUDE_CODE_OAUTH_TOKEN"; return 0
-    fi
-    local token=""
-    if command -v security >/dev/null 2>&1; then
-        local blob
-        blob=$(security find-generic-password -s "Claude Code-credentials" -w 2>/dev/null)
-        if [ -n "$blob" ]; then
-            token=$(echo "$blob" | jq -r '.claudeAiOauth.accessToken // empty' 2>/dev/null)
-            [ -n "$token" ] && [ "$token" != "null" ] && { echo "$token"; return 0; }
-        fi
-    fi
-    local creds_file="${HOME}/.claude/.credentials.json"
-    if [ -f "$creds_file" ]; then
-        token=$(jq -r '.claudeAiOauth.accessToken // empty' "$creds_file" 2>/dev/null)
-        [ -n "$token" ] && [ "$token" != "null" ] && { echo "$token"; return 0; }
-    fi
-    echo ""
-}
-
-# ── Usage data (cached 5m) ──────────────────────────────────────
-cache_file="/tmp/claude/statusline-usage-cache.json"
-cache_max_age=300
-
-needs_refresh=true
-usage_data=""
-if [ -f "$cache_file" ]; then
-    cache_mtime=$(stat -f %m "$cache_file" 2>/dev/null || stat -c %Y "$cache_file" 2>/dev/null)
-    now=$(date +%s)
-    cache_age=$(( now - cache_mtime ))
-    if [ "$cache_age" -lt "$cache_max_age" ]; then
-        needs_refresh=false
-        usage_data=$(cat "$cache_file" 2>/dev/null)
-    fi
-fi
-
-if $needs_refresh; then
-    token=$(get_oauth_token)
-    if [ -n "$token" ] && [ "$token" != "null" ]; then
-        response=$(curl -s --max-time 5 \
-            -H "Accept: application/json" \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Bearer $token" \
-            -H "anthropic-beta: oauth-2025-04-20" \
-            "https://api.anthropic.com/api/oauth/usage" 2>/dev/null)
-        if [ -n "$response" ] && echo "$response" | jq -e '.five_hour' >/dev/null 2>&1; then
-            usage_data="$response"
-            echo "$response" > "$cache_file"
-        fi
-    fi
-    if [ -z "$usage_data" ] && [ -f "$cache_file" ]; then
-        usage_data=$(cat "$cache_file" 2>/dev/null)
-    fi
-fi
-
-# ── Usage bar lines (skip on narrow terminals) ──────────────────
-rate_lines=""
-bar_width=10
-if [ "$usable_cols" -ge 40 ] && [ -n "$usage_data" ] && echo "$usage_data" | jq -e . >/dev/null 2>&1; then
-    five_hour_pct=$(echo "$usage_data"       | jq -r '.five_hour.utilization // 0' | awk '{printf "%.0f", $1}')
-    five_hour_reset_iso=$(echo "$usage_data" | jq -r '.five_hour.resets_at // empty')
-    five_hour_reset=$(format_reset_time "$five_hour_reset_iso" "time")
-    five_hour_bar=$(build_bar "$five_hour_pct" "$bar_width")
-    five_hour_pct_color=$(color_for_pct "$five_hour_pct")
-    five_hour_pct_fmt=$(printf "%3d" "$five_hour_pct")
-
-    rate_lines+="${white}current${reset} ${five_hour_bar} ${five_hour_pct_color}${five_hour_pct_fmt}%${reset}"
-    [ -n "$five_hour_reset" ] && rate_lines+=" ${dim}⟳${reset} ${info}${five_hour_reset}${reset}"
-
-    seven_day_pct=$(echo "$usage_data"       | jq -r '.seven_day.utilization // 0' | awk '{printf "%.0f", $1}')
-    seven_day_reset_iso=$(echo "$usage_data" | jq -r '.seven_day.resets_at // empty')
-    seven_day_reset=$(format_reset_time "$seven_day_reset_iso" "datetime")
-    seven_day_bar=$(build_bar "$seven_day_pct" "$bar_width")
-    seven_day_pct_color=$(color_for_pct "$seven_day_pct")
-    seven_day_pct_fmt=$(printf "%3d" "$seven_day_pct")
-
-    rate_lines+="\n${white}weekly${reset}  ${seven_day_bar} ${seven_day_pct_color}${seven_day_pct_fmt}%${reset}"
-    [ -n "$seven_day_reset" ] && rate_lines+=" ${dim}⟳${reset} ${info}${seven_day_reset}${reset}"
-fi
-
 # ── Output ──────────────────────────────────────────────────────
 printf "%b" "$line1"
-[ -n "$rate_lines" ] && printf "\n%b" "$rate_lines"
 exit 0

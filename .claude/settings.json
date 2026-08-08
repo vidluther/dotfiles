@@ -5,10 +5,22 @@
   "permissions": {
     "defaultMode": "plan"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "deniedMcpServers": [
     {
       "serverUrl": "https://mcp.notion.com/*"
+    },
+    {
+      "serverUrl": "https://gmailmcp.googleapis.com/*"
+    },
+    {
+      "serverUrl": "https://drivemcp.googleapis.com/*"
+    },
+    {
+      "serverUrl": "https://calendarmcp.googleapis.com/*"
+    },
+    {
+      "serverUrl": "https://bindings.mcp.cloudflare.com/*"
     }
   ],
   "statusLine": {
@@ -19,7 +31,7 @@
     "atlassian@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "gitkraken-hooks@gitkraken": true,
+    "gitkraken-hooks@gitkraken": false,
     "playwright@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
