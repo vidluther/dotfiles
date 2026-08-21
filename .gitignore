@@ -19,3 +19,5 @@ result
 .config/opencode/service.json
 .config/opencode/plugins/
 .claude/.last-cleanup
+.config/opencode/skills/
+.claude/rules/gitbutler.md
