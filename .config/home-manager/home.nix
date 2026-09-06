@@ -147,6 +147,7 @@ in
       credential."https://gist.github.com".helper = "!gh auth git-credential";
     };
     ignores = [
+      ".zed/"
       "**/.claude/settings.local.json"
       ".config/zed/conversations/*"
       ".config/zed/prompts/*"

@@ -28,7 +28,6 @@
     "command": "bash /Users/vluther/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "atlassian@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "gitkraken-hooks@gitkraken": false,

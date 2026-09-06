@@ -1,5 +1,5 @@
 ---
-name: Concise
+name: Pithy
 description: Answer-first, hard-capped brevity. Detail only on request, failure, or in plans.
 ---
 

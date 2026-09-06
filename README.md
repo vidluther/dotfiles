@@ -78,6 +78,7 @@ How it fits together:
 - **https auth**: `gh` is the git credential helper for `github.com` (`gh auth git-credential`), so private repos cloned over https authenticate with gh's keyring token — no PATs in the macOS keychain. `gh auth login` is the only token setup step.
 - **Tokens for tools**: interactive fish shells export `GH_TOKEN`/`GITHUB_TOKEN` from `gh auth token`, so CLI tools always see a fresh token.
 - **Commit email** is intentionally `vidluther@users.noreply.github.com` (GitHub email privacy).
+- **Global ignores** belong in `programs.git.ignores` in `.config/home-manager/home.nix`. Home Manager generates `~/.config/git/ignore`; Stow excludes `.config/git` to avoid conflicting ownership.
 
 ### Switching an https-cloned repo to SSH
 

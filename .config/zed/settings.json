@@ -71,21 +71,24 @@
   "agent_servers": {
     "opencode": {
       "default_config_options": {
-        "model": "opencode-go/kimi-k3",
+        "model": "opencode-go/deepseek-v4-pro",
         "mode": "build"
       },
       "type": "registry"
     },
     "codex-acp": {
       "default_config_options": {
-        "collaboration_mode": "default",
+        "mode": "read-only",
+        "reasoning_effort": "high",
+        "collaboration_mode": "plan",
         "fast-mode": false
       },
       "type": "registry"
     },
     "claude-acp": {
       "default_config_options": {
-        "model": "claude-fable-5[1m]",
+        "effort": "xhigh",
+        "model": "claude-fable-5-1[1m]",
         "mode": "plan"
       },
       "favorite_config_option_values": {

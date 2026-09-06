@@ -18,3 +18,4 @@
 --ignore=.ignore
 --ignore=flake.nix
 --ignore=flake.lock
+--ignore=^[.]config/git$
