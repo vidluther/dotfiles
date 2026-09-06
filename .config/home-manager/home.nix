@@ -195,8 +195,32 @@ in
 
       claude-work = {
         wraps = "claude";
-        description = "alias claude-work claude";
-        body = "CLAUDE_CONFIG_DIR=\"$HOME/.claude-work\" claude $argv";
+        description = "run Claude with the work account";
+        body = ''
+          set -lx CLAUDE_CONFIG_DIR "$HOME/.claude-work"
+          mkdir -p "$CLAUDE_CONFIG_DIR"
+          command claude $argv
+        '';
+      };
+
+      personal-claude = {
+        wraps = "claude";
+        description = "run Claude with the personal account";
+        body = ''
+          set -lx CLAUDE_CONFIG_DIR "$HOME/.claude"
+          mkdir -p "$CLAUDE_CONFIG_DIR"
+          command claude $argv
+        '';
+      };
+
+      work-claude = {
+        wraps = "claude";
+        description = "run Claude with the work account";
+        body = ''
+          set -lx CLAUDE_CONFIG_DIR "$HOME/.claude-work"
+          mkdir -p "$CLAUDE_CONFIG_DIR"
+          command claude $argv
+        '';
       };
 
       # Keep personal and work Codex logins in separate credential stores.
