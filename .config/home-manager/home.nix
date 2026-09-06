@@ -265,7 +265,7 @@ in
   # Fish conf.d — fnm
   # ---------------------------------------------------------------------------
   xdg.configFile."fish/conf.d/fnm.fish".text = ''
-    fnm env --use-on-cd --version-file-strategy=recursive --shell fish | source
+    ${pkgs.fnm}/bin/fnm env --use-on-cd --version-file-strategy=recursive --shell fish | source
   '';
 
   # ---------------------------------------------------------------------------
