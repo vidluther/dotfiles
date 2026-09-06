@@ -199,6 +199,37 @@ in
         body = "CLAUDE_CONFIG_DIR=\"$HOME/.claude-work\" claude $argv";
       };
 
+      # Keep personal and work Codex logins in separate credential stores.
+      codex = {
+        wraps = "codex";
+        description = "run Codex with the personal account";
+        body = ''
+          set -lx CODEX_HOME "$HOME/.codex-personal"
+          mkdir -p "$CODEX_HOME"
+          command codex $argv
+        '';
+      };
+
+      personal-codex = {
+        wraps = "codex";
+        description = "run Codex with the personal account";
+        body = ''
+          set -lx CODEX_HOME "$HOME/.codex-personal"
+          mkdir -p "$CODEX_HOME"
+          command codex $argv
+        '';
+      };
+
+      work-codex = {
+        wraps = "codex";
+        description = "run Codex with the work account";
+        body = ''
+          set -lx CODEX_HOME "$HOME/.codex-work"
+          mkdir -p "$CODEX_HOME"
+          command codex $argv
+        '';
+      };
+
     };
   };
 

@@ -1,0 +1,5 @@
+# Portable project defaults. Credentials and account-specific settings stay in
+# ~/.codex/config.toml (or the OS keychain).
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+cli_auth_credentials_store = "keyring"

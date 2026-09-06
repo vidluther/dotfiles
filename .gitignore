@@ -21,3 +21,9 @@ result
 .claude/.last-cleanup
 .config/opencode/skills/
 .claude/rules/gitbutler.md
+.codex/auth.json
+.codex/*.log
+.codex/cache/
+.codex/sessions/
+.codex/rollouts/
+.codex/plugins/
