@@ -41,9 +41,14 @@
       };
 
       # Derives the account from the invoking login. Requires --impure.
-      homeConfigurations.current = mkHome {
-        username = builtins.getEnv "USER";
-        homeDirectory = builtins.getEnv "HOME";
-      };
+      homeConfigurations.current =
+        let
+          username = builtins.getEnv "USER";
+          homeDirectory = builtins.getEnv "HOME";
+        in
+        if username == "" || homeDirectory == "" then
+          throw "homeConfigurations.current reads $USER/$HOME — run with --impure"
+        else
+          mkHome { inherit username homeDirectory; };
     };
 }

@@ -31,13 +31,6 @@ cd ~/dotfiles
 nix run home-manager/master -- switch --flake .#vluther
 ```
 
-For another macOS login, use the portable `current` configuration. It reads that login's `USER` and `HOME` locally; `--impure` is required for this environment lookup, and no second username is stored in the repository:
-
-```sh
-cd ~/dotfiles
-home-manager switch --impure --flake .#current
-```
-
 This fetches Home Manager from GitHub, builds the `vluther` configuration defined in `flake.nix`, and activates it. After the first switch, `home-manager` is on `PATH` and future runs can use it directly. The flake pins both `nixpkgs` and `home-manager` in `flake.lock`, so builds are reproducible regardless of what `nix run` resolves to at bootstrap time.
 
 ### 4. Install Homebrew
@@ -71,6 +64,37 @@ git remote set-url origin git@github.com:vidluther/dotfiles.git
 ```sh
 curl -fsSL https://claude.ai/install.sh | bash
 ```
+
+---
+
+## Second macOS Account on the Same Mac
+
+Nix (multi-user daemon) and Homebrew are machine-wide — **do not reinstall either**. The flake's portable `current` configuration reads the invoking login's `USER`/`HOME` (`--impure` is required for that lookup), so no second username is stored in the repository.
+
+From a fresh fish shell in the new login:
+
+```fish
+# One-time bootstrap: the Nix installer only hooks bash/zsh, so a new
+# fish login has no nix on PATH until home-manager has run once.
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+set -gx NIX_CONFIG "experimental-features = nix-command flakes"
+
+git clone https://github.com/vidluther/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+nix run home-manager/master -- switch --impure --flake .#current
+stow .
+```
+
+After the switch, new fish shells source `nix-daemon.fish` from the generated config, so the bootstrap lines are never needed again.
+
+Notes:
+
+- **Homebrew**: `/opt/homebrew/bin` binaries are shared and usable, but don't run `brew bundle`/`brew install` from the secondary account — the Homebrew prefix is owned by the primary admin user.
+- **Login shell**: `/opt/homebrew/bin/fish` is already in `/etc/shells` and works fine. Using `~/.nix-profile/bin/fish` instead requires appending that per-user path to `/etc/shells` with sudo — optional.
+- **stow conflicts**: if the account already has real files where symlinks should go (e.g. `~/.claude/settings.json`), move them aside and re-run `stow .` — avoid `--adopt`, it overwrites the repo copy.
+- **1Password**: the desktop app's Settings → Developer → "Use the SSH agent" toggle is per-login — enable it once in the new session (see Gotchas below).
+- **Claude Code**: `extraKnownMarketplaces` directory paths in `.claude/settings.json` don't expand `~` — the gitkraken entry hardcodes `/Users/vluther`. In a second account, either fix that path locally or ignore it (the plugin is disabled anyway).
+- **Updating later**: `home-manager switch --impure --flake ~/dotfiles#current`.
 
 ---
 

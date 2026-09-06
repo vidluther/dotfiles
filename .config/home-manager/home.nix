@@ -167,6 +167,10 @@ in
     enable = true;
 
     shellInit = ''
+      # Multi-user daemon install: sets NIX_PROFILES, NIX_SSL_CERT_FILE, etc.
+      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+        source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+      end
       fish_add_path /nix/var/nix/profiles/default/bin
       fish_add_path $HOME/.nix-profile/bin
       fish_add_path $HOME/.antigravity/antigravity/bin
