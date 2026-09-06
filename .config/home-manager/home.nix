@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, homeDirectory, ... }:
 
 let
   starshipWeather = pkgs.writeShellScript "starship-weather" ''
@@ -59,8 +59,8 @@ let
   '';
 in
 {
-  home.username = "vluther";
-  home.homeDirectory = "/Users/vluther";
+  home.username = username;
+  home.homeDirectory = homeDirectory;
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "25.11";
 
@@ -114,7 +114,7 @@ in
   # ---------------------------------------------------------------------------
   home.sessionVariables = {
     EDITOR = "nvim";
-    PNPM_HOME = "/Users/vluther/Library/pnpm";
+    PNPM_HOME = "${homeDirectory}/Library/pnpm";
   };
 
   # ---------------------------------------------------------------------------
@@ -169,7 +169,7 @@ in
     shellInit = ''
       fish_add_path /nix/var/nix/profiles/default/bin
       fish_add_path $HOME/.nix-profile/bin
-      fish_add_path /Users/vluther/.antigravity/antigravity/bin
+      fish_add_path $HOME/.antigravity/antigravity/bin
       fish_add_path $HOME/.local/bin
       fish_add_path $HOME/.opencode/bin
       fish_add_path $PNPM_HOME

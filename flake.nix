@@ -24,10 +24,26 @@
           })
         ];
       };
+    in
+    let
+      mkHome =
+        { username, homeDirectory }:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit username homeDirectory; };
+          modules = [ ./.config/home-manager/home.nix ];
+        };
     in {
-      homeConfigurations.vluther = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./.config/home-manager/home.nix ];
+      # Stable selector for the primary account.
+      homeConfigurations.vluther = mkHome {
+        username = "vluther";
+        homeDirectory = "/Users/vluther";
+      };
+
+      # Derives the account from the invoking login. Requires --impure.
+      homeConfigurations.current = mkHome {
+        username = builtins.getEnv "USER";
+        homeDirectory = builtins.getEnv "HOME";
       };
     };
 }

@@ -31,6 +31,13 @@ cd ~/dotfiles
 nix run home-manager/master -- switch --flake .#vluther
 ```
 
+For another macOS login, use the portable `current` configuration. It reads that login's `USER` and `HOME` locally; `--impure` is required for this environment lookup, and no second username is stored in the repository:
+
+```sh
+cd ~/dotfiles
+home-manager switch --impure --flake .#current
+```
+
 This fetches Home Manager from GitHub, builds the `vluther` configuration defined in `flake.nix`, and activates it. After the first switch, `home-manager` is on `PATH` and future runs can use it directly. The flake pins both `nixpkgs` and `home-manager` in `flake.lock`, so builds are reproducible regardless of what `nix run` resolves to at bootstrap time.
 
 ### 4. Install Homebrew
