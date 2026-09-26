@@ -1,11 +1,16 @@
 {
   "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_ENABLE_CFC": "0"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
   },
   "permissions": {
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
   "deniedMcpServers": [
     {
       "serverUrl": "https://mcp.notion.com/*"
@@ -30,7 +35,6 @@
   "enabledPlugins": {
     "claude-md-management@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "gitkraken-hooks@gitkraken": false,
     "playwright@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
@@ -43,21 +47,14 @@
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       }
-    },
-    "gitkraken": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/vluther/.claude/plugins/marketplaces/gitkraken"
-      }
     }
   },
-  "outputStyle": "Concise",
+  "outputStyle": "Pithy",
+  "spinnerTipsEnabled": false,
   "effortLevel": "high",
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
   "theme": "dark-daltonized",
-  "agentPushNotifEnabled": false,
-  "preferences": {
-    "tmuxSplitPanes": true
-  }
+  "showTurnDuration": false,
+  "agentPushNotifEnabled": false
 }

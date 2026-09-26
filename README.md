@@ -92,8 +92,8 @@ Notes:
 - **Homebrew**: `/opt/homebrew/bin` binaries are shared and usable, but don't run `brew bundle`/`brew install` from the secondary account — the Homebrew prefix is owned by the primary admin user.
 - **Login shell**: `/opt/homebrew/bin/fish` is already in `/etc/shells` and works fine. Using `~/.nix-profile/bin/fish` instead requires appending that per-user path to `/etc/shells` with sudo — optional.
 - **stow conflicts**: if the account already has real files where symlinks should go (e.g. `~/.claude/settings.json`), move them aside and re-run `stow .` — avoid `--adopt`, it overwrites the repo copy.
+- **Claude Code settings symlink**: Claude Code < ~2.1.28x saved `~/.claude/settings.json` via temp-file + rename onto the link path, replacing the symlink with a regular file. 2.1.283+ resolves the link and writes through to the repo copy, so the link holds. If it ever turns into a regular file again, diff it against the repo copy, merge, then `mv` it aside and re-link. Note that when the cwd is `~/dotfiles`, the repo's `.claude/settings.json` is also loaded as *project* settings — harmless while the link is intact, confusing if the two copies drift.
 - **1Password**: the desktop app's Settings → Developer → "Use the SSH agent" toggle is per-login — enable it once in the new session (see Gotchas below).
-- **Claude Code**: `extraKnownMarketplaces` directory paths in `.claude/settings.json` don't expand `~` — the gitkraken entry hardcodes `/Users/vluther`. In a second account, either fix that path locally or ignore it (the plugin is disabled anyway).
 - **Updating later**: `home-manager switch --impure --flake ~/dotfiles#current`.
 
 ---
