@@ -124,7 +124,7 @@ git remote set-url origin git@github.com:<owner>/<repo>.git
 Example:
 
 ```sh
-git remote set-url origin git@github.com:edgemarkets/edgeboost-api.git
+git remote set-url origin git@github.com:vidluther/skills.git
 ```
 
 ### Gotchas
