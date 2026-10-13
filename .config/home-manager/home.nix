@@ -190,75 +190,60 @@ in
       end
     '';
 
-    functions = {
-      vim = {
-        wraps = "nvim";
-        description = "alias vim nvim";
-        body = "nvim $argv";
-      };
+    functions =
+      let
+        # Wrap an agent CLI so each account gets its own isolated
+        # credential store (CLAUDE_CONFIG_DIR / CODEX_HOME).
+        mkAgentAccount = { wraps, configDirEnv, configDir, description }: {
+          inherit wraps description;
+          body = ''
+            set -lx ${configDirEnv} "${configDir}"
+            mkdir -p "${configDir}"
+            command ${wraps} $argv
+          '';
+        };
 
-      claude-work = {
-        wraps = "claude";
-        description = "run Claude with the work account";
-        body = ''
-          set -lx CLAUDE_CONFIG_DIR "$HOME/.claude-work"
-          mkdir -p "$CLAUDE_CONFIG_DIR"
-          command claude $argv
-        '';
-      };
+        claudeWork = mkAgentAccount {
+          wraps = "claude";
+          configDirEnv = "CLAUDE_CONFIG_DIR";
+          configDir = "$HOME/.claude-work";
+          description = "run Claude with the work account";
+        };
+        claudePersonal = mkAgentAccount {
+          wraps = "claude";
+          configDirEnv = "CLAUDE_CONFIG_DIR";
+          configDir = "$HOME/.claude";
+          description = "run Claude with the personal account";
+        };
+        codexPersonal = mkAgentAccount {
+          wraps = "codex";
+          configDirEnv = "CODEX_HOME";
+          configDir = "$HOME/.codex-personal";
+          description = "run Codex with the personal account";
+        };
+        codexWork = mkAgentAccount {
+          wraps = "codex";
+          configDirEnv = "CODEX_HOME";
+          configDir = "$HOME/.codex-work";
+          description = "run Codex with the work account";
+        };
+      in
+      {
+        vim = {
+          wraps = "nvim";
+          description = "alias vim nvim";
+          body = "nvim $argv";
+        };
 
-      personal-claude = {
-        wraps = "claude";
-        description = "run Claude with the personal account";
-        body = ''
-          set -lx CLAUDE_CONFIG_DIR "$HOME/.claude"
-          mkdir -p "$CLAUDE_CONFIG_DIR"
-          command claude $argv
-        '';
-      };
+        claude-work = claudeWork;
+        work-claude = claudeWork;
+        personal-claude = claudePersonal;
 
-      work-claude = {
-        wraps = "claude";
-        description = "run Claude with the work account";
-        body = ''
-          set -lx CLAUDE_CONFIG_DIR "$HOME/.claude-work"
-          mkdir -p "$CLAUDE_CONFIG_DIR"
-          command claude $argv
-        '';
+        # Keep personal and work Codex logins in separate credential stores.
+        codex = codexPersonal;
+        personal-codex = codexPersonal;
+        work-codex = codexWork;
       };
-
-      # Keep personal and work Codex logins in separate credential stores.
-      codex = {
-        wraps = "codex";
-        description = "run Codex with the personal account";
-        body = ''
-          set -lx CODEX_HOME "$HOME/.codex-personal"
-          mkdir -p "$CODEX_HOME"
-          command codex $argv
-        '';
-      };
-
-      personal-codex = {
-        wraps = "codex";
-        description = "run Codex with the personal account";
-        body = ''
-          set -lx CODEX_HOME "$HOME/.codex-personal"
-          mkdir -p "$CODEX_HOME"
-          command codex $argv
-        '';
-      };
-
-      work-codex = {
-        wraps = "codex";
-        description = "run Codex with the work account";
-        body = ''
-          set -lx CODEX_HOME "$HOME/.codex-work"
-          mkdir -p "$CODEX_HOME"
-          command codex $argv
-        '';
-      };
-
-    };
   };
 
   # ---------------------------------------------------------------------------
