@@ -20,6 +20,7 @@ I have ADHD — keep things short and scannable.
 
 - If the current branch is `gitbutler/workspace`, use `but` (GitButler CLI) for branch and commit operations; otherwise use plain `git`.
 - The GitButler rules in `~/.claude/rules/gitbutler.md` apply **only** on `gitbutler/workspace`. On any other branch, ignore them.
+- Never create git worktrees (no `git worktree add`, `EnterWorktree`, or `isolation: "worktree"`). Use a GitButler branch instead.
 - Never commit, and don't offer to, unless explicitly told in the chat.
 - Never make PRs, and don't offer to, unless explicitly told in the chat.
 
