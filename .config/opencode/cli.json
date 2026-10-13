@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "orng",
+    "mode": "system"
+  },
+  "session": {
+    "scrollbar": false,
+    "grouping": "auto",
+    "verbosity": "low",
+    "tps": true,
+    "sidebar": "auto"
+  },
+  "tabs": {
+    "mode": "on",
+    "layout": "horizontal"
+  }
+}
