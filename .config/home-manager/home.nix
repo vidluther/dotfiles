@@ -3,9 +3,9 @@
 let
   starshipWeather = pkgs.writeShellScript "starship-weather" ''
     set -f
-    cache=/tmp/claude/statusline-weather-cache.json
+    cache=$HOME/.cache/starship/weather.json
     max_age=3600
-    mkdir -p /tmp/claude
+    mkdir -p $HOME/.cache/starship
 
     fresh=false
     if [ -f "$cache" ]; then
