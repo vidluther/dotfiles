@@ -13,6 +13,7 @@ result
 .claude/shell-snapshots
 .claude/sessions
 .claude/skills
+.config/karabiner/automatic_backups/
 .config/ized/prompts
 .config/home-manager/result
 .config/opencode/package-lock.json
