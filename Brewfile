@@ -91,10 +91,8 @@ cask "discord@ptb"
 cask "fastmail"
 # Web browser
 cask "firefox@developer-edition"
+# iTerm2's "Normal Font" — nix no longer installs the other nerd fonts
 cask "font-consolas-for-powerline"
-cask "font-fira-code"
-cask "font-inconsolata-dz-for-powerline"
-cask "font-meslo-for-powerline"
 cask "font-powerline-symbols"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
