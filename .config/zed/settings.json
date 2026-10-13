@@ -78,8 +78,9 @@
     },
     "codex-acp": {
       "default_config_options": {
+        "model": "gpt-6.1-sol",
         "mode": "read-only",
-        "reasoning_effort": "high",
+        "reasoning_effort": "medium",
         "collaboration_mode": "plan",
         "fast-mode": false
       },
@@ -87,8 +88,8 @@
     },
     "claude-acp": {
       "default_config_options": {
-        "effort": "xhigh",
-        "model": "claude-fable-5-1[1m]",
+        "effort": "high",
+        "model": "opus[1m]",
         "mode": "plan"
       },
       "favorite_config_option_values": {
