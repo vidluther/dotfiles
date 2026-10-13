@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "servers": {
+      "fastmail": {
+        "type": "remote",
+        "url": "https://api.fastmail.com/mcp"
+      }
+    }
+  }
+}
