@@ -1,30 +1,28 @@
+tap "anomalyco/tap", trusted: true
+tap "manaflow-ai/cmux", trusted: true
 tap "mongodb/brew", trusted: true
+tap "oven-sh/bun", trusted: true
 tap "supabase/tap", trusted: true
-tap "teamookla/speedtest"
+tap "teamookla/speedtest", trusted: true
+tap "wpscanteam/tap"
 # Code searching, linting, rewriting
 brew "ast-grep"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Cryptographic recipes and primitives for Python
 brew "cryptography"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
 # Digital camera RAW photo decoding software
 brew "dcraw"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# Infamous electronic fortune-cookie generator
-brew "fortune"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# GitHub command-line tool
-brew "gh"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Access GitHub's .gitignore boilerplates
 brew "gibo"
 # GIF image/animation creator/editor
@@ -33,8 +31,8 @@ brew "gifsicle"
 brew "gping"
 # Image processing tools collection
 brew "graphicsmagick"
-# User-friendly cURL replacement (command-line HTTP client)
-brew "httpie"
+# Open-source video transcoder available for Linux, Mac, and Windows
+brew "handbrake"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
 # Swiss-army knife of markup format conversion
@@ -73,26 +71,32 @@ brew "uv"
 brew "wget"
 # Personal information dashboard for your terminal
 brew "wtfutil"
-# Blazing fast terminal file manager written in Rust, based on async I/O
-brew "yazi"
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community", trusted: true
+brew "mongodb/brew/mongodb-community"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Ookla Speedtest
-brew "teamookla/speedtest/speedtest", trusted: true
+brew "teamookla/speedtest/speedtest"
+# Black box WordPress vulnerability scanner
+brew "wpscanteam/tap/wpscan", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
+# Open source IDE for exploring and testing APIs
+cask "bruno"
 # Visualise and analyse Claude Code session executions
 cask "claude-devtools"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Voice and text chat software
 cask "discord@ptb"
 # Email client
 cask "fastmail"
 # Web browser
 cask "firefox@developer-edition"
-# iTerm2's "Normal Font" — nix no longer installs the other nerd fonts
 cask "font-consolas-for-powerline"
+cask "font-fira-code"
+cask "font-inconsolata-dz-for-powerline"
+cask "font-meslo-for-powerline"
 cask "font-powerline-symbols"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -100,6 +104,10 @@ cask "ghostty"
 cask "github"
 # Web browser
 cask "google-chrome"
+# Web browser
+cask "google-chrome@canary"
+# Open-source video transcoder
+cask "handbrake-app"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Free and open-source RSS reader
@@ -114,13 +122,15 @@ cask "orbstack"
 cask "orion"
 # Collaboration platform for API development
 cask "postman"
-# VPN client focusing on security
-cask "protonvpn"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Team communication and collaboration software
 cask "slack@beta"
 # Native desktop client for WhatsApp
 cask "whatsapp@beta"
 # Multiplayer code editor
+cask "zed"
+# Multiplayer code editor
 cask "zed@preview"
 uv "skillspector", source: "git+https://github.com/NVIDIA/skillspector.git"
-npm "corepack"
+npm "fast-cli"
