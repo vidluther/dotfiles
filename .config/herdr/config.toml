@@ -1,0 +1,28 @@
+onboarding = false
+
+[keys]
+previous_workspace = "alt+shift+k"
+next_workspace = "alt+shift+j"
+
+[[keys.command]]
+key = "prefix+ctrl+o"
+type = "plugin_action"
+command = "agent-chooser.open"
+description = "choose an agent needing attention"
+
+[[keys.command]]
+key = "prefix+shift+o"
+type = "plugin_action"
+command = "url-chooser.open"
+description = "choose URL from focused pane"
+
+[ui]
+status_indicators = "symbols"
+prompt_new_tab_name = false
+
+[ui.toast]
+delivery = "herdr"
+
+[ui.toast.clipboard]
+enabled = false
+position = "top-right"
