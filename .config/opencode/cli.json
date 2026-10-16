@@ -9,7 +9,7 @@
     "grouping": "auto",
     "verbosity": "low",
     "tps": true,
-    "sidebar": "auto"
+    "sidebar": "hide"
   },
   "tabs": {
     "mode": "on",
