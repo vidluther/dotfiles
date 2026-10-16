@@ -9,6 +9,10 @@ result
 .claude/mcp-needs-auth-cache.json
 .claude/backups
 .claude/cache
+.claude/.last-update-result.json
+.claude/daemon/
+.claude/jobs/
+.claude/security/
 .claude/settings.local.json
 .claude/shell-snapshots
 .claude/sessions
@@ -16,6 +20,7 @@ result
 .config/karabiner/automatic_backups/
 .config/ized/prompts
 .config/home-manager/result
+.config/git/
 .config/opencode/package-lock.json
 .config/opencode/service.json
 .config/opencode/plugins/
