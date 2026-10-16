@@ -14,5 +14,12 @@
   "tabs": {
     "mode": "on",
     "layout": "horizontal"
+  },
+  "diffs": {
+    "source": "working",
+    "tree": true,
+    "single": false,
+    "view": "auto",
+    "fullscreen": false
   }
 }
