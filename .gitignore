@@ -21,6 +21,14 @@ result
 .config/ized/prompts
 .config/home-manager/result
 .config/git/
+.config/herdr/*
+!.config/herdr/config.toml
+!.config/herdr/plugins/
+.config/herdr/plugins/*
+!.config/herdr/plugins/local/
+.config/herdr/plugins/local/*
+!.config/herdr/plugins/local/agent-chooser/
+!.config/herdr/plugins/local/url-chooser/
 .config/opencode/package-lock.json
 .config/opencode/service.json
 .config/opencode/plugins/
