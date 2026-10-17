@@ -11,6 +11,9 @@ result
 .claude/cache
 .claude/.last-update-result.json
 .claude/daemon/
+.claude/daemon.log
+.claude/state/
+.claude/teams/
 .claude/jobs/
 .claude/security/
 .claude/settings.local.json
@@ -35,9 +38,7 @@ result
 .claude/.last-cleanup
 .config/opencode/skills/
 .claude/rules/gitbutler.md
-.codex/auth.json
-.codex/*.log
-.codex/cache/
-.codex/sessions/
-.codex/rollouts/
-.codex/plugins/
+# Keep portable Codex configuration; ignore generated and machine-local data.
+.codex/*
+!.codex/config.toml
+!.codex/AGENTS.md
