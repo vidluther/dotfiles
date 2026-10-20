@@ -32,8 +32,6 @@ brew "gh"
 brew "gibo"
 # GIF image/animation creator/editor
 brew "gifsicle"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Ping, but with a graph
 brew "gping"
 # Image processing tools collection
@@ -129,7 +127,6 @@ cask "slack@beta"
 cask "whatsapp@beta"
 # Multiplayer code editor
 cask "zed@preview"
-go "github.com/google/osv-scanner/v2/cmd/osv-scanner"
 uv "llm"
 uv "mlx-whisper"
 uv "skillspector", source: "git+https://github.com/NVIDIA/skillspector.git"
