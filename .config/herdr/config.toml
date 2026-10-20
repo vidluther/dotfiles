@@ -17,6 +17,9 @@ command = "url-chooser.open"
 description = "choose URL from focused pane"
 
 [ui]
+sidebar_width = 20
+sidebar_min_width = 16
+sidebar_max_width = 20
 status_indicators = "symbols"
 prompt_new_tab_name = false
 
@@ -26,3 +29,6 @@ delivery = "herdr"
 [ui.toast.clipboard]
 enabled = false
 position = "top-right"
+
+[ui.sound]
+enabled = false

@@ -1,6 +1,6 @@
 # Daily Workflow
 
-[Overview](README.md) · [Setup and maintenance](SETUP.md)
+[Overview](README.md) · [Keyboard shortcuts](KEYBOARD_SHORTCUTS.md) · [Setup and maintenance](SETUP.md)
 
 ## Keyboard cheat sheet
 
@@ -12,6 +12,7 @@
 | --- | --- |
 | **Hyper+O** | Open the agent chooser. Herdr equivalent: prefix, **Ctrl+O**. |
 | **Hyper+U** | Open the URL chooser for the focused pane. Herdr equivalent: prefix, **Shift+O**. |
+| **Hyper+W** | Configured for workspace navigation, but unresolved on this machine; use prefix, **W**. |
 | **Option+Shift+J / K** | Next / previous Herdr workspace. |
 | Prefix, **C** | New tab, without a naming prompt. |
 | Prefix, **N / P** | Next / previous tab. |
@@ -20,6 +21,7 @@
 | Prefix, **H / J / K / L** | Focus the pane left / down / up / right. |
 | Prefix, **Z** | Toggle focused-pane zoom. |
 | Prefix, **W** | Workspace navigation. |
+| Prefix, **B** | Toggle sidebar. |
 | Prefix, **Q** | Detach; leave terminals and agents running. |
 | Prefix, **Shift+R** | Reload Herdr configuration. |
 | **Cmd+Shift+,** | Reload Ghostty configuration. |
@@ -73,7 +75,7 @@ Use a font's family name in `font-family`, not its Homebrew cask name. Reload wi
 
 ## Herdr notifications and plugins
 
-The config uses in-app agent notifications, distinct status symbols, and automatic copy-on-select. Herdr's clipboard popup is disabled. Other applications, including an agent TUI, can still show their own copy notifications.
+The config uses in-app agent notifications, distinct status symbols, and automatic copy-on-select. Agent notification sounds and Herdr's clipboard popup are disabled. The sidebar is capped at 20 columns. Other applications, including an agent TUI, can still show their own copy notifications.
 
 Plugin source lives under `.config/herdr/plugins/local/`; registration lives outside version control. If a chooser is missing on another machine, follow [plugin setup](SETUP.md#8-enable-the-herdr-workflow).
 

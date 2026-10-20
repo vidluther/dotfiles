@@ -4,6 +4,7 @@ My macOS development environment: shell tools, terminal workspaces, coding agent
 
 - **[Setup and maintenance](SETUP.md)** — installation, another macOS account, authentication, and updates.
 - **[Daily workflow](WORKFLOW.md)** — Herdr, chooser shortcuts, Ghostty, and troubleshooting config changes.
+- **[Keyboard shortcuts](KEYBOARD_SHORTCUTS.md)** — quick Herdr cheat sheet and daily workflows.
 
 ## How it fits together
 

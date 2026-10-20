@@ -5,6 +5,7 @@
 --ignore=README.md
 --ignore=SETUP.md
 --ignore=WORKFLOW.md
+--ignore=KEYBOARD_SHORTCUTS.md
 --ignore=^result$
 --ignore=node_modules
 --ignore=Brewfile

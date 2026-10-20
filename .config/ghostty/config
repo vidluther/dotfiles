@@ -22,3 +22,6 @@ keybind = super+ctrl+alt+shift+o=text:\x02\x0f
 
 # Karabiner Caps Lock (Hyper) + U opens URLs from the focused Herdr pane.
 keybind = super+ctrl+alt+shift+u=text:\x02O
+
+# Karabiner Caps Lock (Hyper) + W opens Herdr workspace navigation.
+keybind = super+ctrl+alt+shift+w=text:\x02w
