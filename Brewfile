@@ -123,8 +123,6 @@ cask "orbstack"
 cask "orion"
 # Collaboration platform for API development
 cask "postman"
-# VPN client focusing on security
-cask "protonvpn"
 # Team communication and collaboration software
 cask "slack@beta"
 # Native desktop client for WhatsApp
