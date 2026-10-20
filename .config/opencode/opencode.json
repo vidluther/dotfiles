@@ -4,6 +4,14 @@
       "fastmail": {
         "type": "remote",
         "url": "https://api.fastmail.com/mcp"
+      },
+      "remctl": {
+        "type": "local",
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HOME/bin/remctl\" mcp"
+        ]
       }
     }
   }
