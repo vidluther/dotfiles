@@ -159,6 +159,7 @@ in
       fish_add_path $HOME/.nix-profile/bin
       fish_add_path $HOME/.antigravity/antigravity/bin
       fish_add_path $HOME/.local/bin
+      fish_add_path $HOME/bin
       fish_add_path $HOME/go/bin
       fish_add_path $HOME/.opencode/bin
       fish_add_path $PNPM_HOME
