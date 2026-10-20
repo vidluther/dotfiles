@@ -72,6 +72,7 @@ in
   home.packages = with pkgs; [
     eza
     ripgrep
+    glow
     jq
     gh
     neovim
