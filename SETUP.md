@@ -125,6 +125,7 @@ Notes:
 - **Dry run first**: `stow --simulate --verbose .` lists proposed links and conflicts. Compare existing files before moving them aside. The local `.codex/config.toml` may differ from the tracked copy; reconcile it before a full Stow run. The Nix `result` link is excluded by `.stowrc`.
 - **Claude Code settings symlink**: Claude Code < ~2.1.28x saved `~/.claude/settings.json` via temp-file + rename onto the link path, replacing the symlink with a regular file. 2.1.283+ resolves the link and writes through to the repo copy, so the link holds. If it ever turns into a regular file again, diff it against the repo copy, merge, then `mv` it aside and re-link. Note that when the cwd is `~/dotfiles`, the repo's `.claude/settings.json` is also loaded as *project* settings — harmless while the link is intact, confusing if the two copies drift.
 - **1Password**: the desktop app's Settings → Developer → "Use the SSH agent" toggle is per-login — enable it once in the new session (see Gotchas below).
+- **OpenCode service port**: in case OpenCode doesn't start, set the port specifically. Both accounts' background services default to port 49374, so the second one can't bind it. Run `opencode service set port 49380` (any free port works), then `opencode service start`. It's saved in `~/.config/opencode/service.json` (gitignored), so it's needed once per account.
 - **Updating later**: `home-manager switch --impure --flake ~/dotfiles#current`.
 
 ---
