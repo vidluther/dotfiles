@@ -11,6 +11,7 @@ I have ADHD — keep things short and scannable.
 
 ## Tool Preferences
 
+- Before starting a task, check the skills available to you and read any relevant skill instructions before choosing tools or running commands.
 - Search: use `rg` (ripgrep) — never `find` or `grep`
 - Package manager: use `pnpm` for new projects.
 - Shell: my interactive shell is fish — when suggesting commands for me to run, use fish syntax (`set -gx` not `export`, `(cmd)` not `$(cmd)`).
@@ -18,7 +19,7 @@ I have ADHD — keep things short and scannable.
 
 ## Git
 
-- If the current branch is `gitbutler/workspace`, use `but` (GitButler CLI) for branch and commit operations; otherwise use plain `git`.
+- Check the current branch first. Use GitButler (`but`) only when the repository is already on `gitbutler/workspace`; otherwise, use plain Git. Load the available GitButler skill for syntax only in that workspace; its rules do not apply elsewhere.
 - The GitButler rules in `~/.claude/rules/gitbutler.md` apply **only** on `gitbutler/workspace`. On any other branch, ignore them.
 - Never create git worktrees (no `git worktree add`, `EnterWorktree`, or `isolation: "worktree"`). Use a GitButler branch instead.
 - Never commit, and don't offer to, unless explicitly told in the chat.

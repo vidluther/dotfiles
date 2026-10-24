@@ -10,13 +10,14 @@ I have ADHD — keep responses short and scannable.
 
 ## Tool Preferences
 
+- Before starting a task, check the skills available to you and read any relevant skill instructions before choosing tools or running commands.
 - Prefer dedicated search tools; for shell searches use `rg`, not `find` or `grep`.
 - My interactive shell is fish. When suggesting commands for me to run, use fish syntax (`set -gx`, `(cmd)`). Use the execution tool's actual shell for commands you run yourself.
 - Never install system packages or CLI tools yourself, including global package installs, or edit `home.nix`/`Brewfile` to add them. Ask me first; I'll decide where they belong.
 
 ## Version Control
 
-- On `gitbutler/workspace`, use GitButler (`but`) for version-control operations and load the `gitbutler` skill for syntax. Elsewhere, use plain git; GitButler-specific rules apply only in its workspace.
+- Check the current branch first. Use GitButler (`but`) only when the repository is already on `gitbutler/workspace`; otherwise, use plain Git. Load the available GitButler skill for syntax only in that workspace; its rules do not apply elsewhere.
 - Never create worktrees, including through OpenCode tools. In GitButler workspaces, use a dedicated branch per session.
 - Multiple agents may share a repository. Do not modify, discard, commit, or publish another agent's work unless asked.
 - Never commit or create PRs, and don't offer to, unless explicitly told in chat. Never push unless asked.
