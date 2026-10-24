@@ -5,6 +5,10 @@
         "type": "remote",
         "url": "https://api.fastmail.com/mcp"
       },
+      "rememberthemilk": {
+        "type": "remote",
+        "url": "https://www.rememberthemilk.com/mcp"
+      },
       "remctl": {
         "type": "local",
         "command": [
