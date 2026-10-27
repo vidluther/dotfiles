@@ -30,11 +30,48 @@ Hyper+O is deliberate: Hyper+C is assigned to clearing notifications in SuperCha
 
 ## Workspaces and persistence
 
+For everyday use, keep one Herdr session and create a workspace per project.
+The hierarchy is **session → workspace → tab → pane**:
+
+- **Session**: the background server holding a collection of workspaces.
+- **Workspace**: a project or task, such as `dotfiles` or an API repository.
+- **Tab**: a view within that project, such as `coding`, `logs`, or `review`.
+- **Pane**: an individual terminal running an agent, shell, or server.
+
+Use a named session when you want an independent set of terminals and agents,
+with its own socket and saved runtime state. For example, `work` and `personal`
+sessions can be attached to and stopped independently. Sessions do not isolate
+files, Git changes, or credentials; use the account wrappers for agent logins.
+Opening another terminal window does not require another session: multiple
+clients can attach to the same session and view different tabs or workspaces.
+
+From a shell **outside Herdr**, `herdr` attaches to the default session, and
+`herdr session attach work` creates or attaches to the named `work` session.
+Use `herdr session list` to see your sessions. Avoid nesting Herdr clients.
+See [Herdr's concepts](https://herdr.dev/docs/concepts/) for the runtime model.
+
 Use a workspace per project, tabs for different views, and panes for the agent, shell, and development server. A workspace is a terminal container, not a separate Git checkout.
 
 Start or reattach with `herdr`. To step away, use prefix, **Q**, instead of `/exit` in each agent. Running `herdr` again reconnects to the live server and its workspaces.
 
 The host must stay awake for local work to continue. A reboot ends the original processes; Herdr can restore layout and resume supported agent conversations through its integrations. Screen-history persistence is not enabled in this configuration.
+
+## Finding shortcuts without memorizing them
+
+The existing tab bar shows **Ctrl+B ? shortcuts**. Press **Ctrl+B**, release,
+then **?** to open Herdr's live list of active keybindings. Press **/** there
+to search, for example for `rename`, `tab`, or `split`.
+
+Start with **prefix, C** for a new tab and **prefix, Shift+T** to rename it.
+Right-click a tab, workspace, or pane to find its actions by mouse; drag pane
+borders to resize. **Prefix, Z** temporarily zooms the focused pane, and the
+same shortcut restores the layout. **Prefix, [** opens copy mode for searching
+and selecting terminal history.
+
+Herdr 0.9.5 supports formatting existing sidebar agent/workspace rows, but has
+no supported configuration or plugin surface for a standalone sidebar help
+section. The tab-bar reminder uses an existing row and leaves terminal space
+available; on narrow windows Herdr gives tabs priority over the reminder.
 
 ## Agent chooser
 

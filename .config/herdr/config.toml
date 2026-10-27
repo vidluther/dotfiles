@@ -22,6 +22,8 @@ sidebar_min_width = 16
 sidebar_max_width = 20
 status_indicators = "symbols"
 prompt_new_tab_name = false
+# Keep help discoverable without reserving a terminal pane or an extra row.
+tab_bar_right = [{ type = "text", text = "Ctrl+B ? shortcuts" }]
 
 [ui.toast]
 delivery = "herdr"

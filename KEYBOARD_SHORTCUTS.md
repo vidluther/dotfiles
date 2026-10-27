@@ -6,6 +6,10 @@ See [Daily workflow](WORKFLOW.md) for details and [Setup](SETUP.md#8-enable-the-
 **Hyper** = hold **Caps Lock** (Command+Control+Option+Shift).
 **Prefix → key** = press **Ctrl+B**, release, then press the key. Letters are lowercase unless **Shift** is explicitly shown.
 
+Forgot a shortcut? The tab bar reminds you: **Ctrl+B**, then **?** opens live
+help. Press **/** in help to search actions such as `rename` or `new tab`.
+Right-click menus also cover tab, workspace, and pane actions.
+
 ## Workspaces, tabs, and panes
 
 | Shortcut | Action |
@@ -23,6 +27,9 @@ See [Daily workflow](WORKFLOW.md) for details and [Setup](SETUP.md#8-enable-the-
 | Prefix → **-** | Split into stacked panes |
 | Prefix → **h / j / k / l** | Focus pane left / down / up / right |
 | Prefix → **z** | Zoom / unzoom focused pane |
+| Prefix → **r** | Enter resize mode; or drag a pane border with the mouse |
+| Prefix → **Shift+P** | Rename the focused pane |
+| Prefix → **[** | Enter copy mode to search and select terminal history |
 | Prefix → **?** | Show Herdr shortcut help |
 | Prefix → **q** | Detach; leave terminals and agents running |
 
