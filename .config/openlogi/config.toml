@@ -24,7 +24,7 @@ animate_desktop_switch = true
 [devices]
 
 [devices."serial:2607za44t168"]
-dpi = 1600
+dpi = 2050
 invert_scroll = true
 scroll_resolution = "low"
 
@@ -104,7 +104,7 @@ enabled = true
 haptics = true
 
 [devices."serial:2607za44t168".action_ring.default.slots.Right]
-action = "AppExpose"
+action = "NextDesktop"
 
 [devices."serial:2607za44t168".action_ring.default.slots.TopRight]
 icon = "Monitor"
@@ -117,13 +117,13 @@ action = "NextTrack"
 action = "PlayPause"
 
 [devices."serial:2607za44t168".action_ring.default.slots.Left]
-action = "LaunchpadShow"
+action = "PreviousDesktop"
 
 [devices."serial:2607za44t168".action_ring.default.slots.TopLeft]
 action = "CaptureRegion"
 
 [devices."serial:2607za44t168".smartshift]
-mode = "ratchet"
+mode = "free"
 auto_disengage = 255
 tunable_torque = 6
 
