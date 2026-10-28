@@ -32,6 +32,8 @@ result
 .config/herdr/plugins/local/*
 !.config/herdr/plugins/local/agent-chooser/
 !.config/herdr/plugins/local/url-chooser/
+.config/openlogi/*
+!.config/openlogi/config.toml
 .config/opencode/package-lock.json
 .config/opencode/service.json
 .config/opencode/plugins/

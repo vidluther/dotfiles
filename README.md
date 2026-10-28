@@ -31,6 +31,7 @@ Ghostty renders the terminal. Herdr keeps its terminal processes running when th
 | [`.config/ghostty/`](.config/ghostty/) | Menlo font, GitHub Dark Colorblind theme, spacing, cursor-warp shader, and Hyper shortcuts. |
 | [`.config/herdr/`](.config/herdr/) | Workspace navigation, notifications, and local agent/URL chooser plugins. |
 | [`.config/karabiner/`](.config/karabiner/) | Caps Lock → Command+Control+Option+Shift (Hyper). |
+| [`.config/openlogi/config.toml`](.config/openlogi/config.toml) | OpenLogi mouse settings (MX Master 4 DPI, scroll, action ring), shared across macOS accounts. |
 | [`.config/opencode/`](.config/opencode/) | OpenCode settings, agent instructions, and Herdr TUI integration. |
 | [`.claude/`](.claude/) | Claude Code settings, instructions, status line, output styles, and Herdr session hook. |
 | [`.codex/`](.codex/) | Codex configuration. |
