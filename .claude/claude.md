@@ -38,7 +38,8 @@ I have ADHD — keep things short and scannable.
 
 - PR title = `<type>(<TICKET-KEY>): <Jira ticket summary verbatim>`, minus any `[repo-name]` prefix. The ticket summary is the title; don't write a new one.
 - `type` follows the repo's Conventional Commit / release convention (`feat`, `fix`, `chore`, …).
-- Fill in the repo's `.github/pull_request_template.md` when one exists.
+- Fill in the repo's PR template (`.github/pull_request_template.md` or similar) when one exists.
+- Always open the description with a plain-voice **Why** (what breaks if we don't merge, plus the literal error) and a **Benefit** (what's better after merge), so a reviewer who hasn't read the ticket gets the purpose. The template doesn't replace them.
 - Only the ticket being implemented goes in the PR body. The Jira↔GitHub automation transitions every `EDGE-XXXX` key it finds in the PR, so a "Related to EDGE-YYYY" line moves untouched tickets to In Dev Review / Deployed To Staging. Link related tickets in Jira instead.
 
 ## Dotfiles

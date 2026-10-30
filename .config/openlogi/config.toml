@@ -1,7 +1,7 @@
 schema_version = 10
 
 [app_settings]
-launch_at_login = false
+launch_at_login = true
 check_for_updates = true
 auto_install_updates = false
 update_prompt_seen = true
@@ -123,9 +123,9 @@ action = "PreviousDesktop"
 action = "CaptureRegion"
 
 [devices."serial:2607za44t168".smartshift]
-mode = "free"
-auto_disengage = 255
-tunable_torque = 6
+mode = "ratchet"
+auto_disengage = 16
+tunable_torque = 17
 
 [devices."serial:2607za44t168".action_ring.default.slots.BottomLeft]
 action = "PrevTrack"
