@@ -80,6 +80,17 @@
             "timeout": 10
           }
         ]
+      },
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/work/personal/skills/scripts/refresh-gitbutler-skill.sh\" >/dev/null 2>&1 || true",
+            "timeout": 30,
+            "async": true
+          }
+        ]
       }
     ]
   }
