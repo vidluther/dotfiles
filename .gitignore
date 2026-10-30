@@ -36,7 +36,7 @@ result
 !.config/openlogi/config.toml
 .config/opencode/package-lock.json
 .config/opencode/service.json
-.config/opencode/plugins/
+.config/opencode/plugins/herdr-agent-state.js
 .claude/.last-cleanup
 .config/opencode/skills/
 .claude/rules/gitbutler.md
