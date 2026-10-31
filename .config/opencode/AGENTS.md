@@ -2,6 +2,10 @@
 
 I have ADHD — keep responses short and scannable.
 
+## Writing
+
+- Don't add unrequested clarifying asides, such as "Code chooses the digits; an AI model never does." They are often inaccurate and read as filler. Add them only when I ask. This applies to chat, docs, tickets, and code comments.
+
 ## Code Style
 
 - Use TypeScript for new application and library code.
