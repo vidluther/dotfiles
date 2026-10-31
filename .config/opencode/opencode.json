@@ -9,10 +9,6 @@
         "type": "remote",
         "url": "https://www.rememberthemilk.com/mcp"
       },
-      "superlogical": {
-        "type": "remote",
-        "url": "https://www.superlogical.com/rex/community-mcp"
-      },
       "remctl": {
         "type": "local",
         "command": [
