@@ -101,8 +101,6 @@ cask "font-powerline-symbols"
 cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github"
-# Web browser
-cask "google-chrome"
 # Tool to optimise images to a smaller size
 cask "imageoptim"
 # Terminal emulator as alternative to Apple's Terminal app

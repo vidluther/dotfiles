@@ -204,6 +204,8 @@ cd ~/dotfiles/
 brew bundle dump --force
 ```
 
+Google Chrome is installed manually by dragging the DMG, so the dump re-adds `cask "google-chrome"` — delete that line before committing.
+
 ### Miscellaneous
 
 ```sh
