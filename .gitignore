@@ -87,3 +87,5 @@ result
 .codex/*
 !.codex/config.toml.example
 !.codex/AGENTS.md
+# App-synced agent skills; third-party and machine-local.
+.agents/
