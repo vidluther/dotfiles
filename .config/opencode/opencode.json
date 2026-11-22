@@ -16,6 +16,10 @@
           "-c",
           "exec \"$HOME/bin/remctl\" mcp"
         ]
+      },
+      "superlogical": {
+        "type": "remote",
+        "url": "https://www.superlogical.com/rex/community-mcp"
       }
     }
   }
