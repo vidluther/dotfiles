@@ -1,5 +1,13 @@
 { pkgs, username, homeDirectory, ... }:
 
+let
+  # Starship language modules share style and format; only the symbol differs.
+  langModule = symbol: {
+    inherit symbol;
+    style = "bg:#0d1117";
+    format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
+  };
+in
 {
   home.username = username;
   home.homeDirectory = homeDirectory;
@@ -179,41 +187,17 @@
         format = "[[($all_status$ahead_behind )](fg:#f78166 bg:#0d1117)]($style)";
       };
 
-      nodejs = {
-        symbol = "";
-        style = "bg:#0d1117";
-        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
-      };
+      nodejs = langModule "";
 
-      bun = {
-        symbol = "🥟";
-        style = "bg:#0d1117";
-        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
-      };
+      bun = langModule "🥟";
 
-      rust = {
-        symbol = "";
-        style = "bg:#0d1117";
-        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
-      };
+      rust = langModule "";
 
-      golang = {
-        symbol = "";
-        style = "bg:#0d1117";
-        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
-      };
+      golang = langModule "";
 
-      php = {
-        symbol = "";
-        style = "bg:#0d1117";
-        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
-      };
+      php = langModule "";
 
-      python = {
-        symbol = "";
-        style = "bg:#0d1117";
-        format = "[[ $symbol ($version) ](fg:#58a6ff bg:#0d1117)]($style)";
-      };
+      python = langModule "";
 
       character = {
         success_symbol = "[➜](bold green)";
