@@ -2,31 +2,14 @@
 
 [Overview](README.md) · [Keyboard shortcuts](KEYBOARD_SHORTCUTS.md) · [Setup and maintenance](SETUP.md)
 
-## Keyboard cheat sheet
+## Keyboard shortcuts
 
-**Hyper** means holding Caps Lock with the configured Karabiner profile. It sends Command+Control+Option+Shift. Hyper shortcuts below are defined in Ghostty and intended for a focused Herdr session.
+The [keyboard shortcuts reference](KEYBOARD_SHORTCUTS.md) is the canonical list:
+workspace, tab, and pane keys, the agent and URL choosers, and reload keys.
 
-**Prefix** means press **Ctrl+B**, release, then press the next key/chord.
-
-| Shortcut | Action |
-| --- | --- |
-| **Hyper+O** | Open the agent chooser. Herdr equivalent: prefix, **Ctrl+O**. |
-| **Hyper+U** | Open the URL chooser for the focused pane. Herdr equivalent: prefix, **Shift+O**. |
-| **Hyper+W** | Configured for workspace navigation, but unresolved on this machine; use prefix, **W**. |
-| **Option+Shift+J / K** | Next / previous Herdr workspace. |
-| Prefix, **C** | New tab, without a naming prompt. |
-| Prefix, **N / P** | Next / previous tab. |
-| Prefix, **V** | Split into side-by-side panes. |
-| Prefix, **-** | Split into stacked panes. |
-| Prefix, **H / J / K / L** | Focus the pane left / down / up / right. |
-| Prefix, **Z** | Toggle focused-pane zoom. |
-| Prefix, **W** | Workspace navigation. |
-| Prefix, **B** | Toggle sidebar. |
-| Prefix, **Q** | Detach; leave terminals and agents running. |
-| Prefix, **Shift+R** | Reload Herdr configuration. |
-| **Cmd+Shift+,** | Reload Ghostty configuration. |
-
-Hyper+O is deliberate: Hyper+C is assigned to clearing notifications in SuperCharge on this machine.
+**Hyper** means holding Caps Lock with the configured Karabiner profile
+(Command+Control+Option+Shift). **Prefix** means press **Ctrl+B**, release,
+then press the next key/chord.
 
 ## Workspaces and persistence
 
@@ -101,25 +84,13 @@ To restore the stock preview, change the `files` block's `content.mod` from
 
 ## Agent chooser
 
-Press **Hyper+O**:
-
-- **Attention** lists blocked or finished agents, newest state changes first.
-- **Working** lists agents still running; **All** includes idle agents too.
-- **Tab / Shift+Tab** cycles views; type to filter.
-- **Enter** focuses the selected agent; **Esc** closes the popup.
-- **Ctrl+R** refreshes. The picker also refreshes periodically while open.
-
-Status labels include `! blocked`, `✓ done`, `▶ working`, and `○ idle`, so color is not the only cue.
+Press **Hyper+O** to list agents by status and jump to one. Views, keys, and
+status labels are in the [shortcut reference](KEYBOARD_SHORTCUTS.md#agent-chooser).
 
 ## URL chooser
 
-Press **Hyper+U** to extract URLs from the focused pane's recent output (roughly a screenful):
-
-- A single unambiguous URL opens directly in the default browser.
-- With multiple URLs, type to filter, **Enter** to open, or **Y** to copy.
-- **Esc** closes the picker. If no URLs are found, press any key to close the message.
-
-The script attempts to join wrapped links and asks you to verify reconstructed candidates when it cannot confirm them. This is a text-based URL finder, not a search of every link in the agent's conversation history.
+Press **Hyper+U** to open or copy URLs from the focused pane's recent output.
+Keys and behavior are in the [shortcut reference](KEYBOARD_SHORTCUTS.md#url-chooser).
 
 ## Ghostty appearance and configuration
 

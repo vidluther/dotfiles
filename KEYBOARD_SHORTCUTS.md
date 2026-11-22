@@ -33,8 +33,6 @@ Right-click menus also cover tab, workspace, and pane actions.
 | Prefix → **?** | Show Herdr shortcut help |
 | Prefix → **q** | Detach; leave terminals and agents running |
 
-**Hyper+W** is configured to send prefix → **w**, but currently does not work reliably on this machine. Use **Ctrl+B**, then **w** instead; the cause remains unresolved.
-
 ## Agent chooser
 
 Open with **Hyper+O**, or prefix → **Ctrl+O**.
@@ -47,7 +45,7 @@ Open with **Hyper+O**, or prefix → **Ctrl+O**.
 | **Ctrl+R** | Refresh; also refreshes periodically |
 | **Esc** | Close |
 
-Start in **Attention** for blocked or finished agents. Use **Working** for running agents or **All** to include idle ones.
+Start in **Attention** for blocked or finished agents, newest state changes first. Use **Working** for running agents or **All** to include idle ones.
 Status cues: `! blocked`, `✓ done`, `▶ working`, `○ idle`.
 
 ## URL chooser
@@ -61,7 +59,7 @@ Open with **Hyper+U**, or prefix → **Shift+O**.
 | **Y** | Copy selected URL |
 | **Esc** | Close |
 
-One unambiguous URL opens immediately. Links come from the focused pane's recent output, not the entire conversation history. Reconstructed wrapped links may require confirmation.
+One unambiguous URL opens immediately; if no URLs are found, press any key to close the message. Links come from the focused pane's recent output (roughly a screenful), not the entire conversation history. Reconstructed wrapped links may require confirmation.
 
 ## Daily workflow
 
@@ -90,4 +88,4 @@ herdr plugin link ~/.config/herdr/plugins/local/agent-chooser
 herdr plugin link ~/.config/herdr/plugins/local/url-chooser
 ```
 
-If a Hyper shortcut fails, try its prefix equivalent to distinguish a keyboard conflict from a Herdr/plugin issue. **Hyper+C** is reserved for clearing notifications in SuperCharge.
+If a Hyper shortcut fails, try its prefix equivalent to distinguish a keyboard conflict from a Herdr/plugin issue. **Hyper+O** is deliberate: **Hyper+C** is reserved for clearing notifications in SuperCharge on this machine.
