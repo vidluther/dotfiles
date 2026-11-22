@@ -23,5 +23,8 @@
     "view": "auto",
     "fullscreen": false
   },
-  "plugins": ["./herdr-opencode"]
+  "plugins": [
+    "./herdr-opencode"
+  ],
+  "animations": true
 }
