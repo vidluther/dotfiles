@@ -69,11 +69,13 @@
     "file_icons": false
   },
   "agent_servers": {
-    "opencode": {
+    "antigravity-acp": {
       "default_config_options": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "mode": "build"
+        "model": "gemini-4-neon"
       },
+      "type": "registry"
+    },
+    "opencode-v2": {
       "type": "registry"
     },
     "codex-acp": {

@@ -98,7 +98,6 @@
       end
       fish_add_path /nix/var/nix/profiles/default/bin
       fish_add_path $HOME/.nix-profile/bin
-      fish_add_path $HOME/.antigravity/antigravity/bin
       fish_add_path $HOME/.local/bin
       fish_add_path $HOME/bin
       fish_add_path $HOME/go/bin
